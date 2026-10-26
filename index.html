@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modelos de site · Site Express</title>
+<meta name="description" content="Modelos de site para estética automotiva da Site Express. Todas as empresas mostradas são fictícias, criadas para demonstração.">
+<meta property="og:title" content="Modelos de site para estética automotiva · Site Express">
+<meta property="og:description" content="Escolha o estilo. O seu sai com suas fotos, seus serviços e seu WhatsApp.">
+<meta property="og:image" content="img/colecao-black-diamond-detail.webp">
+<meta name="theme-color" content="#0B1020">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B1020;
+    --bg-2: #101731;
+    --surface: #141C38;
+    --line: rgba(255, 255, 255, .09);
+    --text: #F5F6FA;
+    --muted: #A9B0C6;
+    --purple: #7C3AED;
+    --blue: #3B82F6;
+    --lilac: #C4B5FD;
+    --radius: 20px;
+    --gutter: clamp(16px, 4vw, 40px);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(60% 40% at 100% 0%, rgba(124, 58, 237, .28), transparent 70%),
+      radial-gradient(50% 35% at 0% 30%, rgba(59, 130, 246, .16), transparent 70%),
+      var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  .ribbon { background: #05070F; color: var(--muted); font-size: 13px; text-align: center; padding: 8px var(--gutter); border-bottom: 1px solid var(--line); }
+  .ribbon strong { color: var(--text); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 11px; border: 1px solid var(--line); border-radius: 99px; padding: 2px 10px; margin-right: 8px; }
+
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .bolt { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--purple), var(--blue)); flex-shrink: 0; }
+  .brand b { display: block; font-size: 18px; font-weight: 800; }
+  .brand span { display: block; font-size: 13px; color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; font-size: 15px; text-decoration: none; border-radius: 99px; padding: 13px 22px; transition: transform .2s, box-shadow .2s, background .2s; }
+  .btn-primary { background: linear-gradient(135deg, var(--purple), var(--blue)); color: #fff; box-shadow: 0 12px 30px -12px rgba(124, 58, 237, .8); }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid var(--line); background: rgba(255, 255, 255, .04); }
+  .btn-ghost:hover { background: rgba(255, 255, 255, .09); }
+  header .btn { padding: 10px 18px; font-size: 14px; }
+
+  .hero { padding: clamp(40px, 8vw, 96px) 0 clamp(32px, 5vw, 56px); }
+  .eyebrow { color: var(--lilac); font-size: 13px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(36px, 7vw, 72px); line-height: 1.04; letter-spacing: -.03em; margin: 0; font-weight: 800; max-width: 14ch; }
+  .grad { background: linear-gradient(90deg, var(--purple), var(--blue)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--muted); max-width: 56ch; margin: 20px 0 0; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 0; padding: 0; list-style: none; }
+  .facts li { border: 1px solid var(--line); background: rgba(255, 255, 255, .04); border-radius: 99px; padding: 8px 16px; font-size: 14px; font-weight: 600; }
+
+  .group { padding: clamp(28px, 5vw, 56px) 0 0; }
+  .group-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; margin-bottom: 20px; }
+  h2 { font-size: clamp(24px, 3.4vw, 34px); letter-spacing: -.02em; margin: 0; font-weight: 800; }
+  .group-head p { margin: 0; color: var(--muted); font-size: 15px; max-width: 52ch; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 720px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .grid.three { grid-template-columns: repeat(3, 1fr); } }
+
+  .card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; text-decoration: none; transition: transform .25s, border-color .25s, box-shadow .25s; }
+  .card:hover { transform: translateY(-4px); border-color: rgba(196, 181, 253, .35); box-shadow: 0 24px 50px -28px rgba(0, 0, 0, .9); }
+  .shot { position: relative; aspect-ratio: 16 / 10; background: var(--bg-2); overflow: hidden; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .6s; }
+  .card:hover .shot img { transform: scale(1.03); }
+  .tag { position: absolute; left: 12px; top: 12px; background: rgba(5, 7, 15, .78); backdrop-filter: blur(6px); border: 1px solid var(--line); border-radius: 99px; padding: 4px 12px; font-size: 12px; font-weight: 700; }
+  .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .style { color: var(--lilac); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  h3 { margin: 0; font-size: 21px; font-weight: 800; letter-spacing: -.01em; }
+  .body p { margin: 0; color: var(--muted); font-size: 15px; flex: 1; }
+  .open { margin-top: 10px; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 6px; }
+  .open svg { transition: transform .2s; }
+  .card:hover .open svg { transform: translateX(4px); }
+
+  .offer { margin: clamp(48px, 8vw, 96px) 0 0; padding: clamp(28px, 5vw, 56px); border-radius: 28px; border: 1px solid var(--line); background: linear-gradient(160deg, rgba(124, 58, 237, .22), rgba(59, 130, 246, .10) 60%, transparent), var(--bg-2); display: grid; gap: 28px; }
+  @media (min-width: 900px) { .offer { grid-template-columns: 1.1fr 1fr; align-items: center; } }
+  .price { font-size: clamp(44px, 7vw, 68px); font-weight: 800; letter-spacing: -.03em; line-height: 1; margin: 10px 0 6px; }
+  .price small { font-size: 18px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+  .offer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .offer li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+  .offer li::before { content: ""; width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px; border-radius: 50%; background: rgba(124, 58, 237, .25) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4L18 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 13px no-repeat; border: 1.5px solid var(--purple); }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+  footer { padding: 48px 0 40px; color: var(--muted); font-size: 13px; text-align: center; }
+  footer p { margin: 4px 0; }
+  @media (max-width: 520px) { header .btn span { display: none; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+  <div class="ribbon"><strong>Demonstração</strong>Todas as empresas abaixo são fictícias, criadas para mostrar os modelos. Imagens ilustrativas.</div>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#topo" aria-label="Site Express">
+        <span class="bolt" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#fff"/></svg></span>
+        <span><b>Site Express</b><span>Sites para estética automotiva</span></span>
+      </a>
+      <a class="btn btn-ghost" href="https://ig.me/m/site.expressos" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C7 3 3 6.7 3 11.3c0 2.5 1.2 4.7 3.1 6.2V21l3-1.7c.9.3 1.9.4 2.9.4 5 0 9-3.7 9-8.4S17 3 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>Falar no direct</span>
+      </a>
+    </header>
+
+    <section class="hero" id="topo">
+      <p class="eyebrow">Modelos de site</p>
+      <h1>Escolha o estilo da <span class="grad">sua estética</span></h1>
+      <p class="lead">Sete modelos para você navegar como se fosse cliente. O seu sai com as suas fotos, os seus serviços e o seu WhatsApp.</p>
+      <ul class="facts">
+        <li>Pronto em até 24 horas úteis</li>
+        <li>Feito para celular</li>
+        <li>Botão de WhatsApp</li>
+        <li>Sem mensalidade obrigatória</li>
+      </ul>
+    </section>
+
+    <section class="group" aria-labelledby="c3">
+      <div class="group-head">
+        <h2 id="c3">Coleção 03</h2>
+        <p>Visual autoral, de impacto. Três direções bem diferentes para marcar presença.</p>
+      </div>
+      <div class="grid three">
+        <a class="card" href="modelos/colecao-autoclean-express/">
+          <div class="shot"><img src="img/colecao-autoclean-express.webp" alt="Modelo AutoClean Express da Coleção 03 no computador" loading="lazy" width="1200" height="750"><span class="tag">Empresa fictícia</span></div>
+          <div class="body"><span class="style">Praticidade</span><h3>AutoClean Express</h3><p>Pacotes em destaque e caminho curto até o agendamento. Para lavagem e cuidado do dia a dia.</p><span class="open">Ver modelo <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+        <a class="card" href="modelos/colecao-black-diamond-detail/">
+          <div class="shot"><img src="img/colecao-black-diamond-detail.webp" alt="Modelo Black Diamond Detail da Coleção 03 no computador" loading="lazy" width="1200" height="750"><span class="tag">Empresa fictícia</span></div>
+          <div class="body"><span class="style">Atelier</span><h3>Black Diamond Detail</h3><p>Escuro, cinematográfico e premium. Para correção de pintura, vitrificação e detalhamento.</p><span class="open">Ver modelo <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+        <a class="card" href="modelos/colecao-prime-car-estetica/">
+          <div class="shot"><img src="img/colecao-prime-car-estetica.webp" alt="Modelo Prime Car Estética da Coleção 03 no computador" loading="lazy" width="1200" height="750"><span class="tag">Empresa fictícia</span></div>
+          <div class="body"><span class="style">Descoberta</span><h3>Prime Car Estética</h3><p>Moderno e acolhedor, guia o cliente até o serviço certo. Para a estética completa.</p><span class="open">Ver modelo <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="c2">
+      <div class="group-head">
+        <h2 id="c2">Coleção 02</h2>
+        <p>Completos e diretos: serviços, diferenciais, galeria, localização e dúvidas em uma página.</p>
+      </div>
+      <div class="grid three">
+        <a class="card" href="modelos/autoclean-express/">
+          <div class="shot"><img src="img/autoclean-express.webp" alt="Modelo AutoClean Express da Coleção 02 no computador" loading="lazy" width="1200" height="750"><span class="tag">Empresa fictícia</span></div>
+          <div class="body"><span class="style">Claro e leve</span><h3>AutoClean Express</h3><p>Lavagem detalhada e limpeza interna, com horário marcado e WhatsApp sempre à mão.</p><span class="open">Ver modelo <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+        <a class="card" href="modelos/black-diamond-detail/">
+          <div class="shot"><img src="img/black-diamond-detail.webp" alt="Modelo Black Diamond Detail da Coleção 02 no computador" loading="lazy" width="1200" height="750"><span class="tag">Empresa fictícia</span></div>
+          <div class="body"><span class="style">Preto e dourado</span><h3>Black Diamond Detail</h3><p>Correção de pintura, proteção cerâmica e acabamento, com visual sofisticado.</p><span class="open">Ver modelo <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+        <a class="card" href="modelos/prime-car-estetica/">
+          <div class="shot"><img src="img/prime-car-estetica.webp" alt="Modelo Prime Car Estética da Coleção 02 no computador" loading="lazy" width="1200" height="750"><span class="tag">Empresa fictícia</span></div>
+          <div class="body"><span class="style">Verde e natural</span><h3>Prime Car Estética</h3><p>Pintura, interior e acabamento em um só lugar, com plano de cuidado para cada carro.</p><span class="open">Ver modelo <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="c1">
+      <div class="group-head">
+        <h2 id="c1">Coleção 01</h2>
+        <p>O modelo original da Site Express, com o fluxo completo de uma estética premium.</p>
+      </div>
+      <div class="grid">
+        <a class="card" href="https://site-express.vinriibeiro.workers.dev/" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/vertice.webp" alt="Modelo Vértice Detail Studio no computador" loading="lazy" width="1200" height="750"><span class="tag">Empresa fictícia</span></div>
+          <div class="body"><span class="style">Premium escuro</span><h3>Vértice Detail Studio</h3><p>Serviços com preço e duração, galeria, diferenciais, localização e dúvidas frequentes.</p><span class="open">Ver modelo <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="offer" aria-labelledby="oferta">
+      <div>
+        <p class="eyebrow">Quanto custa</p>
+        <h2 id="oferta">Seu site profissional, valor fechado</h2>
+        <p class="price">R$ 497 <small>pagamento único</small></p>
+        <p style="margin:0;color:var(--muted)">R$ 250 para começar e R$ 247 só depois de aprovar, antes de ir ao ar.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://ig.me/m/site.expressos" target="_blank" rel="noopener">Quero o meu site</a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/site.expressos/" target="_blank" rel="noopener">Ver o Instagram</a>
+        </div>
+      </div>
+      <ul>
+        <li>Pronto em até 24 horas úteis depois da entrada e das informações completas</li>
+        <li>Suas fotos, seus serviços, seu endereço e seu WhatsApp</li>
+        <li>Feito para celular e computador, com SEO básico</li>
+        <li>Uma rodada de revisão incluída</li>
+        <li>Domínio no seu nome. Hospedagem opcional por R$ 79/mês</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>Site Express · Sites para estética automotiva · @site.expressos</p>
+    <p>Os modelos usam empresas fictícias e imagens ilustrativas. Nenhum dado mostrado é de um negócio real.</p>
+  </footer>
+</body>
+</html>
