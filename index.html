@@ -3,154 +3,185 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Site Express · Sites profissionais para estética automotiva</title>
-<meta name="description" content="Seu site personalizado por R$ 497, pagamento único. Serviços, fotos, localização e WhatsApp em um só lugar. Veja os modelos e solicite o seu pelo WhatsApp.">
+<title>Site Express · Sites de uma página para pequenos negócios</title>
+<meta name="description" content="Seu negócio bem apresentado. Seu contato fácil de encontrar. Sites de uma página para barbearias, banho e tosa, confeitarias, estética automotiva e outros negócios. R$ 497, pagamento único.">
 <link rel="canonical" href="https://vinriibeiro.github.io/modelos/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Site Express">
 <meta property="og:url" content="https://vinriibeiro.github.io/modelos/">
-<meta property="og:title" content="Sites profissionais para estética automotiva · Site Express">
-<meta property="og:description" content="Seu site personalizado por R$ 497, pagamento único. Veja os modelos e solicite o seu pelo WhatsApp.">
-<meta property="og:image" content="https://vinriibeiro.github.io/modelos/img/og.jpg">
+<meta property="og:title" content="Site Express · Seu negócio bem apresentado. Seu contato fácil de encontrar.">
+<meta property="og:description" content="Sites de uma página para pequenos negócios: serviços, trabalhos, horários, endereço e WhatsApp. R$ 497, pagamento único. Veja os modelos.">
+<meta property="og:image" content="https://vinriibeiro.github.io/modelos/img/og-site-express.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Site Express: sites profissionais para estética automotiva por R$ 497">
+<meta property="og:image:alt" content="Site Express: seu negócio bem apresentado, seu contato fácil de encontrar. Sites de uma página por R$ 497.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#07060C">
-<link rel="icon" href="img/favicon.png">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="twitter:title" content="Site Express · Sites de uma página para pequenos negócios">
+<meta name="twitter:description" content="Serviços, trabalhos, horários, endereço e WhatsApp num endereço profissional. R$ 497, pagamento único.">
+<meta name="twitter:image" content="https://vinriibeiro.github.io/modelos/img/og-site-express.jpg">
+<meta name="theme-color" content="#0B0A10">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon-barras.png">
+<link rel="preload" href="fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family: "Sora"; src: url("fonts/sora-latin-wght-normal.woff2") format("woff2"); font-weight: 100 800; font-display: swap; }
+  @font-face { font-family: "Inter"; src: url("fonts/inter-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
   :root {
-    --bg: #07060C;
-    --bg-2: #0E0C18;
-    --surface: #13111F;
-    --line: rgba(255, 255, 255, .1);
-    --text: #F7F6FB;
-    --muted: #B4B0C6;
-    --purple: #7C3AED;
-    --purple-2: #9333EA;
-    --lilac: #C4B5FD;
+    --preto: #0B0A10;
+    --superficie: #15121F;
+    --borda: #2A2438;
+    --roxo: #7C3AED;
+    --roxo-escuro: #5B21B6;
+    --lilas: #C4B5FD;
+    --lilas-claro: #EDE9FE;
+    --branco: #FFFFFF;
+    --texto-suave: #B9B3C9;
+    --display: "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
     --radius: 20px;
     --gutter: clamp(16px, 4vw, 40px);
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 16px; }
-  body {
-    margin: 0;
-    font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
+  html { scroll-behavior: smooth; scroll-padding-top: 16px; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; font-family: var(--body); color: var(--branco); background: var(--preto); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
   a { color: inherit; }
   img { max-width: 100%; }
-  :focus-visible { outline: 3px solid var(--lilac); outline-offset: 3px; border-radius: 8px; }
-  .skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--purple); color: #fff; padding: 10px 16px; border-radius: 10px; text-decoration: none; font-weight: 700; }
+  :focus-visible { outline: 3px solid var(--lilas); outline-offset: 3px; border-radius: 8px; }
+  .skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--roxo); color: #fff; padding: 10px 16px; border-radius: 10px; text-decoration: none; font-weight: 700; }
   .skip:focus { top: 12px; }
   .wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-  .ribbon { background: #030207; color: var(--muted); font-size: 13px; text-align: center; padding: 8px var(--gutter); border-bottom: 1px solid var(--line); }
-  .ribbon strong { color: var(--text); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 11px; border: 1px solid var(--line); border-radius: 99px; padding: 2px 10px; margin-right: 8px; white-space: nowrap; }
+  .ribbon { background: #06050A; color: var(--texto-suave); font-size: 13px; text-align: center; padding: 8px var(--gutter); border-bottom: 1px solid var(--borda); }
+  .ribbon strong { color: var(--branco); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 11px; border: 1px solid var(--borda); border-radius: 99px; padding: 2px 10px; margin-right: 8px; white-space: nowrap; }
 
   /* Topo */
-  .top { position: relative; overflow: hidden; isolation: isolate; }
-  .top::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("img/hero.webp") 70% 50% / cover no-repeat; opacity: .55; }
-  .top::after { content: ""; position: absolute; inset: 0; z-index: -1; background:
-      radial-gradient(55% 60% at 85% 35%, rgba(124, 58, 237, .45), transparent 70%),
-      linear-gradient(90deg, var(--bg) 0%, rgba(7, 6, 12, .92) 42%, rgba(7, 6, 12, .55) 75%, rgba(7, 6, 12, .75) 100%),
-      linear-gradient(180deg, transparent 60%, var(--bg) 100%); }
-  @media (max-width: 760px) { .top::after { background: radial-gradient(70% 40% at 90% 20%, rgba(124, 58, 237, .45), transparent 70%), linear-gradient(180deg, rgba(7, 6, 12, .7) 0%, rgba(7, 6, 12, .9) 45%, var(--bg) 100%); } }
+  .top { position: relative; overflow: hidden; isolation: isolate; border-bottom: 1px solid var(--borda); }
+  .top::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+      radial-gradient(50% 70% at 88% 20%, rgba(124, 58, 237, .42), transparent 70%),
+      radial-gradient(40% 50% at 0% 100%, rgba(91, 33, 182, .25), transparent 70%),
+      repeating-linear-gradient(-60deg, rgba(196, 181, 253, .045) 0 3px, transparent 3px 28px); }
   header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .brand img { width: 48px; height: 48px; flex-shrink: 0; }
-  .brand b { display: block; font-size: 18px; font-weight: 800; letter-spacing: -.01em; }
-  .brand span span { display: block; font-size: 13px; color: var(--muted); }
+  .brand svg { width: 44px; height: 44px; flex-shrink: 0; }
+  .brand b { display: block; font: 700 18px/1.2 var(--display); letter-spacing: -.01em; }
+  .brand span span { display: block; font-size: 13px; color: var(--texto-suave); }
 
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 99px; padding: 15px 26px; transition: transform .2s, box-shadow .2s, background .2s; text-align: center; min-height: 52px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: 700 16px/1.2 var(--body); text-decoration: none; border-radius: 99px; padding: 15px 26px; transition: transform .2s, box-shadow .2s, background .2s; text-align: center; min-height: 52px; border: 0; cursor: pointer; }
   .btn svg { width: 22px; height: 22px; flex-shrink: 0; }
-  .btn-primary { background: linear-gradient(90deg, #6D28D9, var(--purple) 50%, var(--purple-2)); color: #fff; box-shadow: 0 14px 34px -12px rgba(124, 58, 237, .9), inset 0 0 0 1px rgba(255, 255, 255, .16); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -12px rgba(124, 58, 237, 1), inset 0 0 0 1px rgba(255, 255, 255, .2); }
-  .btn-ghost { border: 1px solid rgba(255, 255, 255, .2); background: rgba(255, 255, 255, .05); color: var(--text); }
+  .btn-primary { background: var(--roxo); color: #fff; box-shadow: 0 14px 34px -12px rgba(124, 58, 237, .9), inset 0 0 0 1px rgba(255, 255, 255, .14); }
+  .btn-primary:hover { background: var(--roxo-escuro); transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid rgba(255, 255, 255, .2); background: rgba(255, 255, 255, .05); color: var(--branco); }
   .btn-ghost:hover { background: rgba(255, 255, 255, .1); }
   header .btn { padding: 10px 18px; font-size: 14px; min-height: 44px; }
   header .btn svg { width: 18px; height: 18px; }
 
-  .hero { padding: clamp(36px, 8vw, 104px) 0 clamp(56px, 9vw, 120px); max-width: 720px; }
-  .eyebrow { color: var(--lilac); font-size: 13px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 16px; }
-  h1 { font-size: clamp(38px, 6.6vw, 70px); line-height: 1.03; letter-spacing: -.035em; margin: 0; font-weight: 800; }
-  .hl { background: linear-gradient(90deg, #8B5CF6, #A855F7 55%, #C084FC); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .price-line { margin: 22px 0 0; font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -.02em; }
-  .price-line .hl { font-size: 1.15em; }
-  .price-line small { display: inline-block; margin-left: 6px; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: rgba(124, 58, 237, .35); border: 1px solid rgba(196, 181, 253, .4); border-radius: 99px; padding: 4px 12px; vertical-align: middle; }
-  .lead { font-size: clamp(17px, 2.1vw, 20px); color: var(--muted); max-width: 52ch; margin: 16px 0 0; }
+  .hero { padding: clamp(36px, 8vw, 96px) 0 clamp(56px, 9vw, 112px); max-width: 800px; }
+  .eyebrow { color: var(--lilas); font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 16px; }
+  h1 { font: 700 clamp(36px, 6.2vw, 66px)/1.05 var(--display); letter-spacing: -.035em; margin: 0; }
+  .hl { color: var(--lilas); }
+  .price-line { margin: 24px 0 0; font: 700 clamp(20px, 2.8vw, 28px)/1.3 var(--display); letter-spacing: -.02em; }
+  .price-line small { display: inline-block; margin-left: 6px; font: 700 13px/1.2 var(--body); letter-spacing: .06em; text-transform: uppercase; color: #fff; background: rgba(124, 58, 237, .35); border: 1px solid rgba(196, 181, 253, .4); border-radius: 99px; padding: 5px 12px; vertical-align: middle; }
+  .lead { font-size: clamp(17px, 2.1vw, 20px); color: var(--texto-suave); max-width: 54ch; margin: 14px 0 0; }
   .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
   @media (max-width: 520px) { .ctas .btn { width: 100%; } }
   .facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 0; padding: 0; list-style: none; }
-  .facts li { border: 1px solid var(--line); background: rgba(255, 255, 255, .05); border-radius: 99px; padding: 8px 15px; font-size: 14px; font-weight: 600; }
+  .facts li { border: 1px solid var(--borda); background: rgba(255, 255, 255, .04); border-radius: 99px; padding: 8px 15px; font-size: 14px; font-weight: 600; }
 
   /* Modelos */
   .models-intro { padding: clamp(40px, 6vw, 72px) 0 0; }
-  h2 { font-size: clamp(26px, 3.6vw, 38px); letter-spacing: -.025em; margin: 0; font-weight: 800; line-height: 1.12; }
-  .models-intro p { color: var(--muted); margin: 12px 0 0; max-width: 60ch; font-size: 17px; }
-  .group { padding: clamp(28px, 4vw, 44px) 0 0; }
-  .group-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; margin-bottom: 18px; }
-  h3.coll { font-size: clamp(20px, 2.6vw, 26px); letter-spacing: -.02em; margin: 0; font-weight: 800; }
-  .group-head p { margin: 0; color: var(--muted); font-size: 15px; max-width: 52ch; }
+  h2 { font: 700 clamp(26px, 3.6vw, 38px)/1.12 var(--display); letter-spacing: -.025em; margin: 0; }
+  .models-intro > p { color: var(--texto-suave); margin: 12px 0 0; max-width: 62ch; font-size: 17px; }
+  .filter { display: none; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
+  .js .filter { display: flex; }
+  .filter button { font: 600 14px/1 var(--body); color: var(--branco); background: var(--superficie); border: 1px solid var(--borda); border-radius: 99px; padding: 11px 16px; min-height: 44px; cursor: pointer; transition: background .2s, border-color .2s; }
+  .filter button:hover { border-color: var(--lilas); }
+  .filter button[aria-pressed="true"] { background: var(--lilas-claro); color: var(--preto); border-color: var(--lilas-claro); }
+
+  .segment { padding: clamp(36px, 5vw, 56px) 0 0; }
+  .segment[hidden] { display: none; }
+  .seg-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-bottom: 8px; }
+  .seg-head .ico { width: 44px; height: 44px; border-radius: 12px; background: rgba(124, 58, 237, .18); border: 1px solid rgba(196, 181, 253, .25); display: grid; place-items: center; color: var(--lilas); flex: none; }
+  .seg-head .ico svg { width: 24px; height: 24px; }
+  h3.seg { font: 700 clamp(22px, 3vw, 30px)/1.15 var(--display); letter-spacing: -.02em; margin: 0; }
+  .seg-desc { margin: 0 0 20px; color: var(--texto-suave); font-size: 16px; max-width: 64ch; }
+  .group { padding: 20px 0 0; }
+  .group-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; margin-bottom: 16px; }
+  h4.coll { font: 700 18px/1.2 var(--display); letter-spacing: -.01em; margin: 0; color: var(--lilas); }
+  .group-head p { margin: 0; color: var(--texto-suave); font-size: 15px; max-width: 52ch; }
   .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
   @media (min-width: 720px) { .grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1040px) { .grid.three { grid-template-columns: repeat(3, 1fr); } }
 
-  .card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; text-decoration: none; transition: transform .25s, border-color .25s, box-shadow .25s; }
-  .card:hover { transform: translateY(-4px); border-color: rgba(196, 181, 253, .4); box-shadow: 0 24px 50px -28px rgba(0, 0, 0, .9); }
-  .card:focus-visible { outline-offset: 4px; border-radius: var(--radius); }
-  .shot { position: relative; aspect-ratio: 16 / 10; background: var(--bg-2); overflow: hidden; }
+  .card { position: relative; display: flex; flex-direction: column; background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--radius); overflow: hidden; transition: transform .25s, border-color .25s, box-shadow .25s; }
+  .card:hover { transform: translateY(-4px); border-color: rgba(196, 181, 253, .45); box-shadow: 0 24px 50px -28px rgba(0, 0, 0, .9); }
+  .card:focus-within { border-color: var(--lilas); }
+  .shot { position: relative; aspect-ratio: 16 / 10; background: #100E18; overflow: hidden; }
   .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .6s; }
   .card:hover .shot img { transform: scale(1.03); }
-  .tag { position: absolute; left: 12px; top: 12px; display: inline-flex; align-items: center; gap: 7px; background: rgba(3, 2, 7, .82); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, .16); border-radius: 99px; padding: 5px 12px; font-size: 12px; font-weight: 700; }
-  .tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #60A5FA; }
+  .tag { position: absolute; left: 12px; top: 12px; display: inline-flex; align-items: center; gap: 7px; background: rgba(11, 10, 16, .85); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, .16); border-radius: 99px; padding: 5px 12px; font-size: 12px; font-weight: 700; }
+  .tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lilas); }
   .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-  .style { color: var(--lilac); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-  h4 { margin: 0; font-size: 21px; font-weight: 800; letter-spacing: -.01em; }
-  .body p { margin: 0; color: var(--muted); font-size: 15px; flex: 1; }
-  .open { margin-top: 12px; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; border: 1px solid rgba(196, 181, 253, .35); background: rgba(124, 58, 237, .14); border-radius: 99px; padding: 9px 16px; transition: background .2s; }
+  .style { color: var(--lilas); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  .card h5 { margin: 0; font: 700 21px/1.25 var(--display); letter-spacing: -.01em; }
+  .card h5 a { text-decoration: none; }
+  .card h5 a::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: var(--radius); }
+  .card h5 a:focus-visible { outline: none; }
+  .card h5 a:focus-visible::after { outline: 3px solid var(--lilas); outline-offset: -3px; }
+  .body p { margin: 0; color: var(--texto-suave); font-size: 15px; flex: 1; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-top: 12px; }
+  .open { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; border: 1px solid rgba(196, 181, 253, .35); background: rgba(124, 58, 237, .14); border-radius: 99px; padding: 9px 16px; transition: background .2s; }
   .card:hover .open { background: rgba(124, 58, 237, .32); }
   .open svg { width: 16px; height: 16px; transition: transform .2s; }
   .card:hover .open svg { transform: translateX(3px); }
+  .want { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--lilas); text-decoration: underline; text-underline-offset: 3px; padding: 10px 2px; }
+  .want:hover { color: var(--branco); }
+  .want svg { width: 16px; height: 16px; }
+
+  /* Segmento com um modelo só: cartão na horizontal, com a captura do celular */
+  .phone { display: none; }
+  @media (min-width: 900px) {
+    .grid.solo { grid-template-columns: 1fr; }
+    .grid.solo .card { flex-direction: row; }
+    .grid.solo .shot { flex: 0 0 60%; aspect-ratio: 16 / 10; overflow: visible; }
+    .grid.solo .shot > img:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .grid.solo .body { padding: 32px; justify-content: center; }
+    .grid.solo .body p { flex: 0; }
+    .grid.solo .shot .phone { display: block; position: absolute; right: -28px; bottom: 24px; width: 24%; height: auto; object-fit: contain; border-radius: 18px; border: 4px solid #0B0A10; box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .7); z-index: 2; }
+  }
 
   /* Chamada depois dos modelos */
-  .custom { margin: clamp(48px, 7vw, 88px) 0 0; padding: clamp(28px, 5vw, 52px); border-radius: 28px; border: 1px solid rgba(196, 181, 253, .25); background: radial-gradient(60% 90% at 100% 0%, rgba(124, 58, 237, .35), transparent 70%), var(--bg-2); display: grid; gap: 24px; align-items: center; }
+  .custom { margin: clamp(48px, 7vw, 88px) 0 0; padding: clamp(28px, 5vw, 52px); border-radius: 28px; border: 1px solid rgba(196, 181, 253, .25); background: radial-gradient(60% 90% at 100% 0%, rgba(124, 58, 237, .32), transparent 70%), var(--superficie); display: grid; gap: 24px; align-items: center; }
   @media (min-width: 900px) { .custom { grid-template-columns: 1.3fr auto; } }
-  .custom p { color: var(--muted); margin: 12px 0 0; font-size: 17px; max-width: 60ch; }
-  .steps { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
-  .steps li { font-size: 14px; font-weight: 600; border-radius: 99px; padding: 7px 14px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); }
+  .custom p { color: var(--texto-suave); margin: 12px 0 0; font-size: 17px; max-width: 60ch; }
+  .steps { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; counter-reset: p; }
+  @media (min-width: 720px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .steps li { counter-increment: p; font-size: 15px; border-radius: 14px; padding: 14px 16px; background: rgba(255, 255, 255, .04); border: 1px solid var(--borda); color: var(--texto-suave); }
+  .steps li::before { content: counter(p); display: inline-grid; place-items: center; width: 26px; height: 26px; margin-right: 8px; border-radius: 50%; background: var(--roxo); color: #fff; font: 700 13px/1 var(--display); }
+  .steps b { color: var(--branco); }
 
   /* Condições */
-  .offer { margin: clamp(32px, 5vw, 56px) 0 0; padding: clamp(28px, 5vw, 56px); border-radius: 28px; border: 1px solid var(--line); background: linear-gradient(160deg, rgba(124, 58, 237, .2), transparent 55%), var(--bg-2); display: grid; gap: 28px; }
+  .offer { margin: clamp(32px, 5vw, 56px) 0 0; padding: clamp(28px, 5vw, 56px); border-radius: 28px; border: 1px solid var(--borda); background: linear-gradient(160deg, rgba(124, 58, 237, .2), transparent 55%), var(--superficie); display: grid; gap: 28px; }
   @media (min-width: 900px) { .offer { grid-template-columns: 1fr 1fr; align-items: center; } }
-  .price { font-size: clamp(52px, 8vw, 84px); font-weight: 800; letter-spacing: -.04em; line-height: 1; margin: 12px 0 8px; }
-  .price small { font-size: 18px; font-weight: 700; color: var(--muted); letter-spacing: 0; }
-  .split { margin: 0; color: var(--text); font-size: 17px; font-weight: 600; }
+  .price { font: 700 clamp(52px, 8vw, 84px)/1 var(--display); letter-spacing: -.04em; margin: 12px 0 8px; }
+  .price small { font: 700 18px/1 var(--body); color: var(--texto-suave); letter-spacing: 0; }
+  .split { margin: 0; color: var(--branco); font-size: 17px; font-weight: 600; }
   .offer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
   .offer li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
-  .offer li::before { content: ""; width: 24px; height: 24px; flex-shrink: 0; margin-top: 0; border-radius: 50%; background: var(--purple) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4L18 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; }
-  .note { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+  .offer li::before { content: ""; width: 24px; height: 24px; flex-shrink: 0; border-radius: 50%; background: var(--roxo) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4L18 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; }
+  .note { margin: 16px 0 0; font-size: 14px; color: var(--texto-suave); }
   .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
   @media (max-width: 520px) { .cta-row .btn { width: 100%; } }
 
-  footer { padding: 48px 0 40px; color: var(--muted); font-size: 13px; text-align: center; }
+  footer { padding: 48px 0 40px; color: var(--texto-suave); font-size: 13px; text-align: center; }
   footer p { margin: 4px 0; }
-  footer a { color: var(--lilac); }
+  footer a { color: var(--lilas); }
 
   /* WhatsApp fixo no celular */
   .wa-float { display: none; }
   @media (max-width: 760px) {
-    .wa-float { display: flex; position: fixed; z-index: 40; left: 16px; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom)); box-shadow: 0 16px 40px -10px rgba(0, 0, 0, .8), 0 14px 34px -12px rgba(124, 58, 237, .9), inset 0 0 0 1px rgba(255, 255, 255, .16); transition: transform .3s, opacity .3s; }
+    .wa-float { display: flex; position: fixed; z-index: 40; left: 16px; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom)); box-shadow: 0 16px 40px -10px rgba(0, 0, 0, .8), 0 14px 34px -12px rgba(124, 58, 237, .9); transition: transform .3s, opacity .3s; }
     .wa-float.hide { transform: translateY(140%); opacity: 0; pointer-events: none; }
     body { padding-bottom: 92px; }
     header .btn span { display: none; }
@@ -158,6 +189,7 @@
   }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
   <a class="skip" href="#modelos">Pular para os modelos</a>
@@ -167,31 +199,31 @@
     <div class="wrap">
       <header>
         <a class="brand" href="./" aria-label="Site Express, página inicial">
-          <img src="img/logo.png" alt="" width="48" height="48">
-          <span><b>Site Express</b><span>Sites para estética automotiva</span></span>
+          <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="9" fill="#7C3AED"/><path d="M9 21.5 15.5 10h4.2l-6.5 11.5zM15.6 21.5 22.1 10h1.9l-6.5 11.5z" fill="#fff"/></svg>
+          <span><b>Site Express</b><span>Sites para pequenos negócios</span></span>
         </a>
-        <a class="btn btn-ghost" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20a%20Site%20Express%20no%20Instagram%20e%20tenho%20interesse%20em%20criar%20um%20site%20profissional%20para%20minha%20est%C3%A9tica%20automotiva.%20Gostaria%20de%20saber%20mais%20sobre%20o%20site%20de%20R%24%20497." data-wa target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+        <a class="btn btn-ghost" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.6c.2-.4.4-.5.7-.5h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.6.8c-.1.2-.1.4 0 .6.6 1 1.6 2 2.7 2.6.2.1.4.1.6 0l.8-.7c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.3.4.5 0 .9-.6 1.9-1.6 2.1-1 .2-2.6 0-4.6-1.5-2-1.5-3.1-3.4-3.4-4.6-.3-1.2.1-2.3.5-3.1Z" fill="currentColor"/></svg>
           <span>WhatsApp</span>
         </a>
       </header>
 
       <section class="hero" aria-labelledby="titulo">
-        <p class="eyebrow">Site Express</p>
-        <h1 id="titulo">Sites profissionais para <span class="hl">estética automotiva</span></h1>
-        <p class="price-line">Seu site personalizado por <span class="hl">R$&nbsp;497</span> <small>pagamento único</small></p>
-        <p class="lead">Apresente seus serviços, fotos, localização e WhatsApp em um só lugar.</p>
+        <p class="eyebrow">Sites de uma página para pequenos negócios</p>
+        <h1 id="titulo">Seu negócio bem apresentado. <span class="hl">Seu contato fácil de encontrar.</span></h1>
+        <p class="price-line">Site personalizado por R$&nbsp;497 <small>pagamento único</small></p>
+        <p class="lead">Serviços, trabalhos, horários, endereço e WhatsApp num endereço profissional, feito para abrir bem no celular.</p>
         <div class="ctas">
-          <a class="btn btn-primary" id="cta-hero" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20a%20Site%20Express%20no%20Instagram%20e%20tenho%20interesse%20em%20criar%20um%20site%20profissional%20para%20minha%20est%C3%A9tica%20automotiva.%20Gostaria%20de%20saber%20mais%20sobre%20o%20site%20de%20R%24%20497." data-wa target="_blank" rel="noopener">
+          <a class="btn btn-primary" id="cta-hero" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.6c.2-.4.4-.5.7-.5h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.6.8c-.1.2-.1.4 0 .6.6 1 1.6 2 2.7 2.6.2.1.4.1.6 0l.8-.7c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.3.4.5 0 .9-.6 1.9-1.6 2.1-1 .2-2.6 0-4.6-1.5-2-1.5-3.1-3.4-3.4-4.6-.3-1.2.1-2.3.5-3.1Z" fill="#fff"/></svg>
-            Solicitar meu site pelo WhatsApp
+            Quero um site para o meu negócio
           </a>
-          <a class="btn btn-ghost" href="#modelos">Ver modelos de sites
+          <a class="btn btn-ghost" href="#modelos">Ver modelos
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
         <ul class="facts" aria-label="Destaques">
-          <li>Entrega em até 24 horas úteis</li>
+          <li>Pronto em até 24 horas úteis*</li>
           <li>Feito para celular</li>
           <li>Botão de WhatsApp</li>
           <li>Sem mensalidade obrigatória</li>
@@ -203,76 +235,153 @@
   <main class="wrap">
     <section class="models-intro" id="modelos" aria-labelledby="titulo-modelos" tabindex="-1">
       <p class="eyebrow">Modelos de site</p>
-      <h2 id="titulo-modelos">Escolha o estilo da sua estética</h2>
-      <p>Sete modelos para você navegar como se fosse cliente. São demonstrações com empresas fictícias: o seu sai com a sua marca, as suas fotos e os seus serviços.</p>
+      <h2 id="titulo-modelos">Escolha um modelo e navegue como se fosse cliente</h2>
+      <p>Cada modelo é uma demonstração com empresa fictícia. O seu sai com o seu nome, as suas fotos, os seus serviços e o seu WhatsApp. Não achou o seu segmento? O formato serve para qualquer negócio que atende pelo WhatsApp.</p>
+      <ul class="filter" aria-label="Filtrar modelos por segmento">
+        <li><button type="button" data-filter="todos" aria-pressed="true">Todos</button></li>
+        <li><button type="button" data-filter="barbearia" aria-pressed="false">Barbearia</button></li>
+        <li><button type="button" data-filter="pet" aria-pressed="false">Pet</button></li>
+        <li><button type="button" data-filter="confeitaria" aria-pressed="false">Confeitaria</button></li>
+        <li><button type="button" data-filter="estetica-automotiva" aria-pressed="false">Estética automotiva</button></li>
+      </ul>
     </section>
 
-    <section class="group" aria-labelledby="c3">
-      <div class="group-head">
-        <h3 class="coll" id="c3">Coleção 03</h3>
-        <p>Visual autoral, de impacto. Três direções bem diferentes para marcar presença.</p>
+    <section class="segment" id="barbearia" data-seg="barbearia" aria-labelledby="s-barbearia">
+      <div class="seg-head">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M8.4 7.8 21 17M8.4 16.2 21 7"/></svg></span>
+        <h3 class="seg" id="s-barbearia">Barbearia</h3>
       </div>
-      <div class="grid three">
-        <a class="card" href="modelos/colecao-autoclean-express/">
-          <div class="shot"><img src="img/colecao-autoclean-express.webp" alt="Prévia do modelo AutoClean Express, Coleção 03" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
-          <div class="body"><span class="style">Praticidade</span><h4>AutoClean Express</h4><p>Pacotes em destaque e caminho curto até o agendamento. Para lavagem e cuidado do dia a dia.</p><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        </a>
-        <a class="card" href="modelos/colecao-black-diamond-detail/">
-          <div class="shot"><img src="img/colecao-black-diamond-detail.webp" alt="Prévia do modelo Black Diamond Detail, Coleção 03" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
-          <div class="body"><span class="style">Atelier</span><h4>Black Diamond Detail</h4><p>Escuro, cinematográfico e premium. Para correção de pintura, vitrificação e detalhamento.</p><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        </a>
-        <a class="card" href="modelos/colecao-prime-car-estetica/">
-          <div class="shot"><img src="img/colecao-prime-car-estetica.webp" alt="Prévia do modelo Prime Car Estética, Coleção 03" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
-          <div class="body"><span class="style">Descoberta</span><h4>Prime Car Estética</h4><p>Moderno e acolhedor, guia o cliente até o serviço certo. Para a estética completa.</p><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        </a>
-      </div>
-    </section>
-
-    <section class="group" aria-labelledby="c2">
-      <div class="group-head">
-        <h3 class="coll" id="c2">Coleção 02</h3>
-        <p>Completos e diretos: serviços, diferenciais, galeria, localização e dúvidas em uma página.</p>
-      </div>
-      <div class="grid three">
-        <a class="card" href="modelos/autoclean-express/">
-          <div class="shot"><img src="img/autoclean-express.webp" alt="Prévia do modelo AutoClean Express, Coleção 02" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
-          <div class="body"><span class="style">Claro e leve</span><h4>AutoClean Express</h4><p>Lavagem detalhada e limpeza interna, com horário marcado e WhatsApp sempre à mão.</p><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        </a>
-        <a class="card" href="modelos/black-diamond-detail/">
-          <div class="shot"><img src="img/black-diamond-detail.webp" alt="Prévia do modelo Black Diamond Detail, Coleção 02" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
-          <div class="body"><span class="style">Preto e dourado</span><h4>Black Diamond Detail</h4><p>Correção de pintura, proteção cerâmica e acabamento, com visual sofisticado.</p><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        </a>
-        <a class="card" href="modelos/prime-car-estetica/">
-          <div class="shot"><img src="img/prime-car-estetica.webp" alt="Prévia do modelo Prime Car Estética, Coleção 02" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
-          <div class="body"><span class="style">Verde e natural</span><h4>Prime Car Estética</h4><p>Pintura, interior e acabamento em um só lugar, com plano de cuidado para cada carro.</p><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        </a>
+      <p class="seg-desc">Serviços com valor de referência, estilos de corte, horários e o botão para agendar.</p>
+      <div class="grid solo">
+        <article class="card">
+          <div class="shot"><img src="img/navalha-co-barbearia.webp" alt="Prévia do modelo Navalha &amp; Co. Barbearia, empresa fictícia" loading="lazy" decoding="async" width="1200" height="750"><img class="phone" src="img/navalha-co-barbearia-mobile.webp" alt="" loading="lazy" decoding="async" width="600" height="1298"><span class="tag">Modelo demonstrativo</span></div>
+          <div class="body"><span class="style">Escuro e dourado</span><h5><a href="modelos/navalha-co-barbearia/">Navalha &amp; Co. Barbearia</a></h5><p>Corte, barba e acabamento com hora marcada. Visual clássico de barbearia, direto ao agendamento.</p>
+            <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Navalha%20%26%20Co.%20Barbearia%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="Navalha &amp; Co. Barbearia" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo Navalha &amp; Co. Barbearia, abre o WhatsApp)</span></a></div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="group" aria-labelledby="c1">
-      <div class="group-head">
-        <h3 class="coll" id="c1">Coleção 01</h3>
-        <p>O modelo original da Site Express, com o fluxo completo de uma estética premium.</p>
+    <section class="segment" id="pet" data-seg="pet" aria-labelledby="s-pet">
+      <div class="seg-head">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="16" rx="5" ry="4.2"/><circle cx="5.5" cy="10.5" r="2.2"/><circle cx="9.5" cy="6.5" r="2.2"/><circle cx="14.5" cy="6.5" r="2.2"/><circle cx="18.5" cy="10.5" r="2.2"/></svg></span>
+        <h3 class="seg" id="s-pet">Pet · banho e tosa</h3>
       </div>
-      <div class="grid">
-        <a class="card" href="https://site-express.vinriibeiro.workers.dev/" target="_blank" rel="noopener">
-          <div class="shot"><img src="img/vertice.webp" alt="Prévia do modelo Vértice Detail Studio, Coleção 01" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
-          <div class="body"><span class="style">Premium escuro</span><h4>Vértice Detail Studio</h4><p>Serviços com preço e duração, galeria, diferenciais, localização e dúvidas frequentes.</p><span class="open">Visualizar modelo <span class="sr">(abre em nova aba)</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        </a>
+      <p class="seg-desc">Serviços por porte, fotos dos pets atendidos, como agendar e horários.</p>
+      <div class="grid solo">
+        <article class="card">
+          <div class="shot"><img src="img/patas-felizes-banho-tosa.webp" alt="Prévia do modelo Patas Felizes Banho &amp; Tosa, empresa fictícia" loading="lazy" decoding="async" width="1200" height="750"><img class="phone" src="img/patas-felizes-banho-tosa-mobile.webp" alt="" loading="lazy" decoding="async" width="600" height="1298"><span class="tag">Modelo demonstrativo</span></div>
+          <div class="body"><span class="style">Claro e acolhedor</span><h5><a href="modelos/patas-felizes-banho-tosa/">Patas Felizes Banho &amp; Tosa</a></h5><p>Banho, tosa e cuidados para cães e gatos, com serviços claros e agendamento pelo WhatsApp.</p>
+            <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Patas%20Felizes%20Banho%20%26%20Tosa%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="Patas Felizes Banho &amp; Tosa" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo Patas Felizes Banho &amp; Tosa, abre o WhatsApp)</span></a></div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="custom" aria-labelledby="titulo-personalizar">
+    <section class="segment" id="confeitaria" data-seg="confeitaria" aria-labelledby="s-confeitaria">
+      <div class="seg-head">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16v-8H4z"/><path d="M4 15.5c1.3 1.3 2.7 1.3 4 0s2.7-1.3 4 0 2.7 1.3 4 0 2.7-1.3 4 0"/><path d="M7 13V9h10v4M12 9V6"/><path d="M12 3.5v.5"/></svg></span>
+        <h3 class="seg" id="s-confeitaria">Confeitaria</h3>
+      </div>
+      <p class="seg-desc">Cardápio curto com valores de referência, sabores, galeria e como encomendar.</p>
+      <div class="grid solo">
+        <article class="card">
+          <div class="shot"><img src="img/doce-atelie-confeitaria.webp" alt="Prévia do modelo Doce Ateliê Confeitaria, empresa fictícia" loading="lazy" decoding="async" width="1200" height="750"><img class="phone" src="img/doce-atelie-confeitaria-mobile.webp" alt="" loading="lazy" decoding="async" width="600" height="1298"><span class="tag">Modelo demonstrativo</span></div>
+          <div class="body"><span class="style">Delicado e elegante</span><h5><a href="modelos/doce-atelie-confeitaria/">Doce Ateliê Confeitaria</a></h5><p>Bolos e doces sob encomenda, com cardápio, sabores da casa e pedido pelo WhatsApp.</p>
+            <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Doce%20Ateli%C3%AA%20Confeitaria%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="Doce Ateliê Confeitaria" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo Doce Ateliê Confeitaria, abre o WhatsApp)</span></a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="segment" id="estetica-automotiva" data-seg="estetica-automotiva" aria-labelledby="s-auto">
+      <div class="seg-head">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-3l2-5h14l2 5v3"/><path d="M3 16h18v2H3z"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="16.5" cy="18.5" r="1.5"/><path d="M5 13h14"/></svg></span>
+        <h3 class="seg" id="s-auto">Estética automotiva</h3>
+      </div>
+      <p class="seg-desc">Sete modelos em três coleções, de lavagem do dia a dia a detalhamento premium.</p>
+
+      <div class="group">
+        <div class="group-head">
+          <h4 class="coll">Coleção 03</h4>
+          <p>Visual autoral, de impacto. Três direções bem diferentes para marcar presença.</p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <div class="shot"><img src="img/colecao-autoclean-express.webp" alt="Prévia do modelo AutoClean Express, Coleção 03" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
+            <div class="body"><span class="style">Praticidade</span><h5><a href="modelos/colecao-autoclean-express/">AutoClean Express</a></h5><p>Pacotes em destaque e caminho curto até o agendamento. Para lavagem e cuidado do dia a dia.</p>
+              <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20AutoClean%20Express%20(Cole%C3%A7%C3%A3o%2003)%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="AutoClean Express (Coleção 03)" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo AutoClean Express, Coleção 03, abre o WhatsApp)</span></a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="shot"><img src="img/colecao-black-diamond-detail.webp" alt="Prévia do modelo Black Diamond Detail, Coleção 03" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
+            <div class="body"><span class="style">Atelier</span><h5><a href="modelos/colecao-black-diamond-detail/">Black Diamond Detail</a></h5><p>Escuro, cinematográfico e premium. Para correção de pintura, vitrificação e detalhamento.</p>
+              <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Black%20Diamond%20Detail%20(Cole%C3%A7%C3%A3o%2003)%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="Black Diamond Detail (Coleção 03)" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo Black Diamond Detail, Coleção 03, abre o WhatsApp)</span></a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="shot"><img src="img/colecao-prime-car-estetica.webp" alt="Prévia do modelo Prime Car Estética, Coleção 03" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
+            <div class="body"><span class="style">Descoberta</span><h5><a href="modelos/colecao-prime-car-estetica/">Prime Car Estética</a></h5><p>Moderno e acolhedor, guia o cliente até o serviço certo. Para a estética completa.</p>
+              <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Prime%20Car%20Est%C3%A9tica%20(Cole%C3%A7%C3%A3o%2003)%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="Prime Car Estética (Coleção 03)" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo Prime Car Estética, Coleção 03, abre o WhatsApp)</span></a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-head">
+          <h4 class="coll">Coleção 02</h4>
+          <p>Completos e diretos: serviços, diferenciais, galeria, localização e dúvidas em uma página.</p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <div class="shot"><img src="img/autoclean-express.webp" alt="Prévia do modelo AutoClean Express, Coleção 02" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
+            <div class="body"><span class="style">Claro e leve</span><h5><a href="modelos/autoclean-express/">AutoClean Express</a></h5><p>Lavagem detalhada e limpeza interna, com horário marcado e WhatsApp sempre à mão.</p>
+              <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20AutoClean%20Express%20(Cole%C3%A7%C3%A3o%2002)%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="AutoClean Express (Coleção 02)" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo AutoClean Express, Coleção 02, abre o WhatsApp)</span></a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="shot"><img src="img/black-diamond-detail.webp" alt="Prévia do modelo Black Diamond Detail, Coleção 02" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
+            <div class="body"><span class="style">Preto e dourado</span><h5><a href="modelos/black-diamond-detail/">Black Diamond Detail</a></h5><p>Correção de pintura, proteção cerâmica e acabamento, com visual sofisticado.</p>
+              <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Black%20Diamond%20Detail%20(Cole%C3%A7%C3%A3o%2002)%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="Black Diamond Detail (Coleção 02)" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo Black Diamond Detail, Coleção 02, abre o WhatsApp)</span></a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="shot"><img src="img/prime-car-estetica.webp" alt="Prévia do modelo Prime Car Estética, Coleção 02" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
+            <div class="body"><span class="style">Verde e natural</span><h5><a href="modelos/prime-car-estetica/">Prime Car Estética</a></h5><p>Pintura, interior e acabamento em um só lugar, com plano de cuidado para cada carro.</p>
+              <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Prime%20Car%20Est%C3%A9tica%20(Cole%C3%A7%C3%A3o%2002)%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="Prime Car Estética (Coleção 02)" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo Prime Car Estética, Coleção 02, abre o WhatsApp)</span></a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-head">
+          <h4 class="coll">Coleção 01</h4>
+          <p>O modelo original da Site Express, com o fluxo completo de uma estética premium.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="shot"><img src="img/vertice.webp" alt="Prévia do modelo Vértice Detail Studio, Coleção 01" loading="lazy" decoding="async" width="1200" height="750"><span class="tag">Modelo demonstrativo</span></div>
+            <div class="body"><span class="style">Premium escuro</span><h5><a href="https://site-express.vinriibeiro.workers.dev/" target="_blank" rel="noopener">Vértice Detail Studio <span class="sr">(abre em nova aba)</span></a></h5><p>Serviços com preço e duração, galeria, diferenciais, localização e dúvidas frequentes.</p>
+              <div class="actions"><span class="open">Visualizar modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="want" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20V%C3%A9rtice%20Detail%20Studio%20(Cole%C3%A7%C3%A3o%2001)%20no%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa data-modelo="Vértice Detail Studio (Coleção 01)" target="_blank" rel="noopener">Quero um site assim <span class="sr">(modelo Vértice Detail Studio, Coleção 01, abre o WhatsApp)</span></a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom" id="como-funciona" aria-labelledby="titulo-personalizar">
       <div>
         <h2 id="titulo-personalizar">Gostou de um modelo? <span class="hl">Ele pode ser seu.</span></h2>
-        <p>O site é montado com a identidade da sua estética: seu nome e logo, suas cores, as fotos dos seus trabalhos, seus serviços e o seu WhatsApp. Me diga qual estilo você prefere e eu monto o seu.</p>
-        <ul class="steps" aria-label="Como funciona">
-          <li>1. Você escolhe o estilo</li>
-          <li>2. Envia fotos, serviços e contatos</li>
-          <li>3. Revisa e aprova</li>
-        </ul>
+        <p>O site é montado com a identidade do seu negócio: seu nome e logo, suas cores, as fotos dos seus trabalhos, seus serviços, horários, endereço e o seu WhatsApp.</p>
+        <ol class="steps" aria-label="Como funciona">
+          <li><b>Você escolhe o modelo</b> e fala comigo pelo WhatsApp.</li>
+          <li><b>Paga a entrada</b> e envia fotos, serviços, horários e contatos.</li>
+          <li><b>Revisa e aprova.</b> Com o restante pago, o site é publicado.</li>
+        </ol>
       </div>
-      <a class="btn btn-primary" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20a%20Site%20Express%20no%20Instagram%20e%20tenho%20interesse%20em%20criar%20um%20site%20profissional%20para%20minha%20est%C3%A9tica%20automotiva.%20Gostaria%20de%20saber%20mais%20sobre%20o%20site%20de%20R%24%20497." data-wa target="_blank" rel="noopener">
+      <a class="btn btn-primary" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.6c.2-.4.4-.5.7-.5h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.6.8c-.1.2-.1.4 0 .6.6 1 1.6 2 2.7 2.6.2.1.4.1.6 0l.8-.7c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.3.4.5 0 .9-.6 1.9-1.6 2.1-1 .2-2.6 0-4.6-1.5-2-1.5-3.1-3.4-3.4-4.6-.3-1.2.1-2.3.5-3.1Z" fill="#fff"/></svg>
         Quero o meu personalizado
       </a>
@@ -283,44 +392,63 @@
         <p class="eyebrow">Condições</p>
         <h2 id="titulo-oferta">Site personalizado, valor fechado</h2>
         <p class="price">R$&nbsp;497 <small>pagamento único</small></p>
-        <p class="split">R$&nbsp;250 de entrada e R$&nbsp;247 antes da publicação.</p>
+        <p class="split">R$&nbsp;250 de entrada + R$&nbsp;247 antes da publicação.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20a%20Site%20Express%20no%20Instagram%20e%20tenho%20interesse%20em%20criar%20um%20site%20profissional%20para%20minha%20est%C3%A9tica%20automotiva.%20Gostaria%20de%20saber%20mais%20sobre%20o%20site%20de%20R%24%20497." data-wa target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.6c.2-.4.4-.5.7-.5h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.6.8c-.1.2-.1.4 0 .6.6 1 1.6 2 2.7 2.6.2.1.4.1.6 0l.8-.7c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.3.4.5 0 .9-.6 1.9-1.6 2.1-1 .2-2.6 0-4.6-1.5-2-1.5-3.1-3.4-3.4-4.6-.3-1.2.1-2.3.5-3.1Z" fill="#fff"/></svg>
-            Solicitar meu site pelo WhatsApp
+            Quero um site para o meu negócio
           </a>
         </div>
       </div>
       <div>
         <ul>
-          <li>Site personalizado com a sua marca, fotos e serviços</li>
+          <li>Site de uma página com a sua marca, fotos e serviços</li>
           <li>Feito para celular e computador</li>
-          <li>Botão de WhatsApp, localização e mapa</li>
-          <li>Entrega em até 24 horas úteis*</li>
+          <li>Botão de WhatsApp, horários, endereço e mapa</li>
+          <li>Pronto em até 24 horas úteis*</li>
           <li>Sem mensalidade obrigatória</li>
+          <li>Hospedagem e suporte opcionais: R$&nbsp;79/mês</li>
         </ul>
-        <p class="note">*Prazo contado após a confirmação da entrada e o recebimento do briefing completo.</p>
+        <p class="note">*Prazo contado após a confirmação da entrada e o recebimento do briefing completo. Vale para o site de uma página no formato dos modelos. Loja virtual, agendamento online, várias páginas e cardápio extenso ficam fora desse prazo.</p>
       </div>
     </section>
   </main>
 
   <footer class="wrap">
-    <p>Site Express · Sites profissionais para estética automotiva · <a href="https://www.instagram.com/site.expressos/" target="_blank" rel="noopener">@site.expressos</a></p>
+    <p>Site Express · Sites de uma página para pequenos negócios · <a href="https://www.instagram.com/site.expressos/" target="_blank" rel="noopener">@site.expressos</a> · <a href="privacidade/">Política de Privacidade</a></p>
     <p>Os modelos usam empresas fictícias e imagens ilustrativas. Nenhum dado mostrado é de um negócio real.</p>
   </footer>
 
-  <a class="btn btn-primary wa-float" id="wa-float" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20a%20Site%20Express%20no%20Instagram%20e%20tenho%20interesse%20em%20criar%20um%20site%20profissional%20para%20minha%20est%C3%A9tica%20automotiva.%20Gostaria%20de%20saber%20mais%20sobre%20o%20site%20de%20R%24%20497." data-wa target="_blank" rel="noopener">
+  <a class="btn btn-primary wa-float" id="wa-float" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20cat%C3%A1logo%20do%20Site%20Express%20e%20quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20explicar%20como%20come%C3%A7ar%3F" data-wa target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 7.6c.2-.4.4-.5.7-.5h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.6.8c-.1.2-.1.4 0 .6.6 1 1.6 2 2.7 2.6.2.1.4.1.6 0l.8-.7c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.3.4.5 0 .9-.6 1.9-1.6 2.1-1 .2-2.6 0-4.6-1.5-2-1.5-3.1-3.4-3.4-4.6-.3-1.2.1-2.3.5-3.1Z" fill="#fff"/></svg>
-    Solicitar meu site pelo WhatsApp
+    Quero um site para o meu negócio
   </a>
   <script>
-    // Links de WhatsApp: número e mensagem num lugar só, codificados com encodeURIComponent.
+    // Links de WhatsApp: número e mensagens num lugar só, codificados com encodeURIComponent.
+    // Os cartões com data-modelo mencionam o modelo escolhido.
     (function () {
       var WA_NUMERO = "5561996113299";
-      var WA_MENSAGEM = "Olá! Vi a Site Express no Instagram e tenho interesse em criar um site profissional para minha estética automotiva. Gostaria de saber mais sobre o site de R$ 497.";
-      var url = "https://wa.me/" + WA_NUMERO + "?text=" + encodeURIComponent(WA_MENSAGEM);
+      var WA_MENSAGEM = "Olá! Vi o catálogo do Site Express e quero um site para o meu negócio. Pode me explicar como começar?";
+      function msgModelo(nome) { return "Olá! Vi o modelo " + nome + " no catálogo do Site Express e quero um site assim para o meu negócio. Pode me explicar como começar?"; }
       var links = document.querySelectorAll("a[data-wa]");
-      for (var i = 0; i < links.length; i++) links[i].href = url;
+      for (var i = 0; i < links.length; i++) {
+        var nome = links[i].getAttribute("data-modelo");
+        links[i].href = "https://wa.me/" + WA_NUMERO + "?text=" + encodeURIComponent(nome ? msgModelo(nome) : WA_MENSAGEM);
+      }
+    })();
+  </script>
+  <script>
+    // Filtro por segmento: mostra só a seção escolhida. Sem JS, todas aparecem.
+    (function () {
+      var botoes = document.querySelectorAll("[data-filter]"), secoes = document.querySelectorAll("[data-seg]");
+      function aplicar(seg) {
+        for (var i = 0; i < botoes.length; i++) botoes[i].setAttribute("aria-pressed", String(botoes[i].getAttribute("data-filter") === seg));
+        for (var j = 0; j < secoes.length; j++) secoes[j].hidden = seg !== "todos" && secoes[j].getAttribute("data-seg") !== seg;
+      }
+      for (var k = 0; k < botoes.length; k++) botoes[k].addEventListener("click", function () { aplicar(this.getAttribute("data-filter")); });
+      // Link direto para um segmento (ex.: #barbearia) já abre filtrado.
+      var alvo = location.hash.slice(1);
+      for (var m = 0; m < secoes.length; m++) if (secoes[m].getAttribute("data-seg") === alvo) aplicar(alvo);
     })();
   </script>
   <script>
