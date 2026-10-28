@@ -222,7 +222,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
-        <ul class="facts" aria-label="Destaques">
+        <ul class="facts">
           <li>Pronto em até 24 horas úteis*</li>
           <li>Feito para celular</li>
           <li>Botão de WhatsApp</li>
@@ -237,13 +237,13 @@
       <p class="eyebrow">Modelos de site</p>
       <h2 id="titulo-modelos">Escolha um modelo e navegue como se fosse cliente</h2>
       <p>Cada modelo é uma demonstração com empresa fictícia. O seu sai com o seu nome, as suas fotos, os seus serviços e o seu WhatsApp. Não achou o seu segmento? O formato serve para qualquer negócio que atende pelo WhatsApp.</p>
-      <ul class="filter" aria-label="Filtrar modelos por segmento">
-        <li><button type="button" data-filter="todos" aria-pressed="true">Todos</button></li>
-        <li><button type="button" data-filter="barbearia" aria-pressed="false">Barbearia</button></li>
-        <li><button type="button" data-filter="pet" aria-pressed="false">Pet</button></li>
-        <li><button type="button" data-filter="confeitaria" aria-pressed="false">Confeitaria</button></li>
-        <li><button type="button" data-filter="estetica-automotiva" aria-pressed="false">Estética automotiva</button></li>
-      </ul>
+      <div class="filter" role="group" aria-label="Filtrar modelos por segmento">
+        <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-filter="barbearia" aria-pressed="false">Barbearia</button>
+        <button type="button" data-filter="pet" aria-pressed="false">Pet</button>
+        <button type="button" data-filter="confeitaria" aria-pressed="false">Confeitaria</button>
+        <button type="button" data-filter="estetica-automotiva" aria-pressed="false">Estética automotiva</button>
+      </div>
     </section>
 
     <section class="segment" id="barbearia" data-seg="barbearia" aria-labelledby="s-barbearia">
@@ -375,7 +375,7 @@
       <div>
         <h2 id="titulo-personalizar">Gostou de um modelo? <span class="hl">Ele pode ser seu.</span></h2>
         <p>O site é montado com a identidade do seu negócio: seu nome e logo, suas cores, as fotos dos seus trabalhos, seus serviços, horários, endereço e o seu WhatsApp.</p>
-        <ol class="steps" aria-label="Como funciona">
+        <ol class="steps">
           <li><b>Você escolhe o modelo</b> e fala comigo pelo WhatsApp.</li>
           <li><b>Paga a entrada</b> e envia fotos, serviços, horários e contatos.</li>
           <li><b>Revisa e aprova.</b> Com o restante pago, o site é publicado.</li>
@@ -447,8 +447,12 @@
       }
       for (var k = 0; k < botoes.length; k++) botoes[k].addEventListener("click", function () { aplicar(this.getAttribute("data-filter")); });
       // Link direto para um segmento (ex.: #barbearia) já abre filtrado.
-      var alvo = location.hash.slice(1);
-      for (var m = 0; m < secoes.length; m++) if (secoes[m].getAttribute("data-seg") === alvo) aplicar(alvo);
+      function doHash() {
+        var alvo = location.hash.slice(1);
+        for (var m = 0; m < secoes.length; m++) if (secoes[m].getAttribute("data-seg") === alvo) aplicar(alvo);
+      }
+      doHash();
+      window.addEventListener("hashchange", doHash);
     })();
   </script>
   <script>
