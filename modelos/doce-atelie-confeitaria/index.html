@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Doce Ateliê Confeitaria · Modelo Site Express</title>
+<meta name="description" content="Doce Ateliê Confeitaria: modelo demonstrativo de site para confeitaria sob encomenda. Empresa fictícia.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBF3EE">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Doce Ateliê Confeitaria · Modelo Site Express">
+<meta property="og:description" content="Modelo demonstrativo de site para confeitaria. Empresa fictícia.">
+<meta property="og:site_name" content="Doce Ateliê Confeitaria">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";src:url("fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --bg:#FBF3EE;--bg-2:#F6E6E0;--card:#FFFFFF;--line:rgba(59,35,32,.12);
+  --text:#3B2320;--muted:#6E5650;--rose:#A63D61;--rose-2:#8A2F4F;--pink:#F6D7DF;--pistachio:#9BB07F;--gold:#C9963A;--cream:#FFF8F0;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gutter:clamp(16px,4vw,40px);--radius:20px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--rose);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 var(--gutter)}
+
+.demo{background:var(--rose-2);color:#fff;font-size:13px;line-height:1.4;text-align:center;padding:8px var(--gutter)}
+.demo b{font-weight:600}
+.demo span{opacity:.85}
+@media (max-width:620px){.demo span{display:none}}
+
+.header{position:sticky;top:0;z-index:30;background:rgba(251,243,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:40px;height:40px;flex:none}
+.brand b{display:block;font:italic 600 22px/1 var(--serif);color:var(--rose-2)}
+.brand small{display:block;font:500 10.5px/1.4 var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:26px;font-size:15px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--rose)}
+@media (max-width:900px){.nav{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 15.5px/1.2 var(--body);text-decoration:none;transition:background .2s,transform .2s,border-color .2s;text-align:center;border:0;cursor:pointer}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-rose:hover{background:var(--rose-2);transform:translateY(-1px)}
+.btn-outline{border:1.5px solid var(--rose);color:var(--rose-2);background:transparent}
+.btn-outline:hover{background:var(--pink)}
+.header .btn{min-height:44px;padding:0 18px;font-size:14px}
+@media (max-width:420px){.header .btn span{display:none}.header .btn{padding:0 13px}}
+
+.hero{background:
+  radial-gradient(circle at 50% 110%,var(--pink) 0 34%,transparent 34.2%),
+  repeating-linear-gradient(90deg,transparent 0 46px,rgba(166,61,97,.05) 46px 48px),var(--bg);overflow:hidden}
+.hero .wrap{display:grid;gap:30px;align-items:center;padding-top:clamp(36px,6vw,84px);padding-bottom:clamp(40px,6vw,80px)}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1fr 1fr}}
+.over{font:500 12px/1.2 var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--rose);margin-bottom:16px}
+h1{font:500 clamp(38px,6.2vw,66px)/1.04 var(--serif);letter-spacing:-.015em}
+h1 em{color:var(--rose)}
+.lead{margin-top:18px;font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:46ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+@media (max-width:520px){.ctas .btn{width:100%}}
+.chips{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:14px;color:var(--muted)}
+.chips li{display:flex;align-items:center;gap:8px}
+.chips li::before{content:"✦";color:var(--gold);font-size:12px}
+.hero-art{max-width:480px;width:100%;margin:0 auto}
+
+section{padding:clamp(56px,8vw,100px) 0}
+.head{text-align:center;max-width:620px;margin:0 auto 42px}
+h2{font:500 clamp(30px,4.2vw,46px)/1.1 var(--serif);letter-spacing:-.01em}
+.head p:not(.over){color:var(--muted);margin-top:12px}
+.alt{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+.menu{display:grid;gap:18px}
+@media (min-width:700px){.menu{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1020px){.menu{grid-template-columns:repeat(3,1fr)}}
+.item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.item svg{width:100%;height:auto;aspect-ratio:16/9}
+.item div{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.item h3{font:600 22px/1.2 var(--serif)}
+.item p{color:var(--muted);font-size:15px;flex:1}
+.item .price{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px dotted var(--line);padding-top:12px;font-size:14px;color:var(--muted)}
+.item .price strong{font:600 21px/1 var(--serif);color:var(--rose-2)}
+.item a{font-weight:600;font-size:14.5px;color:var(--rose);text-decoration:none}
+.item a:hover{text-decoration:underline}
+.fine{margin-top:18px;font-size:13px;color:var(--muted);text-align:center}
+
+.flavors{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:34px}
+.flavors li{background:var(--pink);color:var(--rose-2);border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:500}
+.flavors-title{text-align:center;font:italic 500 22px/1.3 var(--serif);margin-top:48px}
+
+.gallery{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+.gallery figure{position:relative;border-radius:var(--radius);overflow:hidden}
+.gallery svg{width:100%;height:auto;aspect-ratio:1/1}
+.gallery figcaption{position:absolute;left:10px;bottom:10px;right:10px;background:rgba(255,255,255,.92);border-radius:12px;padding:8px 12px;font:italic 500 16px/1.3 var(--serif)}
+@media (max-width:520px){.gallery figcaption{font-size:14px;padding:6px 10px}}
+
+.steps{display:grid;gap:16px;counter-reset:s}
+@media (min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;padding:28px 24px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line);text-align:center}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:52px;height:52px;margin:0 auto 14px;border-radius:50%;border:1.5px solid var(--rose);color:var(--rose);font:600 24px/1 var(--serif)}
+.steps h3{font:600 21px/1.25 var(--serif);margin-bottom:6px}
+.steps p{color:var(--muted);font-size:15px}
+.notice{margin:24px auto 0;max-width:640px;text-align:center;font-size:14.5px;color:var(--muted);background:var(--pink);border-radius:14px;padding:14px 18px}
+.notice strong{color:var(--rose-2)}
+.center{display:flex;justify-content:center}
+
+.visit{display:grid;gap:18px}
+@media (min-width:900px){.visit{grid-template-columns:1fr 1.2fr}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px}
+.box h3{font:600 23px/1.2 var(--serif);margin-bottom:16px}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dotted var(--line)}
+.hours div:last-child{border-bottom:0}
+.hours dt{color:var(--muted)}
+.hours dd{font-weight:600;text-align:right}
+.address{display:flex;flex-direction:column;gap:16px}
+.address p{color:var(--muted)}
+.address strong{color:var(--text)}
+.map{border-radius:14px;overflow:hidden}
+.map svg{width:100%;height:auto}
+
+.final{text-align:center;background:var(--rose-2);color:#fff}
+.final h2{max-width:20ch;margin:0 auto}
+.final p{margin:14px auto 0;max-width:44ch;color:#F6D7DF}
+.final .ctas{justify-content:center}
+.final .btn-rose{background:#fff;color:var(--rose-2)}
+.final .btn-rose:hover{background:var(--pink)}
+
+footer{padding:30px 0 40px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer a{color:var(--rose-2)}
+
+.fab{display:none}
+@media (max-width:760px){
+  .fab{display:flex;position:fixed;z-index:40;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));box-shadow:0 14px 30px -12px rgba(59,35,32,.6)}
+  body{padding-bottom:84px}
+}
+dialog{max-width:min(440px,calc(100% - 32px));border:0;border-radius:var(--radius);background:#fff;color:var(--text);padding:28px 26px}
+dialog::backdrop{background:rgba(59,35,32,.6)}
+dialog h2{font-size:26px;margin-bottom:10px}
+dialog p{color:var(--muted);margin-bottom:20px}
+dialog .ctas{margin-top:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="demo" role="note"><b>Modelo demonstrativo · empresa fictícia</b> <span>· Doce Ateliê não existe. Preços, endereço e fotos são ilustrativos.</span></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="da-stripe" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#F6D7DF"/><rect width="8" height="16" fill="#FFF8F0"/></pattern>
+    <pattern id="da-dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="1.6" fill="#A63D61" opacity=".18"/></pattern>
+    <pattern id="da-wrap" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#E7B9C6"/><rect width="5" height="12" fill="#D894A8"/></pattern>
+    <linearGradient id="da-choc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B3A2E"/><stop offset="1" stop-color="#4A2620"/></linearGradient>
+    <symbol id="da-brig" viewBox="0 0 60 60">
+      <path d="M8 34h44l-6 18H14z" fill="#E7B9C6"/><path d="M14 34l2 18M22 34l1 18M30 34v18M38 34l-1 18M46 34l-2 18" stroke="#D894A8" stroke-width="2"/>
+      <circle cx="30" cy="28" r="17" fill="url(#da-choc)"/>
+      <g fill="#F6D7DF"><rect x="22" y="16" width="5" height="2" rx="1" transform="rotate(30 24 17)"/><rect x="32" y="14" width="5" height="2" rx="1" transform="rotate(-20 34 15)"/><rect x="26" y="24" width="5" height="2" rx="1"/><rect x="36" y="24" width="5" height="2" rx="1" transform="rotate(50 38 25)"/><rect x="18" y="26" width="5" height="2" rx="1" transform="rotate(-40 20 27)"/></g>
+    </symbol>
+    <symbol id="da-cupcake" viewBox="0 0 100 120">
+      <path d="M18 64h64l-8 50H26z" fill="url(#da-wrap)"/>
+      <path d="M14 66q0-14 14-16 0-18 22-20 22 2 22 20 14 2 14 16z" style="fill:var(--frost,#F6D7DF)"/>
+      <path d="M26 52q10-6 24-4M38 38q8-4 18 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+      <circle cx="50" cy="24" r="8" fill="#C0392B"/><path d="M50 16q2-8 8-10" stroke="#5B7F3A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="da-macaron" viewBox="0 0 80 50">
+      <ellipse cx="40" cy="16" rx="32" ry="12" style="fill:var(--mac,#F2A7BC)"/>
+      <rect x="10" y="20" width="60" height="9" rx="4" fill="#FFF8F0"/>
+      <ellipse cx="40" cy="34" rx="32" ry="12" style="fill:var(--mac,#F2A7BC)"/>
+      <path d="M12 20q28 6 56 0M12 30q28-6 56 0" stroke="#000" stroke-opacity=".08" stroke-width="3" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Doce Ateliê Confeitaria, início">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#F6D7DF"/><rect x="10" y="20" width="20" height="10" rx="2" fill="#A63D61"/><rect x="13" y="13" width="14" height="8" rx="2" fill="#fff" stroke="#A63D61" stroke-width="1.4"/><path d="M10 22.5q2.5 2.5 5 0t5 0 5 0 5 0" stroke="#fff" stroke-width="1.6" fill="none"/><circle cx="20" cy="10" r="2.4" fill="#C0392B"/></svg>
+      <span><b>Doce Ateliê</b><small>Confeitaria</small></span>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#encomendar">Como encomendar</a>
+      <a href="#retirada">Horários e retirada</a>
+    </nav>
+    <a class="btn btn-rose" href="#aviso-demonstracao" data-demo-notice aria-label="Encomendar pelo WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+      <span>Encomendar</span>
+    </a>
+  </div>
+</header>
+
+<main id="conteudo">
+  <div class="hero" id="topo">
+    <div class="wrap">
+      <div>
+        <p class="over">Confeitaria sob encomenda</p>
+        <h1>Bolos e doces feitos <em>para a sua festa</em>.</h1>
+        <p class="lead">Bolos decorados, docinhos e caixas de presente. Escolha o sabor, diga a data e encomende pelo WhatsApp.</p>
+        <div class="ctas">
+          <a class="btn btn-rose" href="#aviso-demonstracao" data-demo-notice>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+            Encomendar pelo WhatsApp
+          </a>
+          <a class="btn btn-outline" href="#cardapio">Ver o cardápio</a>
+        </div>
+        <ul class="chips" aria-label="Informações rápidas">
+          <li>Encomendas com 3 dias de antecedência</li>
+          <li>Retirada ou entrega</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 480 440" role="img" aria-label="Ilustração: bolo de dois andares com cobertura rosa, morangos e vela, ao lado de docinhos e macarons">
+          <circle cx="240" cy="210" r="190" fill="#FFF8F0"/>
+          <circle cx="240" cy="210" r="190" fill="url(#da-dots)"/>
+          <!-- prato -->
+          <ellipse cx="240" cy="372" rx="150" ry="18" fill="#E6CFC6"/>
+          <rect x="226" y="372" width="28" height="34" fill="#E6CFC6"/>
+          <ellipse cx="240" cy="408" rx="60" ry="10" fill="#D9BDB2"/>
+          <ellipse cx="240" cy="364" rx="150" ry="18" fill="#FFFFFF"/>
+          <!-- andar de baixo -->
+          <rect x="120" y="262" width="240" height="102" rx="10" fill="#F6D7DF"/>
+          <path d="M120 272q0-10 10-10h220q10 0 10 10v18q-12 0-14 14-2 12-12 0-6-12-18 4-8 12-14-4-6-14-18 0-10 12-16-6-6-10-18 2-10 12-16-4-6-12-18 4-8 12-14-6-6-12-18 0-10 12-16-4-4-10-12-10z" fill="url(#da-choc)"/>
+          <path d="M120 340h240" stroke="#E7B9C6" stroke-width="10"/>
+          <g fill="#fff"><circle cx="140" cy="340" r="4"/><circle cx="172" cy="340" r="4"/><circle cx="204" cy="340" r="4"/><circle cx="236" cy="340" r="4"/><circle cx="268" cy="340" r="4"/><circle cx="300" cy="340" r="4"/><circle cx="332" cy="340" r="4"/></g>
+          <!-- andar de cima -->
+          <rect x="170" y="180" width="140" height="84" rx="10" fill="#FFF8F0"/>
+          <path d="M170 190q0-10 10-10h120q10 0 10 10v12q-10 0-12 12-3 10-12-2-6-10-16 4-7 10-12-4-6-12-16 0-8 10-14-4-5-10-16 2-8 10-12-4-4-10-12-10z" fill="#E7B9C6"/>
+          <!-- morangos -->
+          <g><path d="M196 178q-14-18 4-26 18 8 4 26z" fill="#C0392B"/><path d="M196 152l4-6 4 6" stroke="#5B7F3A" stroke-width="3" fill="none"/></g>
+          <g><path d="M280 178q-14-18 4-26 18 8 4 26z" fill="#C0392B"/><path d="M280 152l4-6 4 6" stroke="#5B7F3A" stroke-width="3" fill="none"/></g>
+          <!-- vela -->
+          <rect x="234" y="128" width="12" height="54" rx="3" fill="url(#da-stripe)" stroke="#E7B9C6"/>
+          <path d="M240 98q12 14 0 26-12-12 0-26z" fill="#F2B544"/><path d="M240 108q5 7 0 12-5-5 0-12z" fill="#FFF0C2"/>
+          <!-- docinhos e macarons -->
+          <use href="#da-brig" x="40" y="318" width="64" height="64"/>
+          <use href="#da-brig" x="70" y="340" width="52" height="52"/>
+          <use href="#da-macaron" x="370" y="330" width="80" height="50" style="--mac:#C9DDB0"/>
+          <use href="#da-macaron" x="384" y="296" width="70" height="44" style="--mac:#F2A7BC"/>
+          <path d="M92 120l5 10 10 5-10 5-5 10-5-10-10-5 10-5zM392 150l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="#C9963A"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="cardapio" aria-labelledby="t-cardapio">
+    <div class="wrap">
+      <div class="head">
+        <p class="over">Cardápio</p>
+        <h2 id="t-cardapio">Para festas, presentes e vontade de doce</h2>
+        <p>Valores de referência. O preço final depende do tamanho, do sabor e da decoração escolhida.</p>
+      </div>
+      <ul class="menu">
+        <li class="item">
+          <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#F6D7DF"/><rect width="320" height="180" fill="url(#da-dots)"/><ellipse cx="160" cy="152" rx="90" ry="10" fill="#fff"/><rect x="92" y="78" width="136" height="72" rx="8" fill="#FFF8F0"/><path d="M92 86q0-8 8-8h120q8 0 8 8v12q-8 0-10 10-2 8-10-2-5-8-12 2-6 8-10-2-5-10-12 0-6 8-10-2-5-8-12 2-6 8-10-2-4-8-12-8-4-8-12-8z" fill="#A63D61"/><path d="M144 76q-10-14 4-20 14 6 4 20zM176 76q-10-14 4-20 14 6 4 20z" fill="#C0392B"/></svg>
+          <div>
+            <h3>Bolo decorado</h3>
+            <p>Massa fofinha, recheio farto e decoração no tema da festa. Tamanho de 1 kg, para cerca de 10 pessoas.</p>
+            <p class="price"><span>a partir de</span><strong>R$ 120</strong></p>
+            <a href="#aviso-demonstracao" data-demo-notice>Encomendar este bolo →</a>
+          </div>
+        </li>
+        <li class="item">
+          <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#FFF8F0"/><rect width="320" height="180" fill="url(#da-dots)"/><use href="#da-brig" x="40" y="60" width="80" height="80"/><use href="#da-brig" x="120" y="60" width="80" height="80"/><use href="#da-brig" x="200" y="60" width="80" height="80"/></svg>
+          <div>
+            <h3>Cento de docinhos</h3>
+            <p>Brigadeiro, beijinho, bicho de pé e outros clássicos, em forminhas de papel.</p>
+            <p class="price"><span>a partir de</span><strong>R$ 110</strong></p>
+            <a href="#aviso-demonstracao" data-demo-notice>Encomendar docinhos →</a>
+          </div>
+        </li>
+        <li class="item">
+          <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#E9EFDF"/><use href="#da-cupcake" x="60" y="40" width="80" height="96"/><use href="#da-cupcake" x="180" y="40" width="80" height="96" style="--frost:#FFF8F0"/><use href="#da-cupcake" x="120" y="64" width="80" height="96" style="--frost:#C9DDB0"/></svg>
+          <div>
+            <h3>Cupcakes (6 unidades)</h3>
+            <p>Cobertura de buttercream nas cores da sua festa.</p>
+            <p class="price"><span>a partir de</span><strong>R$ 42</strong></p>
+            <a href="#aviso-demonstracao" data-demo-notice>Encomendar cupcakes →</a>
+          </div>
+        </li>
+        <li class="item">
+          <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#FFF8F0"/><rect x="100" y="64" width="120" height="90" rx="6" fill="#A63D61"/><rect x="92" y="50" width="136" height="24" rx="6" fill="#8A2F4F"/><rect x="152" y="50" width="16" height="104" fill="#F6D7DF"/><path d="M160 50q-30-30-38-6 8 14 38 6zM160 50q30-30 38-6-8 14-38 6z" fill="#F6D7DF"/></svg>
+          <div>
+            <h3>Caixa presente</h3>
+            <p>Doze doces finos sortidos numa caixa com laço e cartão. Para presentear.</p>
+            <p class="price"><span>a partir de</span><strong>R$ 48</strong></p>
+            <a href="#aviso-demonstracao" data-demo-notice>Encomendar caixa →</a>
+          </div>
+        </li>
+        <li class="item">
+          <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#F6E6E0"/><ellipse cx="160" cy="156" rx="80" ry="9" fill="#fff"/><rect x="100" y="60" width="120" height="94" rx="6" fill="#E9C9A0"/><path d="M100 84h120M100 110h120M100 134h120" stroke="#FFF8F0" stroke-width="8"/><g fill="#C0392B"><circle cx="120" cy="56" r="7"/><circle cx="146" cy="52" r="7"/><circle cx="196" cy="54" r="7"/></g><g fill="#4B3B7A"><circle cx="134" cy="54" r="5"/><circle cx="174" cy="52" r="5"/><circle cx="208" cy="58" r="5"/></g><path d="M160 46l6 10" stroke="#5B7F3A" stroke-width="4" stroke-linecap="round"/></svg>
+          <div>
+            <h3>Naked cake com frutas</h3>
+            <p>Camadas aparentes, creme leve e frutas da estação. Tamanho de 1,5 kg.</p>
+            <p class="price"><span>a partir de</span><strong>R$ 150</strong></p>
+            <a href="#aviso-demonstracao" data-demo-notice>Encomendar este bolo →</a>
+          </div>
+        </li>
+        <li class="item">
+          <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#F6D7DF"/><rect width="320" height="180" fill="url(#da-dots)"/><g transform="translate(120 34)"><rect x="0" y="16" width="80" height="112" rx="14" fill="#fff" opacity=".6" stroke="#fff" stroke-width="3"/><rect x="6" y="40" width="68" height="20" fill="#6B3A2E"/><rect x="6" y="60" width="68" height="16" fill="#FFF8F0"/><rect x="6" y="76" width="68" height="20" fill="#6B3A2E"/><rect x="6" y="96" width="68" height="26" rx="8" fill="#FFF8F0"/><rect x="-4" y="4" width="88" height="16" rx="6" fill="#A63D61"/></g></svg>
+          <div>
+            <h3>Bolo de pote</h3>
+            <p>Camadas de massa e recheio no pote, prontos para levar. Pedido mínimo de 10.</p>
+            <p class="price"><span>a partir de</span><strong>R$ 14</strong></p>
+            <a href="#aviso-demonstracao" data-demo-notice>Encomendar bolos de pote →</a>
+          </div>
+        </li>
+      </ul>
+      <p class="fine">Valores fictícios, apenas para demonstração do modelo.</p>
+      <p class="flavors-title">Sabores da casa</p>
+      <ul class="flavors" aria-label="Sabores da casa">
+        <li>Brigadeiro</li><li>Ninho com morango</li><li>Doce de leite</li><li>Limão siciliano</li><li>Red velvet</li><li>Pistache</li><li>Coco queimado</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="galeria" class="alt" aria-labelledby="t-galeria">
+    <div class="wrap">
+      <div class="head">
+        <p class="over">Galeria</p>
+        <h2 id="t-galeria">Feitos aqui no ateliê</h2>
+        <p>No site real, aqui entram as fotos das encomendas entregues. Neste modelo, usamos ilustrações.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <svg viewBox="0 0 300 300" role="img" aria-label="Ilustração de bolo de aniversário com cobertura rosa e velas">
+            <rect width="300" height="300" fill="#F6D7DF"/>
+            <ellipse cx="150" cy="236" rx="110" ry="14" fill="#fff"/>
+            <rect x="70" y="130" width="160" height="104" rx="10" fill="#FFF8F0"/>
+            <path d="M70 140q0-10 10-10h140q10 0 10 10v16q-10 0-12 12-3 10-12-2-6-10-16 4-7 10-12-4-6-12-16 0-8 10-14-4-5-10-16 2-8 10-12-4-5-10-16 2-8 10-12-4-4-10-12-10z" fill="#E78FAA"/>
+            <path d="M70 210h160" stroke="#F6D7DF" stroke-width="8"/>
+            <g><rect x="110" y="86" width="10" height="46" rx="3" fill="url(#da-stripe)"/><rect x="145" y="80" width="10" height="52" rx="3" fill="url(#da-stripe)"/><rect x="180" y="86" width="10" height="46" rx="3" fill="url(#da-stripe)"/></g>
+            <g fill="#F2B544"><path d="M115 64q9 10 0 18-9-8 0-18z"/><path d="M150 58q9 10 0 18-9-8 0-18z"/><path d="M185 64q9 10 0 18-9-8 0-18z"/></g>
+          </svg>
+          <figcaption>Bolo de aniversário</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 300" role="img" aria-label="Ilustração de bandeja com docinhos de brigadeiro em forminhas">
+            <rect width="300" height="300" fill="#FFF8F0"/>
+            <rect x="30" y="50" width="240" height="200" rx="18" fill="#fff" stroke="#E6CFC6" stroke-width="3"/>
+            <use href="#da-brig" x="44" y="62" width="70" height="70"/><use href="#da-brig" x="115" y="62" width="70" height="70"/><use href="#da-brig" x="186" y="62" width="70" height="70"/>
+            <use href="#da-brig" x="44" y="132" width="70" height="70"/><use href="#da-brig" x="115" y="132" width="70" height="70"/><use href="#da-brig" x="186" y="132" width="70" height="70"/>
+          </svg>
+          <figcaption>Docinhos finos</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 300" role="img" aria-label="Ilustração de naked cake com morangos e mirtilos">
+            <rect width="300" height="300" fill="#E9EFDF"/>
+            <ellipse cx="150" cy="238" rx="100" ry="12" fill="#fff"/>
+            <rect x="80" y="110" width="140" height="126" rx="8" fill="#E9C9A0"/>
+            <path d="M80 142h140M80 174h140M80 206h140" stroke="#FFF8F0" stroke-width="10"/>
+            <g fill="#C0392B"><path d="M110 108q-12-16 4-22 16 6 4 22z"/><path d="M150 104q-12-16 4-22 16 6 4 22z"/><path d="M188 108q-12-16 4-22 16 6 4 22z"/></g>
+            <g fill="#4B3B7A"><circle cx="132" cy="104" r="7"/><circle cx="172" cy="102" r="7"/><circle cx="204" cy="108" r="6"/><circle cx="96" cy="108" r="6"/></g>
+            <path d="M156 82l6-10M112 86l4-8" stroke="#5B7F3A" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <figcaption>Naked cake</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 300" role="img" aria-label="Ilustração de três cupcakes com cobertura colorida e cereja">
+            <rect width="300" height="300" fill="#F6E6E0"/>
+            <rect width="300" height="300" fill="url(#da-dots)"/>
+            <use href="#da-cupcake" x="20" y="100" width="110" height="132" style="--frost:#FFF8F0"/>
+            <use href="#da-cupcake" x="170" y="100" width="110" height="132" style="--frost:#C9DDB0"/>
+            <use href="#da-cupcake" x="90" y="70" width="120" height="144"/>
+          </svg>
+          <figcaption>Cupcakes</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 300" role="img" aria-label="Ilustração de caixa de presente com laço e macarons">
+            <rect width="300" height="300" fill="#FFF8F0"/>
+            <rect x="70" y="120" width="160" height="120" rx="8" fill="#A63D61"/>
+            <rect x="60" y="100" width="180" height="30" rx="8" fill="#8A2F4F"/>
+            <rect x="140" y="100" width="20" height="140" fill="#F6D7DF"/>
+            <path d="M150 100q-44-44-56-8 12 18 56 8zM150 100q44-44 56-8-12 18-56 8z" fill="#F6D7DF"/>
+            <use href="#da-macaron" x="30" y="236" width="80" height="50" style="--mac:#C9DDB0"/>
+            <use href="#da-macaron" x="196" y="236" width="80" height="50" style="--mac:#F2A7BC"/>
+          </svg>
+          <figcaption>Caixa presente</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 300" role="img" aria-label="Ilustração de dois bolos de pote com camadas de chocolate e creme">
+            <rect width="300" height="300" fill="#F6D7DF"/>
+            <g transform="translate(50 70)"><rect x="0" y="20" width="90" height="150" rx="16" fill="#fff" opacity=".55" stroke="#fff" stroke-width="3"/><rect x="6" y="50" width="78" height="26" fill="#6B3A2E"/><rect x="6" y="76" width="78" height="20" fill="#FFF8F0"/><rect x="6" y="96" width="78" height="26" fill="#6B3A2E"/><rect x="6" y="122" width="78" height="42" rx="10" fill="#FFF8F0"/><rect x="-6" y="4" width="102" height="20" rx="7" fill="#A63D61"/></g>
+            <g transform="translate(160 70)"><rect x="0" y="20" width="90" height="150" rx="16" fill="#fff" opacity=".55" stroke="#fff" stroke-width="3"/><rect x="6" y="50" width="78" height="26" fill="#E9C9A0"/><rect x="6" y="76" width="78" height="20" fill="#E78FAA"/><rect x="6" y="96" width="78" height="26" fill="#E9C9A0"/><rect x="6" y="122" width="78" height="42" rx="10" fill="#E78FAA"/><rect x="-6" y="4" width="102" height="20" rx="7" fill="#8A2F4F"/></g>
+          </svg>
+          <figcaption>Bolo de pote</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="encomendar" aria-labelledby="t-encomendar">
+    <div class="wrap">
+      <div class="head">
+        <p class="over">Como encomendar</p>
+        <h2 id="t-encomendar">Sua encomenda em três passos</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Escolha o doce</h3><p>Veja o cardápio e separe o produto, o sabor e o tamanho.</p></li>
+        <li><h3>Mande no WhatsApp</h3><p>Informe a data, a quantidade e o tema da festa. Se tiver uma referência, envie a foto.</p></li>
+        <li><h3>Confirme e combine</h3><p>Passamos o valor final e combinamos a retirada ou a entrega.</p></li>
+      </ol>
+      <p class="notice"><strong>Antecedência:</strong> encomendas com pelo menos 3 dias. Para datas especiais, fale com a gente o quanto antes.</p>
+      <div class="ctas center">
+        <a class="btn btn-rose" href="#aviso-demonstracao" data-demo-notice>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+          Fazer minha encomenda
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="retirada" class="alt" aria-labelledby="t-retirada">
+    <div class="wrap">
+      <div class="head">
+        <p class="over">Visite</p>
+        <h2 id="t-retirada">Horários e retirada</h2>
+      </div>
+      <div class="visit">
+        <div class="box">
+          <h3>Horários</h3>
+          <dl class="hours">
+            <div><dt>Retiradas: terça a sábado</dt><dd>10h às 19h</dd></div>
+            <div><dt>Atendimento no WhatsApp</dt><dd>Seg. a sáb., 9h às 19h</dd></div>
+            <div><dt>Domingo</dt><dd>Só entregas agendadas</dd></div>
+          </dl>
+        </div>
+        <div class="box address">
+          <h3>Ateliê</h3>
+          <p><strong>Rua Exemplo, 789 · Vila Modelo</strong><br>Sua Cidade (UF) · Endereço fictício</p>
+          <div class="map">
+            <svg viewBox="0 0 480 200" role="img" aria-label="Mapa ilustrativo com a localização fictícia do ateliê">
+              <rect width="480" height="200" fill="#F6E6E0"/>
+              <path d="M0 60h480M0 150h480M90 0v200M250 0v200M410 0v200" stroke="#fff" stroke-width="16"/>
+              <rect x="110" y="76" width="122" height="56" rx="6" fill="#EFD8CF"/><rect x="270" y="76" width="122" height="56" rx="6" fill="#E9EFDF"/>
+              <circle cx="250" cy="60" r="22" fill="#A63D61" opacity=".18"/>
+              <path d="M250 66c-10-12-16-20-16-27a16 16 0 0 1 32 0c0 7-6 15-16 27z" fill="#A63D61"/>
+              <circle cx="250" cy="39" r="5" fill="#fff"/>
+            </svg>
+          </div>
+          <a class="btn btn-outline" href="#aviso-demonstracao" data-demo-notice>Combinar retirada no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">Tem uma festa chegando?</h2>
+      <p>Conte a data e o que você imagina. A gente responde com as opções e o valor.</p>
+      <div class="ctas">
+        <a class="btn btn-rose" href="#aviso-demonstracao" data-demo-notice>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+          Encomendar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Doce Ateliê Confeitaria · Empresa fictícia (demonstração) · Ilustrações próprias</p>
+    <p>Modelo criado por Site Express · <a href="../../#confeitaria">Ver todos os modelos</a></p>
+  </div>
+</footer>
+
+<a class="btn btn-rose fab" href="#aviso-demonstracao" data-demo-notice>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+  Encomendar pelo WhatsApp
+</a>
+
+<dialog id="aviso-demonstracao" aria-labelledby="aviso-titulo">
+  <h2 id="aviso-titulo">Este é um site demonstrativo</h2>
+  <p>Doce Ateliê é uma empresa fictícia. No site de um cliente real, este botão abre o WhatsApp da confeitaria com uma mensagem pronta para encomendar.</p>
+  <div class="ctas">
+    <button type="button" class="btn btn-rose" data-close>Entendi</button>
+    <a class="btn btn-outline" href="../../#confeitaria">Ver todos os modelos</a>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var d = document.getElementById("aviso-demonstracao"), last = null;
+  if (!d || typeof d.showModal !== "function") return;
+  var links = document.querySelectorAll("[data-demo-notice]");
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function (e) { e.preventDefault(); last = this; d.showModal(); });
+  }
+  d.querySelector("[data-close]").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+  d.addEventListener("close", function () { if (last) last.focus(); });
+})();
+</script>
+</body>
+</html>

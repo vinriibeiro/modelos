@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Patas Felizes Banho &amp; Tosa · Modelo Site Express</title>
+<meta name="description" content="Patas Felizes Banho &amp; Tosa: modelo demonstrativo de site para pet shop de banho e tosa. Empresa fictícia.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFF8EF">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Patas Felizes Banho &amp; Tosa · Modelo Site Express">
+<meta property="og:description" content="Modelo demonstrativo de site para banho e tosa. Empresa fictícia.">
+<meta property="og:site_name" content="Patas Felizes Banho &amp; Tosa">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Sora";src:url("fonts/sora-latin-wght-normal.woff2") format("woff2");font-weight:100 800;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --bg:#FFF8EF;--bg-2:#FCEBD6;--card:#FFFFFF;--line:rgba(31,42,46,.1);
+  --text:#1F2A2E;--muted:#55626A;--teal:#0F766E;--teal-2:#0B5F58;--teal-soft:#D5F0EC;--coral:#F26B4F;--sun:#FFC857;
+  --display:"Sora",ui-rounded,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gutter:clamp(16px,4vw,40px);--radius:24px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--teal);color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
+
+.demo{background:var(--text);color:#FFF8EF;font-size:13px;line-height:1.4;text-align:center;padding:8px var(--gutter)}
+.demo b{font-weight:700}
+.demo span{opacity:.8}
+@media (max-width:620px){.demo span{display:none}}
+
+.header{position:sticky;top:0;z-index:30;background:rgba(255,248,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:42px;height:42px;flex:none}
+.brand b{display:block;font:700 18px/1.1 var(--display);letter-spacing:-.01em;color:var(--teal-2)}
+.brand small{display:block;font:500 12px/1.3 var(--body);color:var(--muted)}
+.nav{display:flex;gap:24px;font-size:15px;font-weight:500}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--teal)}
+@media (max-width:900px){.nav{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 16px/1.2 var(--body);text-decoration:none;transition:background .2s,transform .2s;text-align:center;border:0;cursor:pointer}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 10px 24px -12px rgba(15,118,110,.8)}
+.btn-teal:hover{background:var(--teal-2);transform:translateY(-1px)}
+.btn-soft{background:#fff;color:var(--text);border:1px solid var(--line)}
+.btn-soft:hover{border-color:var(--teal)}
+.header .btn{min-height:44px;padding:0 18px;font-size:14px}
+@media (max-width:420px){.header .btn span{display:none}.header .btn{padding:0 13px}}
+
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 12% 20%,rgba(255,200,87,.35) 0 120px,transparent 121px),
+  radial-gradient(circle at 95% 90%,rgba(242,107,79,.14) 0 180px,transparent 181px),var(--bg)}
+.hero .wrap{display:grid;gap:36px;align-items:center;padding-top:clamp(36px,6vw,88px);padding-bottom:clamp(48px,7vw,96px)}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1.05fr .95fr}}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--teal-soft);color:var(--teal-2);font:600 13px/1 var(--body);padding:8px 14px;border-radius:999px;margin-bottom:18px}
+h1{font:700 clamp(36px,6vw,62px)/1.05 var(--display);letter-spacing:-.035em;isolation:isolate}
+h1 em{font-style:normal;color:var(--teal);position:relative;white-space:nowrap}
+h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.22em;background:var(--sun);z-index:-1;border-radius:6px}
+.lead{margin-top:18px;font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:48ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+@media (max-width:520px){.ctas .btn{width:100%}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:500}
+.hero-art{max-width:480px;width:100%;margin:0 auto}
+
+section{padding:clamp(56px,8vw,100px) 0}
+.head{text-align:center;max-width:640px;margin:0 auto 40px}
+.head .tag{margin-bottom:14px}
+h2{font:700 clamp(28px,4vw,42px)/1.1 var(--display);letter-spacing:-.03em}
+.head p{color:var(--muted);margin-top:12px}
+.alt{background:var(--bg-2)}
+
+.services{display:grid;gap:16px}
+@media (min-width:700px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.services{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--card);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 0 var(--line),0 18px 40px -30px rgba(31,42,46,.35)}
+.svc .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--teal-soft);color:var(--teal-2)}
+.svc:nth-child(3n+2) .ico{background:#FFE6DF;color:#B23E25}
+.svc:nth-child(3n) .ico{background:#FFF0C9;color:#8A5A00}
+.svc .ico svg{width:28px;height:28px}
+.svc h3{font:700 19px/1.25 var(--display);letter-spacing:-.01em}
+.svc p{color:var(--muted);font-size:15px;flex:1}
+.svc .price{font-size:14px;color:var(--muted)}
+.svc .price strong{font:700 22px/1 var(--display);color:var(--text);margin-left:4px}
+.svc a{font-weight:600;font-size:15px;color:var(--teal);text-decoration:none}
+.svc a:hover{text-decoration:underline}
+.fine{margin-top:18px;font-size:13px;color:var(--muted);text-align:center}
+
+.gallery{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+.gallery figure{background:#fff;border-radius:var(--radius);overflow:hidden;padding:8px}
+.gallery svg{width:100%;height:auto;aspect-ratio:4/3;border-radius:18px}
+.gallery figcaption{padding:10px 8px 6px;font:600 15px/1.3 var(--display)}
+.gallery figcaption span{display:block;font:400 13px/1.4 var(--body);color:var(--muted);margin-top:2px}
+
+.steps{display:grid;gap:16px;counter-reset:s}
+@media (min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;background:#fff;border-radius:var(--radius);padding:28px 24px;position:relative}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sun);font:700 20px/1 var(--display);margin-bottom:14px}
+.steps h3{font:700 18px/1.3 var(--display);margin-bottom:6px}
+.steps p{color:var(--muted);font-size:15px}
+.center{display:flex;justify-content:center}
+
+.care{display:grid;gap:12px;margin-top:28px}
+@media (min-width:800px){.care{grid-template-columns:repeat(3,1fr)}}
+.care li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding:16px 18px;border-radius:18px;background:var(--teal-soft);color:#12403C}
+.care li::before{content:"";flex:none;width:22px;height:22px;margin-top:1px;border-radius:50%;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4L18 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+
+.visit{display:grid;gap:16px}
+@media (min-width:900px){.visit{grid-template-columns:1fr 1.2fr}}
+.box{background:#fff;border-radius:var(--radius);padding:28px 26px}
+.box h3{font:700 20px/1.2 var(--display);margin-bottom:16px}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.hours div:last-child{border-bottom:0}
+.hours dt{color:var(--muted)}
+.hours dd{font-weight:600;text-align:right}
+.address{display:flex;flex-direction:column;gap:16px}
+.address p{color:var(--muted)}
+.address strong{color:var(--text)}
+.map{border-radius:18px;overflow:hidden}
+.map svg{width:100%;height:auto}
+
+.final{background:var(--teal);color:#fff;text-align:center;position:relative;overflow:hidden}
+.final h2{max-width:20ch;margin:0 auto}
+.final p{margin:14px auto 0;max-width:44ch;color:#D5F0EC}
+.final .ctas{justify-content:center}
+.final .btn-teal{background:#fff;color:var(--teal-2)}
+.final .btn-teal:hover{background:var(--sun)}
+.final .paws{position:absolute;inset:0;width:100%;height:100%;opacity:.12;pointer-events:none}
+
+footer{padding:30px 0 40px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer a{color:var(--teal-2)}
+
+.fab{display:none}
+@media (max-width:760px){
+  .fab{display:flex;position:fixed;z-index:40;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom))}
+  body{padding-bottom:84px}
+}
+dialog{max-width:min(440px,calc(100% - 32px));border:0;border-radius:var(--radius);background:#fff;color:var(--text);padding:28px 26px}
+dialog::backdrop{background:rgba(31,42,46,.6)}
+dialog h2{font-size:22px;margin-bottom:10px}
+dialog p{color:var(--muted);margin-bottom:20px}
+dialog .ctas{margin-top:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="demo" role="note"><b>Modelo demonstrativo · empresa fictícia</b> <span>· Patas Felizes não existe. Preços, endereço e fotos são ilustrativos.</span></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="pf-dog" viewBox="0 0 200 200">
+      <ellipse cx="54" cy="96" rx="22" ry="44" transform="rotate(18 54 96)" style="fill:var(--ear,#B9773F)"/>
+      <ellipse cx="146" cy="96" rx="22" ry="44" transform="rotate(-18 146 96)" style="fill:var(--ear,#B9773F)"/>
+      <ellipse cx="100" cy="100" rx="52" ry="50" style="fill:var(--fur,#E3A15F)"/>
+      <ellipse cx="100" cy="126" rx="31" ry="23" style="fill:var(--muzzle,#FBE3C4)"/>
+      <circle cx="80" cy="95" r="6.5" fill="#1F2A2E"/><circle cx="120" cy="95" r="6.5" fill="#1F2A2E"/>
+      <circle cx="82" cy="93" r="2" fill="#fff"/><circle cx="122" cy="93" r="2" fill="#fff"/>
+      <ellipse cx="100" cy="114" rx="10" ry="7" fill="#1F2A2E"/>
+      <path d="M95 133q5 14 10 0z" fill="#F26B4F"/>
+      <path d="M100 120v9M89 129q11 8 22 0" stroke="#1F2A2E" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="pf-cat" viewBox="0 0 200 200">
+      <path d="M50 78 58 26l36 30zM150 78l-8-52-36 30z" style="fill:var(--fur,#8E8A86)"/>
+      <path d="M60 64l3-24 18 14zM140 64l-3-24-18 14z" fill="#F7B6A8"/>
+      <ellipse cx="100" cy="106" rx="58" ry="52" style="fill:var(--fur,#8E8A86)"/>
+      <ellipse cx="100" cy="130" rx="26" ry="18" style="fill:var(--muzzle,#EFEAE4)"/>
+      <ellipse cx="78" cy="100" rx="7" ry="9" fill="#1F2A2E"/><ellipse cx="122" cy="100" rx="7" ry="9" fill="#1F2A2E"/>
+      <circle cx="80" cy="97" r="2.2" fill="#fff"/><circle cx="124" cy="97" r="2.2" fill="#fff"/>
+      <path d="M94 120h12l-6 7z" fill="#E07A6A"/>
+      <path d="M100 127v6M92 136q8 5 16 0M40 120l34 6M40 134l34-2M160 120l-34 6M160 134l-34-2" stroke="#1F2A2E" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="pf-paw" viewBox="0 0 40 40">
+      <ellipse cx="20" cy="26" rx="9" ry="7.5"/><circle cx="9" cy="16" r="4"/><circle cx="16" cy="9" r="4"/><circle cx="24" cy="9" r="4"/><circle cx="31" cy="16" r="4"/>
+    </symbol>
+    <pattern id="pf-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r="2" fill="#0F766E" opacity=".12"/></pattern>
+  </defs>
+</svg>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Patas Felizes Banho &amp; Tosa, início">
+      <svg viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="14" fill="#0F766E"/><use href="#pf-paw" x="7" y="7" width="28" height="28" fill="#FFF8EF"/></svg>
+      <span><b>Patas Felizes</b><small>Banho &amp; Tosa</small></span>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#agendar">Como agendar</a>
+      <a href="#visite">Horários e endereço</a>
+    </nav>
+    <a class="btn btn-teal" href="#aviso-demonstracao" data-demo-notice aria-label="Agendar banho pelo WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+      <span>Agendar</span>
+    </a>
+  </div>
+</header>
+
+<main id="conteudo">
+  <div class="hero" id="topo">
+    <div class="wrap">
+      <div>
+        <p class="tag">Banho e tosa para cães e gatos</p>
+        <h1>Seu pet limpinho, cheiroso e <em>tranquilo</em>.</h1>
+        <p class="lead">Banho, tosa e cuidados com hora marcada. Você agenda pelo WhatsApp e recebe uma foto quando ele estiver pronto.</p>
+        <div class="ctas">
+          <a class="btn btn-teal" href="#aviso-demonstracao" data-demo-notice>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+            Agendar banho pelo WhatsApp
+          </a>
+          <a class="btn btn-soft" href="#servicos">Ver serviços e valores</a>
+        </div>
+        <ul class="chips" aria-label="Informações rápidas">
+          <li>Cães de todos os portes</li>
+          <li>Gatos com horário próprio</li>
+          <li>Busca e entrega opcional</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 480 420" role="img" aria-label="Ilustração: cachorro caramelo com laço e gato cinza entre bolhas de sabão">
+          <circle cx="240" cy="220" r="185" fill="#D5F0EC"/>
+          <circle cx="240" cy="220" r="185" fill="url(#pf-dots)"/>
+          <circle cx="400" cy="90" r="36" fill="#FFC857"/>
+          <use href="#pf-paw" x="40" y="40" width="44" height="44" fill="#F26B4F" opacity=".6" transform="rotate(-20 62 62)"/>
+          <use href="#pf-paw" x="400" y="320" width="36" height="36" fill="#0F766E" opacity=".35"/>
+          <use href="#pf-cat" x="250" y="150" width="190" height="190" style="--fur:#9A948E"/>
+          <use href="#pf-dog" x="60" y="110" width="250" height="250" style="--fur:#E3A15F;--ear:#B9773F"/>
+          <g transform="translate(185 132)"><path d="M0 0l-30-16v32zM0 0l30-16v32z" fill="#F26B4F"/><circle r="8" fill="#D9543A"/></g>
+          <g fill="#fff" stroke="#0F766E" stroke-opacity=".25" stroke-width="2">
+            <circle cx="96" cy="120" r="16"/><circle cx="72" cy="160" r="9"/><circle cx="380" cy="160" r="14"/><circle cx="412" cy="200" r="8"/><circle cx="130" cy="350" r="12"/><circle cx="350" cy="372" r="18"/>
+          </g>
+          <path d="M92 114a8 8 0 0 1 8-6M376 156a6 6 0 0 1 6-5" stroke="#0F766E" stroke-opacity=".4" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="servicos" class="alt" aria-labelledby="t-servicos">
+    <div class="wrap">
+      <div class="head">
+        <p class="tag">Serviços</p>
+        <h2 id="t-servicos">O que o seu pet precisa hoje?</h2>
+        <p>Os valores mudam conforme o porte e o tipo de pelagem. Pelo WhatsApp a gente confirma o preço certinho antes de agendar.</p>
+      </div>
+      <ul class="services">
+        <li class="svc">
+          <span class="ico"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h22v3a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z"/><path d="M6 14V7a3 3 0 0 1 6 0"/><circle cx="17" cy="8" r="1.5"/><circle cx="21" cy="5" r="1"/></svg></span>
+          <h3>Banho</h3>
+          <p>Shampoo neutro, condicionador, secagem e escovação. Ouvidos limpos e perfume suave.</p>
+          <p class="price">a partir de <strong>R$ 50</strong></p>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar banho →</a>
+        </li>
+        <li class="svc">
+          <span class="ico"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="21" r="3.5"/><circle cx="7" cy="7" r="3.5"/><path d="M9.8 9 24 20M9.8 19 24 8"/></svg></span>
+          <h3>Banho e tosa higiênica</h3>
+          <p>Banho completo com aparo das patinhas, barriga e região íntima.</p>
+          <p class="price">a partir de <strong>R$ 70</strong></p>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+        <li class="svc">
+          <span class="ico"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6c3 0 4 2 6 2s3-2 6-2 6 2 6 6-3 10-9 10S5 18 5 12"/><path d="M5 12V6"/></svg></span>
+          <h3>Tosa completa</h3>
+          <p>Na máquina ou na tesoura, no padrão da raça ou do jeito que você preferir.</p>
+          <p class="price">a partir de <strong>R$ 90</strong></p>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+        <li class="svc">
+          <span class="ico"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11 7 4l5 4h4l5-4 1 7c0 7-4 12-8 12s-8-5-8-12z"/><path d="M11 15h.01M17 15h.01M14 18v1"/></svg></span>
+          <h3>Banho para gatos</h3>
+          <p>Em horário separado dos cães, com ambiente calmo e manuseio cuidadoso.</p>
+          <p class="price">a partir de <strong>R$ 80</strong></p>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+        <li class="svc">
+          <span class="ico"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3c4 5 7 8.5 7 13a7 7 0 0 1-14 0c0-4.5 3-8 7-13z"/><path d="M11 17a3 3 0 0 0 3 3"/></svg></span>
+          <h3>Hidratação de pelagem</h3>
+          <p>Máscara hidratante para pelos ressecados ou embaraçados. Adicional ao banho.</p>
+          <p class="price">a partir de <strong>R$ 30</strong></p>
+          <a href="#aviso-demonstracao" data-demo-notice>Incluir no banho →</a>
+        </li>
+        <li class="svc">
+          <span class="ico"><svg viewBox="0 0 28 28" aria-hidden="true" fill="currentColor"><use href="#pf-paw" x="2" y="2" width="24" height="24"/></svg></span>
+          <h3>Corte de unhas</h3>
+          <p>Rápido e com cuidado, também disponível sem banho.</p>
+          <p class="price">a partir de <strong>R$ 15</strong></p>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+      </ul>
+      <p class="fine">Valores fictícios, apenas para demonstração do modelo.</p>
+    </div>
+  </section>
+
+  <section id="fotos" aria-labelledby="t-fotos">
+    <div class="wrap">
+      <div class="head">
+        <p class="tag">Fotos</p>
+        <h2 id="t-fotos">Quem já passou por aqui</h2>
+        <p>No site real, aqui entram as fotos dos pets atendidos. Neste modelo, usamos ilustrações.</p>
+      </div>
+      <div class="gallery">
+        <figure style="background:#D5F0EC">
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de cachorro branco com tosa completa e topete fofo">
+            <rect width="300" height="225" fill="#BFE7E1"/>
+            <rect width="300" height="225" fill="url(#pf-dots)"/>
+            <g fill="#FFFFFF"><circle cx="130" cy="54" r="20"/><circle cx="150" cy="44" r="22"/><circle cx="172" cy="54" r="20"/></g>
+            <use href="#pf-dog" x="60" y="30" width="180" height="180" style="--fur:#FFFFFF;--ear:#F1ECE6;--muzzle:#FBF6F0"/>
+            <path d="M40 40l6 12 12 6-12 6-6 12-6-12-12-6 12-6zM255 150l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="#FFC857"/>
+          </svg>
+          <figcaption>Tosa completa <span>pelagem aparada na tesoura</span></figcaption>
+        </figure>
+        <figure style="background:#FFE6DF">
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de cachorro na banheira cheia de espuma">
+            <rect width="300" height="225" fill="#FFE6DF"/>
+            <use href="#pf-dog" x="80" y="20" width="140" height="140" style="--fur:#6B4A35;--ear:#4A3224;--muzzle:#C9A27F"/>
+            <g fill="#fff"><circle cx="90" cy="140" r="22"/><circle cx="120" cy="132" r="26"/><circle cx="160" cy="134" r="28"/><circle cx="200" cy="140" r="22"/><circle cx="226" cy="148" r="16"/><circle cx="72" cy="150" r="14"/></g>
+            <path d="M48 148h204v22a30 30 0 0 1-30 30H78a30 30 0 0 1-30-30z" fill="#0F766E"/>
+            <rect x="70" y="198" width="10" height="16" rx="4" fill="#0B5F58"/><rect x="220" y="198" width="10" height="16" rx="4" fill="#0B5F58"/>
+            <g fill="#fff" stroke="#F26B4F" stroke-opacity=".35" stroke-width="2"><circle cx="60" cy="60" r="12"/><circle cx="246" cy="44" r="16"/><circle cx="262" cy="96" r="8"/></g>
+          </svg>
+          <figcaption>Banho com espuma <span>shampoo neutro</span></figcaption>
+        </figure>
+        <figure style="background:#FFF0C9">
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de cachorro caramelo com laço vermelho">
+            <rect width="300" height="225" fill="#FFE7A8"/>
+            <circle cx="150" cy="118" r="96" fill="#FFF4D6"/>
+            <use href="#pf-dog" x="55" y="25" width="190" height="190" style="--fur:#E3A15F;--ear:#B9773F"/>
+            <g transform="translate(150 52)"><path d="M0 0l-24-13v26zM0 0l24-13v26z" fill="#F26B4F"/><circle r="6" fill="#D9543A"/></g>
+          </svg>
+          <figcaption>Laço e perfume <span>o toque final</span></figcaption>
+        </figure>
+        <figure style="background:#E8E4F5">
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de gato cinza tranquilo depois do banho">
+            <rect width="300" height="225" fill="#E3EEF0"/>
+            <use href="#pf-paw" x="22" y="150" width="34" height="34" fill="#0F766E" opacity=".25"/>
+            <use href="#pf-paw" x="242" y="30" width="30" height="30" fill="#0F766E" opacity=".25"/>
+            <use href="#pf-cat" x="55" y="20" width="190" height="190" style="--fur:#9A948E"/>
+          </svg>
+          <figcaption>Gatos também <span>horário só para eles</span></figcaption>
+        </figure>
+        <figure style="background:#D5F0EC">
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de secador soprando ar morno em cachorro preto">
+            <rect width="300" height="225" fill="#D5F0EC"/>
+            <use href="#pf-dog" x="120" y="35" width="170" height="170" style="--fur:#2E2B2A;--ear:#1B1918;--muzzle:#5A5350"/>
+            <g transform="translate(30 70)">
+              <rect x="0" y="0" width="70" height="40" rx="20" fill="#F26B4F"/>
+              <rect x="62" y="10" width="24" height="20" rx="4" fill="#D9543A"/>
+              <rect x="14" y="30" width="16" height="56" rx="6" fill="#F26B4F"/>
+            </g>
+            <path d="M124 82q10-6 20 0t20 0M124 98q10-6 20 0t20 0M124 114q10-6 20 0" stroke="#0F766E" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/>
+          </svg>
+          <figcaption>Secagem sem pressa <span>ar morno, sem susto</span></figcaption>
+        </figure>
+        <figure style="background:#FFE6DF">
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de cachorro descansando numa almofada no espaço de espera">
+            <rect width="300" height="225" fill="#FCEBD6"/>
+            <use href="#pf-paw" x="20" y="20" width="26" height="26" fill="#F26B4F" opacity=".3"/>
+            <use href="#pf-paw" x="250" y="26" width="26" height="26" fill="#F26B4F" opacity=".3"/>
+            <use href="#pf-paw" x="140" y="10" width="22" height="22" fill="#F26B4F" opacity=".3"/>
+            <ellipse cx="150" cy="180" rx="120" ry="30" fill="#0F766E"/>
+            <ellipse cx="150" cy="170" rx="100" ry="22" fill="#14968B"/>
+            <use href="#pf-dog" x="80" y="40" width="140" height="140" style="--fur:#D8C3A5;--ear:#A88C68"/>
+          </svg>
+          <figcaption>Espaço de espera <span>almofada e água fresca</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="agendar" class="alt" aria-labelledby="t-agendar">
+    <div class="wrap">
+      <div class="head">
+        <p class="tag">Como agendar</p>
+        <h2 id="t-agendar">Agendar é rapidinho</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Chame no WhatsApp</h3><p>Conte o nome, a raça e o porte do seu pet e o serviço que você quer.</p></li>
+        <li><h3>Combine dia e horário</h3><p>Escolha o melhor horário e diga se quer a busca e entrega.</p></li>
+        <li><h3>Receba a foto</h3><p>Avisamos com uma foto quando ele estiver pronto para voltar para casa.</p></li>
+      </ol>
+      <ul class="care" aria-label="Cuidados">
+        <li>Produtos neutros e próprios para pets</li>
+        <li>Avisamos se notarmos algo diferente na pele ou nos pelos</li>
+        <li>Cães e gatos atendidos em horários separados</li>
+      </ul>
+      <div class="ctas center">
+        <a class="btn btn-teal" href="#aviso-demonstracao" data-demo-notice>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="visite" aria-labelledby="t-visite">
+    <div class="wrap">
+      <div class="head">
+        <p class="tag">Visite</p>
+        <h2 id="t-visite">Horários e endereço</h2>
+      </div>
+      <div class="visit">
+        <div class="box">
+          <h3>Horário de atendimento</h3>
+          <dl class="hours">
+            <div><dt>Segunda a sexta</dt><dd>8h às 18h</dd></div>
+            <div><dt>Sábado</dt><dd>8h às 14h</dd></div>
+            <div><dt>Domingo</dt><dd>Fechado</dd></div>
+            <div><dt>Busca e entrega</dt><dd>Com agendamento</dd></div>
+          </dl>
+        </div>
+        <div class="box address">
+          <h3>Onde estamos</h3>
+          <p><strong>Avenida Exemplo, 456 · Jardim Modelo</strong><br>Sua Cidade (UF) · Endereço fictício</p>
+          <div class="map">
+            <svg viewBox="0 0 480 200" role="img" aria-label="Mapa ilustrativo com a localização fictícia do banho e tosa">
+              <rect width="480" height="200" fill="#E6F4F1"/>
+              <circle cx="60" cy="40" r="34" fill="#BFE3D9"/><circle cx="420" cy="170" r="40" fill="#BFE3D9"/>
+              <path d="M0 120h480M180 0v200M360 0v200" stroke="#fff" stroke-width="20"/>
+              <path d="M0 40q120 30 240 10t240 20" stroke="#fff" stroke-width="12" fill="none"/>
+              <circle cx="270" cy="120" r="22" fill="#0F766E" opacity=".18"/>
+              <path d="M270 126c-10-12-16-20-16-27a16 16 0 0 1 32 0c0 7-6 15-16 27z" fill="#F26B4F"/>
+              <use href="#pf-paw" x="262" y="90" width="16" height="16" fill="#fff"/>
+            </svg>
+          </div>
+          <a class="btn btn-soft" href="#aviso-demonstracao" data-demo-notice>Pedir a localização no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <svg class="paws" aria-hidden="true" focusable="false"><defs><pattern id="pf-paws" width="90" height="90" patternUnits="userSpaceOnUse" patternTransform="rotate(-15)"><use href="#pf-paw" x="10" y="10" width="26" height="26" fill="#fff"/><use href="#pf-paw" x="55" y="52" width="22" height="22" fill="#fff"/></pattern></defs><rect width="100%" height="100%" fill="url(#pf-paws)"/></svg>
+    <div class="wrap" style="position:relative">
+      <h2 id="t-final">Hora do banho? É só chamar.</h2>
+      <p>Mande uma mensagem com o porte e o serviço. A gente responde com o horário disponível.</p>
+      <div class="ctas">
+        <a class="btn btn-teal" href="#aviso-demonstracao" data-demo-notice>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Patas Felizes Banho &amp; Tosa · Empresa fictícia (demonstração) · Ilustrações próprias</p>
+    <p>Modelo criado por Site Express · <a href="../../#pet">Ver todos os modelos</a></p>
+  </div>
+</footer>
+
+<a class="btn btn-teal fab" href="#aviso-demonstracao" data-demo-notice>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+  Agendar pelo WhatsApp
+</a>
+
+<dialog id="aviso-demonstracao" aria-labelledby="aviso-titulo">
+  <h2 id="aviso-titulo">Este é um site demonstrativo</h2>
+  <p>Patas Felizes é uma empresa fictícia. No site de um cliente real, este botão abre o WhatsApp do banho e tosa com uma mensagem pronta para agendar.</p>
+  <div class="ctas">
+    <button type="button" class="btn btn-teal" data-close>Entendi</button>
+    <a class="btn btn-soft" href="../../#pet">Ver todos os modelos</a>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var d = document.getElementById("aviso-demonstracao"), last = null;
+  if (!d || typeof d.showModal !== "function") return;
+  var links = document.querySelectorAll("[data-demo-notice]");
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function (e) { e.preventDefault(); last = this; d.showModal(); });
+  }
+  d.querySelector("[data-close]").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+  d.addEventListener("close", function () { if (last) last.focus(); });
+})();
+</script>
+</body>
+</html>
