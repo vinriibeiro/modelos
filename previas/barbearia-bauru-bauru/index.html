@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barbearia Bauru · Prévia do site · Site Express</title>
+<meta name="description" content="Prévia de site criada pela Site Express para Barbearia Bauru.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#121110">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Barbearia Bauru · Prévia do site">
+<meta property="og:description" content="Prévia de site criada pela Site Express para Barbearia Bauru.">
+<meta property="og:site_name" content="Barbearia Bauru">
+<link rel="icon" type="image/svg+xml" href="../_assets/favicon.svg">
+<link rel="preload" href="../_assets/fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Sora";src:url("../_assets/fonts/sora-latin-wght-normal.woff2") format("woff2");font-weight:100 800;font-display:swap}
+@font-face{font-family:"Inter";src:url("../_assets/fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --bg:#121110;--bg-2:#1A1816;--card:#211E1B;--line:rgba(243,235,221,.13);
+  --text:#F3EBDD;--muted:#BDB3A3;--brass:#C9965A;--brass-2:#E2B97F;--red:#A3322B;--navy:#1F3A5F;
+  --display:"Sora",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gutter:clamp(16px,4vw,40px);--radius:14px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--brass-2);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--brass);color:#121110;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Faixa de demonstração */
+.demo{background:#F3EBDD;color:#121110;font-size:13px;line-height:1.4;text-align:center;padding:8px var(--gutter)}
+.demo b{font-weight:700;letter-spacing:.04em}
+.demo span{color:#4A4239}
+@media (max-width:620px){.demo span{display:none}}
+
+/* Topo */
+.header{position:sticky;top:0;z-index:30;background:rgba(18,17,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand b{display:block;max-width:24ch;font:700 17px/1.1 var(--display);letter-spacing:.02em;text-transform:uppercase}
+.brand small{display:block;font:500 11px/1.2 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--brass-2)}
+.nav{display:flex;gap:26px;font-size:14px;font-weight:500}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+@media (max-width:900px){.nav{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:8px;font:600 15px/1.2 var(--body);text-decoration:none;letter-spacing:.01em;transition:background .2s,transform .2s,border-color .2s;text-align:center}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-brass{background:var(--brass);color:#121110}
+.btn-brass:hover{background:var(--brass-2);transform:translateY(-1px)}
+.btn-line{border:1px solid rgba(243,235,221,.3);color:var(--text);background:transparent;cursor:pointer}
+@media (max-width:520px){.brand b{font-size:14px}.brand small{letter-spacing:.14em}}
+.btn-line:hover{border-color:var(--brass-2)}
+.header .btn{min-height:42px;padding:0 16px;font-size:14px}
+@media (max-width:420px){.header .btn span{display:none}.header .btn{padding:0 12px}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:
+  radial-gradient(50% 60% at 85% 30%,rgba(201,150,90,.16),transparent 70%),
+  repeating-linear-gradient(-45deg,rgba(243,235,221,.025) 0 2px,transparent 2px 14px),var(--bg)}
+.hero .wrap{display:grid;gap:40px;align-items:center;padding-top:clamp(40px,7vw,96px);padding-bottom:clamp(48px,7vw,96px)}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1.1fr .9fr}}
+.kicker{display:inline-flex;align-items:center;gap:12px;font:600 12px/1.2 var(--body);letter-spacing:.26em;text-transform:uppercase;color:var(--brass-2);margin-bottom:20px}
+.kicker::before{content:"";width:32px;height:2px;background:var(--brass)}
+h1{font:700 clamp(36px,6.4vw,68px)/1.02 var(--display);letter-spacing:-.03em;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--brass-2)}
+.lead{margin-top:20px;font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:50ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+@media (max-width:520px){.ctas .btn{width:100%}}
+.chips{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:28px;font-size:14px;color:var(--muted)}
+.chips li{display:flex;align-items:center;gap:8px}
+.chips li::before{content:"";width:6px;height:6px;background:var(--brass);transform:rotate(45deg)}
+.hero-art{max-width:440px;width:100%;margin:0 auto}
+
+/* Seções */
+section{padding:clamp(56px,8vw,104px) 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 32px;margin-bottom:36px}
+h2{font:700 clamp(28px,4vw,44px)/1.08 var(--display);letter-spacing:-.02em;text-transform:uppercase}
+.head p{color:var(--muted);max-width:46ch}
+.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* Serviços */
+.services{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+@media (min-width:700px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.services{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--card);padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.svc svg{width:36px;height:36px;color:var(--brass-2)}
+.svc h3{font:600 19px/1.25 var(--display)}
+.svc p{color:var(--muted);font-size:15px;flex:1}
+.svc .price{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}
+.svc .price strong{font:700 20px/1 var(--display);color:var(--text)}
+.svc .price strong small{font:500 12px/1 var(--body);color:var(--muted);margin-right:4px;text-transform:uppercase;letter-spacing:.06em}
+.svc a{font-weight:600;font-size:14px;color:var(--brass-2);text-decoration:none}
+.svc a:hover{text-decoration:underline}
+.fine{margin-top:16px;font-size:13px;color:var(--muted)}
+
+/* Galeria */
+.gallery{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+.gallery figure{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.gallery svg{width:100%;height:auto;aspect-ratio:4/3}
+.gallery figcaption{padding:12px 14px;font-size:14px;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.gallery figcaption span{color:var(--muted);font-weight:400}
+@media (max-width:520px){.gallery figcaption{flex-direction:column;gap:0}}
+
+/* Como agendar */
+.steps{display:grid;gap:16px;counter-reset:s}
+@media (min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;padding:26px 24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+.steps li::before{content:"0" counter(s);display:block;font:700 34px/1 var(--display);color:var(--brass);margin-bottom:14px}
+.steps h3{font:600 18px/1.3 var(--display);margin-bottom:6px}
+.steps p{color:var(--muted);font-size:15px}
+
+/* Horários e endereço */
+.visit{display:grid;gap:20px}
+@media (min-width:900px){.visit{grid-template-columns:1fr 1.2fr}}
+.box{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:28px 26px}
+.box h3{font:600 20px/1.2 var(--display);margin-bottom:18px}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.hours div:last-child{border-bottom:0}
+.hours dt{color:var(--muted)}
+.hours dd{font-weight:600;text-align:right}
+.address{display:flex;flex-direction:column;gap:18px}
+.address p{color:var(--muted)}
+.address strong{color:var(--text);font-weight:600}
+.map{border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map svg{width:100%;height:auto}
+
+/* Chamada final */
+.final{text-align:center;background:
+  radial-gradient(60% 80% at 50% 0%,rgba(201,150,90,.18),transparent 70%),var(--bg)}
+.final h2{max-width:18ch;margin:0 auto}
+.final p{color:var(--muted);margin:16px auto 0;max-width:46ch}
+.final .ctas{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:32px 0 40px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer a{color:var(--brass-2)}
+
+/* WhatsApp fixo no celular */
+.fab{display:none}
+@media (max-width:760px){
+  .fab{display:flex;position:fixed;z-index:40;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));box-shadow:0 14px 34px -10px rgba(0,0,0,.8)}
+  body{padding-bottom:84px}
+}
+
+/* Aviso de demonstração */
+dialog{max-width:min(440px,calc(100% - 32px));border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);color:var(--text);padding:28px 26px}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog h2{font-size:22px;text-transform:none;letter-spacing:-.01em;margin-bottom:10px}
+dialog p{color:var(--muted);margin-bottom:20px}
+dialog .ctas{margin-top:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+<meta property="og:image" content="https://vinriibeiro.github.io/modelos/previas/barbearia-bauru-bauru/arte.png">
+<meta property="og:url" content="https://vinriibeiro.github.io/modelos/previas/barbearia-bauru-bauru/">
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="demo" role="note"><b>Prévia feita para Barbearia Bauru</b> <span>· Criada pela Site Express. Textos, preços e fotos são de exemplo e serão trocados pelos seus.</span></div>
+
+<!-- Ícones reaproveitados nas ilustrações -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="nv-pole" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+      <rect width="36" height="36" fill="#F3EBDD"/><rect width="12" height="36" fill="#A3322B"/><rect x="18" width="7" height="36" fill="#1F3A5F"/>
+    </pattern>
+    <linearGradient id="nv-shade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".4"/><stop offset=".45" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></linearGradient>
+    <linearGradient id="nv-brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0CF9C"/><stop offset=".5" stop-color="#C9965A"/><stop offset="1" stop-color="#8A5F2E"/></linearGradient>
+    <linearGradient id="nv-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A211B"/><stop offset="1" stop-color="#2A211B" stop-opacity="0"/></linearGradient>
+    <pattern id="nv-tile" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="#1E1B18"/><path d="M0 24 24 0" stroke="#2A2622" stroke-width="2"/></pattern>
+    <symbol id="nv-bust" viewBox="0 0 300 225">
+      <path d="M62 225 Q66 170 150 160 Q234 170 238 225Z" fill="#2B2724"/>
+      <path d="M128 162 l22 30 22-30" fill="none" stroke="#F3EBDD" stroke-width="3" opacity=".6"/>
+      <rect x="136" y="132" width="28" height="34" rx="6" fill="#B9845C"/>
+      <ellipse cx="112" cy="104" rx="7" ry="11" fill="#C69068"/>
+      <ellipse cx="188" cy="104" rx="7" ry="11" fill="#C69068"/>
+      <ellipse cx="150" cy="100" rx="38" ry="46" fill="#D29C72"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Barbearia Bauru, início">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#C9965A" stroke-width="2"/><path d="M12 26.5 26 12.5l2 2-14 14z" fill="#F3EBDD"/><path d="M24.5 11l4.5 4.5-2 2-4.5-4.5z" fill="#C9965A"/></svg>
+      <span><b>Barbearia Bauru</b><small>Bauru (SP)</small></span>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#agendar">Como agendar</a>
+      <a href="#visite">Horários e endereço</a>
+    </nav>
+    <a class="btn btn-brass" href="#aviso-demonstracao" data-demo-notice aria-label="Agendar pelo WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+      <span>Agendar</span>
+    </a>
+  </div>
+</header>
+
+<main id="conteudo">
+  <div class="hero" id="topo">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Barbearia em Bauru</p>
+        <h1>Corte, barba e <em>acabamento</em> no seu horário.</h1>
+        <p class="lead">Escolha o serviço, chame no WhatsApp e reserve o horário. Sem fila, sem espera: você chega e senta na cadeira.</p>
+        <div class="ctas">
+          <a class="btn btn-brass" href="#aviso-demonstracao" data-demo-notice>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a class="btn btn-line" href="#servicos">Ver serviços e valores</a>
+        </div>
+        <ul class="chips">
+          <li>Terça a sábado</li>
+          <li>Atendimento com hora marcada</li>
+          <li>Pix, cartão ou dinheiro</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 400 460" role="img" aria-label="Ilustração: poste de barbearia listrado, tesoura e pente dourados">
+          <defs>
+            <radialGradient id="nv-glow" cx=".55" cy=".45" r=".55"><stop offset="0" stop-color="#C9965A" stop-opacity=".35"/><stop offset="1" stop-color="#C9965A" stop-opacity="0"/></radialGradient>
+            <clipPath id="nv-arch"><path d="M30 450V200a170 170 0 0 1 340 0v250z"/></clipPath>
+          </defs>
+          <path d="M30 450V200a170 170 0 0 1 340 0v250z" fill="url(#nv-tile)"/>
+          <g clip-path="url(#nv-arch)"><circle cx="230" cy="230" r="220" fill="url(#nv-glow)"/></g>
+          <path d="M30 450V200a170 170 0 0 1 340 0v250z" fill="none" stroke="#C9965A" stroke-width="2"/>
+          <path d="M46 450V202a154 154 0 0 1 308 0v248" fill="none" stroke="#C9965A" stroke-width="1" opacity=".4"/>
+          <!-- poste -->
+          <g>
+            <rect x="88" y="92" width="44" height="18" rx="6" fill="url(#nv-brass)"/>
+            <path d="M92 92a18 14 0 0 1 36 0z" fill="url(#nv-brass)"/>
+            <rect x="94" y="110" width="32" height="250" fill="url(#nv-pole)"/>
+            <rect x="94" y="110" width="32" height="250" fill="url(#nv-shade)"/>
+            <rect x="88" y="360" width="44" height="18" rx="6" fill="url(#nv-brass)"/>
+            <rect x="104" y="378" width="12" height="40" fill="#8A5F2E"/>
+            <rect x="84" y="416" width="52" height="10" rx="4" fill="url(#nv-brass)"/>
+          </g>
+          <!-- pente -->
+          <g transform="rotate(-12 270 340)">
+            <rect x="180" y="318" width="190" height="20" rx="6" fill="#F3EBDD"/>
+            <line x1="188" y1="352" x2="362" y2="352" stroke="#F3EBDD" stroke-width="30" stroke-dasharray="3 5"/>
+          </g>
+          <!-- tesoura -->
+          <g transform="translate(260 225) rotate(-50)">
+            <g transform="rotate(10)">
+              <path d="M0 -5 L138 -3 Q146 0 138 4 L0 7z" fill="url(#nv-brass)"/>
+              <path d="M0 -4 L-46 -18" stroke="url(#nv-brass)" stroke-width="10" stroke-linecap="round"/>
+              <circle cx="-66" cy="-24" r="20" fill="none" stroke="url(#nv-brass)" stroke-width="9"/>
+            </g>
+            <g transform="rotate(-10)">
+              <path d="M0 5 L138 3 Q146 0 138 -4 L0 -7z" fill="#E2B97F"/>
+              <path d="M0 4 L-46 18" stroke="#E2B97F" stroke-width="10" stroke-linecap="round"/>
+              <circle cx="-66" cy="24" r="20" fill="none" stroke="#E2B97F" stroke-width="9"/>
+            </g>
+            <circle r="7" fill="#121110" stroke="#F0CF9C" stroke-width="3"/>
+          </g>
+          <text x="200" y="118" text-anchor="middle" fill="#E2B97F" font-family="Sora, sans-serif" font-size="13" letter-spacing="5" font-weight="600">B</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="servicos" aria-labelledby="t-servicos">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="kicker">Serviços</p>
+          <h2 id="t-servicos">Escolha o seu serviço</h2>
+        </div>
+        <p>Valores de referência. O preço final pode mudar conforme o comprimento e o volume do cabelo ou da barba.</p>
+      </div>
+      <ul class="services">
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="27" r="4.5"/><circle cx="9" cy="9" r="4.5"/><path d="M12.5 11.5 31 25M12.5 24.5 31 11"/></svg>
+          <h3>Corte masculino</h3>
+          <p>Máquina, tesoura ou os dois, com lavagem e finalização. Cerca de 40 minutos.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 45</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12c2 10 6 16 12 16s10-6 12-16"/><path d="M11 13c2 2 4 3 7 3s5-1 7-3"/><path d="M14 22c1.2.8 2.5 1.2 4 1.2s2.8-.4 4-1.2"/></svg>
+          <h3>Barba completa</h3>
+          <p>Desenho na navalha, toalha quente e hidratação. Cerca de 30 minutos.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 35</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 25 25 5l4 4L9 29z"/><path d="M22 8l4 4"/><path d="M20 31h11"/></svg>
+          <h3>Corte + barba</h3>
+          <p>O combo completo para sair pronto. Cerca de 1 hora e 10 minutos.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 75</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="4" width="14" height="22" rx="4"/><path d="M11 9h14M14 26v5h8v-5"/></svg>
+          <h3>Pezinho e acabamento</h3>
+          <p>Contorno da nuca e das laterais entre um corte e outro. Cerca de 15 minutos.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 20</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="14" r="7"/><path d="M8 31c1.5-5.5 5.4-8 10-8s8.5 2.5 10 8"/><path d="M13 11c2-2 8-2 10 0"/></svg>
+          <h3>Corte infantil</h3>
+          <p>Para crianças de até 12 anos, com calma e no tempo delas. Cerca de 40 minutos.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 40</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17c4-5 9-6 13-6s9 1 13 6"/><path d="M9 23c3-2 6-3 9-3s6 1 9 3"/></svg>
+          <h3>Sobrancelha na navalha</h3>
+          <p>Limpeza e alinhamento discretos, sem exagero. Cerca de 10 minutos.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 15</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Agendar este serviço →</a>
+        </li>
+      </ul>
+      <p class="fine">Valores de exemplo. No site final, entram os serviços e preços da Barbearia Bauru.</p>
+    </div>
+  </section>
+
+  <section id="trabalhos" class="alt" aria-labelledby="t-trabalhos">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="kicker">Trabalhos</p>
+          <h2 id="t-trabalhos">Alguns estilos da casa</h2>
+        </div>
+        <p>No site real, aqui entram as fotos dos cortes feitos na barbearia. Neste modelo, usamos ilustrações.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de corte degradê baixo">
+            <rect width="300" height="225" fill="url(#nv-tile)"/>
+            <circle cx="150" cy="100" r="86" fill="#C9965A" opacity=".12"/>
+            <use href="#nv-bust"/>
+            <path d="M111 96Q108 50 150 48Q192 50 189 96Q182 72 150 70Q118 72 111 96Z" fill="#2A211B"/>
+            <path d="M110 90h9v34h-9zM181 90h9v34h-9z" fill="url(#nv-fade)"/>
+          </svg>
+          <figcaption>Degradê baixo <span>máquina e tesoura</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de barba desenhada com bigode">
+            <rect width="300" height="225" fill="url(#nv-tile)"/>
+            <circle cx="150" cy="100" r="86" fill="#A3322B" opacity=".14"/>
+            <use href="#nv-bust"/>
+            <path d="M111 94Q110 52 150 50Q190 52 189 94Q178 76 150 74Q122 76 111 94Z" fill="#2A211B"/>
+            <path d="M113 104Q114 156 150 160Q186 156 187 104Q182 132 168 134Q160 126 150 126Q140 126 132 134Q118 132 113 104Z" fill="#2A211B"/>
+            <path d="M134 120Q150 112 166 120Q150 118 134 120Z" fill="#2A211B" stroke="#2A211B" stroke-width="4" stroke-linejoin="round"/>
+          </svg>
+          <figcaption>Barba desenhada <span>navalha e toalha quente</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de topete texturizado">
+            <rect width="300" height="225" fill="url(#nv-tile)"/>
+            <circle cx="150" cy="100" r="86" fill="#1F3A5F" opacity=".3"/>
+            <use href="#nv-bust"/>
+            <path d="M111 96Q100 36 160 30Q206 34 189 96Q182 70 154 66Q122 68 111 96Z" fill="#3A2A20"/>
+            <path d="M128 52q14-14 36-10M136 60q14-10 32-6" stroke="#5A4434" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M110 92h8v30h-8zM182 92h8v30h-8z" fill="url(#nv-fade)"/>
+          </svg>
+          <figcaption>Topete texturizado <span>finalização com pomada</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de corte social com risca lateral e barba curta">
+            <rect width="300" height="225" fill="url(#nv-tile)"/>
+            <circle cx="150" cy="100" r="86" fill="#C9965A" opacity=".1"/>
+            <use href="#nv-bust"/>
+            <path d="M110 100Q104 48 152 46Q196 50 190 100Q186 74 166 68Q132 64 110 100Z" fill="#1E1916"/>
+            <path d="M132 58 126 76" stroke="#D29C72" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M114 110Q118 148 150 152Q182 148 186 110Q178 130 150 132Q122 130 114 110Z" fill="#1E1916" opacity=".55"/>
+          </svg>
+          <figcaption>Social clássico <span>risca e barba curta</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de navalha aberta sobre toalha">
+            <rect width="300" height="225" fill="#1E1B18"/>
+            <rect x="40" y="132" width="220" height="60" rx="10" fill="#F3EBDD"/>
+            <path d="M40 150h220M40 170h220" stroke="#D9CDB8" stroke-width="3"/>
+            <g transform="translate(150 108) rotate(-14)">
+              <path d="M-96 -6h86l6 6-6 6h-86a6 6 0 0 1 0-12z" fill="url(#nv-brass)"/>
+              <path d="M-4 -14h96q10 0 10 10v4q0 6-8 6H-4z" fill="#E8E2D6"/>
+              <path d="M-4 6h100" stroke="#9AA3AD" stroke-width="2"/>
+              <circle cx="-4" cy="0" r="5" fill="#121110" stroke="#F0CF9C" stroke-width="2"/>
+            </g>
+          </svg>
+          <figcaption>Toalha quente <span>barba tradicional</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração do ambiente: cadeira de barbeiro diante do espelho">
+            <rect width="300" height="225" fill="#1A1816"/>
+            <rect y="170" width="300" height="55" fill="url(#nv-tile)"/>
+            <rect x="96" y="22" width="108" height="92" rx="46" fill="#2C2A2C" stroke="url(#nv-brass)" stroke-width="5"/>
+            <path d="M112 46q20-14 40-8" stroke="#F3EBDD" stroke-width="3" opacity=".25" fill="none" stroke-linecap="round"/>
+            <rect x="122" y="96" width="56" height="44" rx="10" fill="#7A2620"/>
+            <rect x="110" y="134" width="80" height="22" rx="8" fill="#A3322B"/>
+            <rect x="100" y="126" width="12" height="30" rx="5" fill="#8A5F2E"/>
+            <rect x="188" y="126" width="12" height="30" rx="5" fill="#8A5F2E"/>
+            <rect x="144" y="156" width="12" height="34" fill="url(#nv-brass)"/>
+            <ellipse cx="150" cy="194" rx="40" ry="7" fill="url(#nv-brass)"/>
+            <rect x="34" y="40" width="18" height="120" fill="url(#nv-pole)"/>
+            <rect x="34" y="40" width="18" height="120" fill="url(#nv-shade)"/>
+            <rect x="30" y="32" width="26" height="10" rx="3" fill="url(#nv-brass)"/>
+            <rect x="30" y="158" width="26" height="10" rx="3" fill="url(#nv-brass)"/>
+          </svg>
+          <figcaption>Nosso espaço <span>uma cadeira, sem pressa</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="agendar" aria-labelledby="t-agendar">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="kicker">Como agendar</p>
+          <h2 id="t-agendar">Três passos, tudo pelo WhatsApp</h2>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><h3>Escolha o serviço</h3><p>Veja a lista acima e decida entre corte, barba ou o combo.</p></li>
+        <li><h3>Chame no WhatsApp</h3><p>Diga o serviço e o dia que prefere. A mensagem já vai pronta pelo botão.</p></li>
+        <li><h3>Horário confirmado</h3><p>Você recebe a confirmação e chega no horário. Se precisar remarcar, é só avisar.</p></li>
+      </ol>
+      <div class="ctas">
+        <a class="btn btn-brass" href="#aviso-demonstracao" data-demo-notice>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+          Agendar meu horário
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="visite" class="alt" aria-labelledby="t-visite">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="kicker">Visite</p>
+          <h2 id="t-visite">Horários e endereço</h2>
+        </div>
+      </div>
+      <div class="visit">
+        <div class="box">
+          <h3>Horário de atendimento</h3>
+          <dl class="hours">
+            <div><dt>Terça a sexta</dt><dd>9h às 20h</dd></div>
+            <div><dt>Sábado</dt><dd>8h às 18h</dd></div>
+            <div><dt>Domingo e segunda</dt><dd>Fechado</dd></div>
+          </dl>
+        </div>
+        <div class="box address">
+          <h3>Onde estamos</h3>
+          <p><strong>R. Alfredo Fontão, 4-17, Bauru/SP</strong><br>Bauru (SP)</p>
+          <div class="map">
+            <svg viewBox="0 0 480 200" role="img" aria-label="Mapa ilustrativo da localização da barbearia">
+              <rect width="480" height="200" fill="#1E1B18"/>
+              <path d="M0 70h480M0 150h480M120 0v200M300 0v200M400 0v200" stroke="#2E2A26" stroke-width="18"/>
+              <path d="M0 70h480M0 150h480M120 0v200M300 0v200M400 0v200" stroke="#3A352F" stroke-width="1" stroke-dasharray="8 8"/>
+              <rect x="140" y="88" width="140" height="44" rx="4" fill="#26221E"/>
+              <rect x="20" y="88" width="80" height="44" rx="4" fill="#26221E"/>
+              <rect x="320" y="0" width="60" height="52" rx="4" fill="#26221E"/>
+              <circle cx="210" cy="70" r="20" fill="#C9965A" opacity=".25"/>
+              <path d="M210 76c-9-11-14-18-14-24a14 14 0 0 1 28 0c0 6-5 13-14 24z" fill="#C9965A"/>
+              <circle cx="210" cy="52" r="5" fill="#121110"/>
+            </svg>
+          </div>
+          <a class="btn btn-line" href="#aviso-demonstracao" data-demo-notice>Pedir a localização no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">Seu próximo corte está a uma mensagem.</h2>
+      <p>Chame no WhatsApp, escolha o horário e venha.</p>
+      <div class="ctas">
+        <a class="btn btn-brass" href="#aviso-demonstracao" data-demo-notice>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Barbearia Bauru · Prévia criada pela Site Express</p>
+    <p>Gostou? <a href="https://wa.me/5561996113299?text=Ol%C3%A1%21%20Vi%20a%20pr%C3%A9via%20do%20site%20da%20Barbearia%20Bauru%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Coloque este site no ar com a Site Express</a></p>
+  </div>
+</footer>
+
+<a class="btn btn-brass fab" href="#aviso-demonstracao" data-demo-notice>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg>
+  Agendar pelo WhatsApp
+</a>
+
+<dialog id="aviso-demonstracao" aria-labelledby="aviso-titulo">
+  <h2 id="aviso-titulo">Esta é uma prévia do site da Barbearia Bauru</h2>
+  <p>No site final, este botão abre o WhatsApp de vocês com uma mensagem pronta para o cliente agendar. Quer colocar o site no ar? Fica pronto em até 24h.</p>
+  <div class="ctas">
+    <a class="btn btn-brass" href="https://wa.me/5561996113299?text=Ol%C3%A1%21%20Vi%20a%20pr%C3%A9via%20do%20site%20da%20Barbearia%20Bauru%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Quero este site</a>
+    <button type="button" class="btn btn-line" data-close>Continuar vendo</button>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var d = document.getElementById("aviso-demonstracao"), last = null;
+  if (!d || typeof d.showModal !== "function") return;
+  var links = document.querySelectorAll("[data-demo-notice]");
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function (e) { e.preventDefault(); last = this; d.showModal(); });
+  }
+  d.querySelector("[data-close]").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+  d.addEventListener("close", function () { if (last) last.focus(); });
+})();
+</script>
+</body>
+</html>
