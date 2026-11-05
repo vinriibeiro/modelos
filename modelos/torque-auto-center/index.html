@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Torque Auto Center Mecânica geral · Modelo Site Express</title>
+<meta name="description" content="Modelo de site da Site Express para oficina mecânica e auto center. Empresa fictícia.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#101418">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Torque Auto Center Mecânica geral">
+<meta property="og:description" content="Modelo de site da Site Express para oficina mecânica e auto center. Empresa fictícia.">
+<meta property="og:site_name" content="Torque Auto Center">
+<meta property="og:url" content="https://vinriibeiro.github.io/modelos/modelos/torque-auto-center/">
+<meta property="og:image" content="https://vinriibeiro.github.io/modelos/modelos/torque-auto-center/arte.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Sora";src:url("fonts/sora-latin-wght-normal.woff2") format("woff2");font-weight:100 800;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --bg:#101418;--bg-2:#181C20;--card:#212428;--line:rgba(238,239,239,0.13);
+  --text:#EEEFEF;--muted:#A7A9AA;--d:#F2B01E;--d-txt:#F4BE47;--d-on:#111111;--d-hover:#F4BC40;--glow:rgba(242,176,30,0.18);
+  --display:"Sora",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gutter:clamp(16px,4vw,40px);--radius:10px;
+  --caixa:uppercase;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+svg,img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--d-txt);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--d);color:var(--d-on);padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
+
+.demo{background:var(--text);color:var(--bg);font-size:13px;line-height:1.4;text-align:center;padding:8px var(--gutter)}
+.demo b{font-weight:700;letter-spacing:.04em}
+.demo span{opacity:.75}
+@media (max-width:620px){.demo span{display:none}}
+
+.header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand svg,.brand img{width:40px;height:40px;flex:none;border-radius:50%;object-fit:cover}
+.brand b{display:block;font:700 17px/1.1 var(--display);letter-spacing:.02em;text-transform:var(--caixa);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.brand small{display:block;font:500 11px/1.3 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--d-txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:26px;font-size:14px;font-weight:500}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+@media (max-width:900px){.nav{display:none}}
+@media (max-width:520px){.brand b{font-size:15px}.brand small{letter-spacing:.12em}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:min(var(--radius),999px);font:600 15px/1.2 var(--body);text-decoration:none;letter-spacing:.01em;transition:background .2s,transform .2s,border-color .2s;text-align:center;cursor:pointer}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-d{background:var(--d);color:var(--d-on);border:0}
+.btn-d:hover{background:var(--d-hover);transform:translateY(-1px)}
+.btn-line{border:1px solid color-mix(in srgb,var(--text) 30%,transparent);color:var(--text);background:transparent}
+.btn-line:hover{border-color:var(--d)}
+.header .btn{min-height:42px;padding:0 16px;font-size:14px;flex:none}
+@media (max-width:420px){.header .btn span{display:none}.header .btn{padding:0 12px}}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(50% 60% at 85% 30%,var(--glow),transparent 70%),var(--bg)}
+.hero .wrap{display:grid;gap:40px;align-items:center;padding-top:clamp(40px,7vw,96px);padding-bottom:clamp(48px,7vw,96px)}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1.1fr .9fr}}
+.kicker{display:inline-flex;align-items:center;gap:12px;font:600 12px/1.2 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--d-txt);margin-bottom:20px}
+.kicker::before{content:"";width:32px;height:2px;background:var(--d);flex:none}
+@media (max-width:520px){.kicker{letter-spacing:.14em}}
+h1{font:700 clamp(36px,6.2vw,66px)/1.04 var(--display);letter-spacing:-.03em;text-transform:var(--caixa);text-wrap:balance}
+h1 em,h2 em{font-style:normal;color:var(--d-txt)}
+.lead{margin-top:20px;font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:50ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+@media (max-width:520px){.ctas .btn{width:100%}}
+.chips{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:28px;font-size:14px;color:var(--muted)}
+.chips li{display:flex;align-items:center;gap:8px}
+.chips li::before{content:"";width:6px;height:6px;background:var(--d);transform:rotate(45deg)}
+.hero-art{max-width:440px;width:100%;margin:0 auto}
+.hero-foto{border-radius:220px 220px var(--radius) var(--radius);overflow:hidden;border:2px solid var(--d);aspect-ratio:400/460}
+.hero-foto img{width:100%;height:100%;object-fit:cover}
+
+section{padding:clamp(56px,8vw,104px) 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 32px;margin-bottom:36px}
+h2{font:700 clamp(28px,4vw,44px)/1.08 var(--display);letter-spacing:-.02em;text-transform:var(--caixa);text-wrap:balance}
+.head p{color:var(--muted);max-width:46ch}
+.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+.difs{display:grid;gap:14px}
+@media (min-width:760px){.difs{grid-template-columns:repeat(3,1fr)}}
+.difs li{display:flex;gap:16px;align-items:flex-start;padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+.difs svg{width:34px;height:34px;flex:none;color:var(--d-txt)}
+.difs h3{font:600 17px/1.3 var(--display);margin-bottom:4px}
+.difs p{color:var(--muted);font-size:15px}
+.difs-sec{padding:clamp(32px,5vw,56px) 0 0}
+
+.services{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+@media (min-width:700px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.services{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--card);padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.svc svg{width:36px;height:36px;color:var(--d-txt)}
+.svc .cat{font:600 11px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.svc h3{font:600 19px/1.25 var(--display)}
+.svc p{color:var(--muted);font-size:15px;flex:1}
+.svc .cat{flex:0}
+.svc .price{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}
+.svc .price strong{font:700 20px/1 var(--display);color:var(--text)}
+.svc .price strong small{font:500 12px/1 var(--body);color:var(--muted);margin-right:4px;text-transform:uppercase;letter-spacing:.06em}
+.svc a{font-weight:600;font-size:14px;color:var(--d-txt);text-decoration:none}
+.svc a:hover{text-decoration:underline}
+.fine{margin-top:16px;font-size:13px;color:var(--muted)}
+
+.gallery{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+.gallery figure{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.gallery svg,.gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.gallery figcaption{padding:12px 14px;font-size:14px;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.gallery figcaption span{color:var(--muted);font-weight:400}
+@media (max-width:520px){.gallery figcaption{flex-direction:column;gap:0}}
+
+.steps{display:grid;gap:16px;counter-reset:s}
+@media (min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;padding:26px 24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+.steps li::before{content:"0" counter(s);display:block;font:700 34px/1 var(--display);color:var(--d-txt);margin-bottom:14px}
+.steps h3{font:600 18px/1.3 var(--display);margin-bottom:6px}
+.steps p{color:var(--muted);font-size:15px}
+
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 32px 18px 0;font:600 16px/1.4 var(--display);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:14px;font:400 24px/1 var(--body);color:var(--d-txt)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{color:var(--muted);padding-bottom:18px;font-size:15px}
+
+.visit{display:grid;gap:20px}
+@media (min-width:900px){.visit{grid-template-columns:1fr 1.2fr}}
+.box{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:28px 26px}
+.box h3{font:600 20px/1.2 var(--display);margin-bottom:18px}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.hours div:last-child{border-bottom:0}
+.hours dt{color:var(--muted)}
+.hours dd{font-weight:600;text-align:right}
+.address{display:flex;flex-direction:column;gap:18px}
+.address p{color:var(--muted)}
+.address strong{color:var(--text);font-weight:600}
+.map{border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.map svg{width:100%;height:auto}
+
+.final{text-align:center;background:radial-gradient(60% 80% at 50% 0%,var(--glow),transparent 70%),var(--bg)}
+.final h2{max-width:20ch;margin:0 auto}
+.final p{color:var(--muted);margin:16px auto 0;max-width:46ch}
+.final .ctas{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:32px 0 40px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer a{color:var(--d-txt)}
+.social{display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.social svg{width:16px;height:16px}
+
+.fab{display:none}
+@media (max-width:760px){
+  .fab{display:flex;position:fixed;z-index:40;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));box-shadow:0 14px 34px -10px rgba(0,0,0,.6)}
+  body{padding-bottom:84px}
+}
+
+dialog{max-width:min(440px,calc(100% - 32px));border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);color:var(--text);padding:28px 26px}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog h2{font-size:22px;text-transform:none;letter-spacing:-.01em;margin-bottom:10px}
+dialog p{color:var(--muted);margin-bottom:20px}
+dialog .ctas{margin-top:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="demo" role="note"><b>Modelo demonstrativo</b> <span>· Torque Auto Center é uma empresa fictícia. Textos, preços e imagens são de exemplo.</span></div>
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Torque Auto Center, início">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#F2B01E" stroke-width="2"/><text x="20" y="25" text-anchor="middle" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="#EEEFEF" letter-spacing=".5">TA</text></svg>
+      <span><b>Torque Auto Center</b><small>Mecânica geral</small></span>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Na oficina</a>
+      <a href="#como">Como funciona</a>
+      <a href="#visite">Horários e endereço</a>
+    </nav>
+    <a class="btn btn-d" href="#aviso-demonstracao" data-demo-notice><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg><span>Orçamento</span></a>
+  </div>
+</header>
+
+<main id="conteudo">
+  <div class="hero" id="topo">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Mecânica automotiva em Campinas (SP)</p>
+        <h1>Seu carro em dia, com <em>orçamento antes</em> de mexer.</h1>
+        <p class="lead">Revisão, freios, suspensão, injeção e ar-condicionado. Você aprova o orçamento antes do serviço e acompanha tudo pelo WhatsApp.</p>
+        <div class="ctas">
+          <a class="btn btn-d" href="#aviso-demonstracao" data-demo-notice><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg><span>Pedir orçamento no WhatsApp</span></a>
+          <a class="btn btn-line" href="#servicos">Ver serviços</a>
+        </div>
+        <ul class="chips"><li>Orçamento sem compromisso</li><li>Peças com nota fiscal</li><li>Pix ou cartão</li></ul>
+      </div>
+      <div class="hero-art"><svg viewBox="0 0 400 460" role="img" aria-label="Ilustração: engrenagem, chave de boca e pneu com roda">
+  <defs>
+    <radialGradient id="h-brilho" cx=".55" cy=".42" r=".6"><stop offset="0" stop-color="#F2B01E" stop-opacity=".35"/><stop offset="1" stop-color="#F2B01E" stop-opacity="0"/></radialGradient>
+    <clipPath id="h-arco"><path d="M30 450V200a170 170 0 0 1 340 0v250z"/></clipPath>
+    <linearGradient id="h-metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8D483"/><stop offset=".5" stop-color="#F2B01E"/><stop offset="1" stop-color="#9D7214"/></linearGradient>
+  </defs>
+  <path d="M30 450V200a170 170 0 0 1 340 0v250z" fill="#1C2024"/>
+  <g clip-path="url(#h-arco)"><circle cx="220" cy="220" r="230" fill="url(#h-brilho)"/>
+    <path d="M344.2 171.3L362.2 174.2L362.2 205.8L344.2 208.7L343.0 214.0L357.9 224.4L344.2 252.9L326.7 247.7L323.3 251.9L332.3 267.8L307.6 287.6L294.1 275.3L289.2 277.6L290.4 295.8L259.5 302.9L252.7 286.0L247.3 286.0L240.5 302.9L209.6 295.8L210.8 277.6L205.9 275.3L192.4 287.6L167.7 267.8L176.7 251.9L173.3 247.7L155.8 252.9L142.1 224.4L157.0 214.0L155.8 208.7L137.8 205.8L137.8 174.2L155.8 171.3L157.0 166.0L142.1 155.6L155.8 127.1L173.3 132.3L176.7 128.1L167.7 112.2L192.4 92.4L205.9 104.7L210.8 102.4L209.6 84.2L240.5 77.1L247.3 94.0L252.7 94.0L259.5 77.1L290.4 84.2L289.2 102.4L294.1 104.7L307.6 92.4L332.3 112.2L323.3 128.1L326.7 132.3L344.2 127.1L357.9 155.6L343.0 166.0Z" fill="#2D3034"/><circle cx="250" cy="190" r="43.2" fill="#1C2024"/>
+    <path d="M164.3 137.5L173.2 139.4L173.2 160.6L164.3 162.5L163.2 165.9L169.3 172.7L156.8 189.9L148.5 186.1L145.6 188.2L146.5 197.4L126.4 203.9L121.8 196.0L118.2 196.0L113.6 203.9L93.5 197.4L94.4 188.2L91.5 186.1L83.2 189.9L70.7 172.7L76.8 165.9L75.7 162.5L66.8 160.6L66.8 139.4L75.7 137.5L76.8 134.1L70.7 127.3L83.2 110.1L91.5 113.9L94.4 111.8L93.5 102.6L113.6 96.1L118.2 104.0L121.8 104.0L126.4 96.1L146.5 102.6L145.6 111.8L148.5 113.9L156.8 110.1L169.3 127.3L163.2 134.1Z" fill="#F2B01E"/><circle cx="120" cy="150" r="20.7" fill="#1C2024"/>
+    <circle cx="220" cy="360" r="110" fill="#1E2226"/><path d="M314.6 360.0L330.0 360.0" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M307.4 396.2L321.6 402.1" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M286.9 426.9L297.8 437.8" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M256.2 447.4L262.1 461.6" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M220.0 454.6L220.0 470.0" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M183.8 447.4L177.9 461.6" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M153.1 426.9L142.2 437.8" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M132.6 396.2L118.4 402.1" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M125.4 360.0L110.0 360.0" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M132.6 323.8L118.4 317.9" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M153.1 293.1L142.2 282.2" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M183.8 272.6L177.9 258.4" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M220.0 265.4L220.0 250.0" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M256.2 272.6L262.1 258.4" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M286.9 293.1L297.8 282.2" stroke="#3A4148" stroke-width="12.222222222222221"/><path d="M307.4 323.8L321.6 317.9" stroke="#3A4148" stroke-width="12.222222222222221"/><circle cx="220" cy="360" r="68.2" fill="#8B96A1"/><circle cx="220" cy="360" r="55" fill="#C9D1D9"/><circle cx="220.0" cy="327.0" r="6.6" fill="#8B96A1"/><circle cx="251.4" cy="349.8" r="6.6" fill="#8B96A1"/><circle cx="239.4" cy="386.7" r="6.6" fill="#8B96A1"/><circle cx="200.6" cy="386.7" r="6.6" fill="#8B96A1"/><circle cx="188.6" cy="349.8" r="6.6" fill="#8B96A1"/><circle cx="220" cy="360" r="13.2" fill="#F2B01E"/>
+    <g transform="translate(170 260) rotate(-38) scale(0.95)"><path d="M-130 -11h220v22h-220z" fill="#C9D1D9"/><path d="M90 -34a34 34 0 1 1 0 68l0-22 20 0 0-24-20 0z" fill="#C9D1D9"/><path d="M-130 -30a30 30 0 1 0 0 60a30 30 0 0 0 0-60zm0 14a16 16 0 1 1 0 32a16 16 0 0 1 0-32z" fill="#C9D1D9"/></g>
+    <rect x="30" y="440" width="340" height="30" fill="#F2B01E"/>
+    <path d="M30 440h340" stroke="#1E2226" stroke-width="10" stroke-dasharray="26 26"/></g>
+  <path d="M30 450V200a170 170 0 0 1 340 0v250z" fill="none" stroke="#F2B01E" stroke-width="2"/>
+  <path d="M46 450V202a154 154 0 0 1 308 0v248" fill="none" stroke="#F2B01E" stroke-width="1" opacity=".4"/>
+</svg></div>
+    </div>
+  </div>
+
+  <section class="difs-sec" aria-label="Diferenciais">
+    <div class="wrap"><ul class="difs"><li><svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h26v16H15l-7 6v-6H5z"/><path d="M11 14h14M11 19h9"/></svg><div><h3>Você aprova antes</h3><p>Nenhum serviço começa sem o seu ok no orçamento.</p></div></li><li><svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3 6 8v9c0 8 5 13 12 16 7-3 12-8 12-16V8z"/><path d="m12 18 4 4 8-8"/></svg><div><h3>Garantia do serviço</h3><p>Serviços e peças com garantia, informada no orçamento.</p></div></li><li><svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="18" height="28" rx="3"/><path d="M10 9h10v8H10z"/><path d="M11 22h2M17 22h2M11 26h2M17 26h2M24 18h4l3 3"/><path d="M12 15l2-3 2 2 2-3"/></svg><div><h3>Diagnóstico com scanner</h3><p>Leitura eletrônica para achar o problema sem chute.</p></div></li></ul></div>
+  </section>
+
+  <section id="servicos" aria-labelledby="t-servicos">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="kicker">Serviços</p>
+          <h2 id="t-servicos">O que fazemos pelo seu carro</h2>
+        </div>
+        <p>Valores de referência para carros de passeio. O valor final depende do modelo e das peças.</p>
+      </div>
+      <ul class="services">
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14h16l6-4 4 2-6 6v12H6z"/><path d="M10 14v-4h6v4"/><path d="M31 21s-2 3-2 4.5a2 2 0 0 0 4 0c0-1.5-2-4.5-2-4.5z"/></svg>
+          
+          <h3>Troca de óleo e filtros</h3>
+          <p>Óleo na especificação do fabricante, filtro de óleo e verificação geral.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 180</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Orçar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4a8 8 0 0 0-7.4 11L4 25.6V32h6.4L21 21.4A8 8 0 0 0 32 14l-5 5-5-1-1-5 5-5a8 8 0 0 0-4-4z"/></svg>
+          
+          <h3>Revisão completa</h3>
+          <p>Checagem de itens de segurança, fluidos, correias e lista do que precisa trocar.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 250</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Orçar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="13"/><circle cx="18" cy="18" r="4"/><path d="M24 7a14 14 0 0 1 5 6l-5 3-3-5z"/></svg>
+          
+          <h3>Freios</h3>
+          <p>Pastilhas, discos e fluido de freio, com teste ao final.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 220</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Orçar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="14"/><circle cx="18" cy="18" r="7"/><path d="M18 4v7M18 25v7M4 18h7M25 18h7M8 8l5 5M23 23l5 5M28 8l-5 5M13 23l-5 5"/></svg>
+          
+          <h3>Suspensão e alinhamento</h3>
+          <p>Amortecedores, buchas e alinhamento para o carro andar reto e sem barulho.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 120</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Orçar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="18" height="28" rx="3"/><path d="M10 9h10v8H10z"/><path d="M11 22h2M17 22h2M11 26h2M17 26h2M24 18h4l3 3"/><path d="M12 15l2-3 2 2 2-3"/></svg>
+          
+          <h3>Injeção eletrônica</h3>
+          <p>Diagnóstico com scanner, limpeza de bicos e correção de falhas.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 150</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Orçar este serviço →</a>
+        </li>
+        <li class="svc">
+          <svg viewBox="0 0 36 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3v30M5 10.5l26 15M5 25.5l26-15"/><path d="M14 5l4 3 4-3M14 31l4-3 4 3M4 15l5-1 1-4M32 21l-5 1-1 4M4 21l5 1 1 4M32 15l-5-1-1-4"/></svg>
+          
+          <h3>Ar-condicionado</h3>
+          <p>Higienização, carga de gás e verificação de vazamentos.</p>
+          <div class="price"><span>Valor</span><strong><small>a partir de</small>R$ 160</strong></div>
+          <a href="#aviso-demonstracao" data-demo-notice>Orçar este serviço →</a>
+        </li>
+      </ul>
+      <p class="fine">Valores de exemplo. No site final, entram os serviços e preços do seu negócio.</p>
+    </div>
+  </section>
+
+  <section id="galeria" class="alt" aria-labelledby="t-galeria">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="kicker">Na oficina</p>
+          <h2 id="t-galeria">Serviço feito com cuidado</h2>
+        </div>
+        <p>No site real, aqui entram as fotos do seu negócio. Neste modelo, usamos ilustrações.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de galão de óleo sendo despejado"><rect width="300" height="225" fill="#1C2024"/><circle cx="150" cy="105" r="88" fill="#F2B01E" opacity="0.12"/><g transform="translate(120 70)"><path d="M0 40h90l20-30 18 8-18 32v80H0z" fill="#F2B01E"/><rect x="16" y="20" width="34" height="22" rx="4" fill="#9D7214"/><rect x="14" y="70" width="64" height="44" rx="6" fill="#101418" opacity=".9"/><path d="M26 92h40M26 102h28" stroke="#F2B01E" stroke-width="5" stroke-linecap="round"/></g><path d="M246 84c4 20-6 36-6 60" stroke="#C9921E" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M240 160c-8 12-12 18-12 24a12 12 0 0 0 24 0c0-6-4-12-12-24z" fill="#C9921E"/></svg>
+          <figcaption>Troca de óleo <span>na especificação do fabricante</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de disco e pinça de freio"><rect width="300" height="225" fill="#1C2024"/><circle cx="150" cy="105" r="88" fill="#F2B01E" opacity="0.12"/><circle cx="150" cy="112" r="80" fill="#8B96A1"/><circle cx="150" cy="112" r="72" fill="#C9D1D9"/><circle cx="204.0" cy="112.0" r="4" fill="#8B96A1"/><circle cx="196.8" cy="139.0" r="4" fill="#8B96A1"/><circle cx="177.0" cy="158.8" r="4" fill="#8B96A1"/><circle cx="150.0" cy="166.0" r="4" fill="#8B96A1"/><circle cx="123.0" cy="158.8" r="4" fill="#8B96A1"/><circle cx="103.2" cy="139.0" r="4" fill="#8B96A1"/><circle cx="96.0" cy="112.0" r="4" fill="#8B96A1"/><circle cx="103.2" cy="85.0" r="4" fill="#8B96A1"/><circle cx="123.0" cy="65.2" r="4" fill="#8B96A1"/><circle cx="150.0" cy="58.0" r="4" fill="#8B96A1"/><circle cx="177.0" cy="65.2" r="4" fill="#8B96A1"/><circle cx="196.8" cy="85.0" r="4" fill="#8B96A1"/><circle cx="150" cy="112" r="30" fill="#8B96A1"/><circle cx="150" cy="112" r="10" fill="#1E2226"/><path d="M200 40a84 84 0 0 1 32 46l-30 10a54 54 0 0 0-20-32z" fill="#F2B01E"/><rect x="214" y="52" width="10" height="22" rx="3" fill="#9D7214" transform="rotate(30 219 63)"/></svg>
+          <figcaption>Freios <span>pastilhas e discos</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de pneu com setas de alinhamento"><rect width="300" height="225" fill="#1C2024"/><circle cx="150" cy="105" r="88" fill="#F2B01E" opacity="0.12"/><circle cx="150" cy="112" r="80" fill="#1E2226"/><path d="M218.8 112.0L230.0 112.0" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M213.6 138.3L223.9 142.6" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M198.6 160.6L206.6 168.6" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M176.3 175.6L180.6 185.9" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M150.0 180.8L150.0 192.0" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M123.7 175.6L119.4 185.9" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M101.4 160.6L93.4 168.6" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M86.4 138.3L76.1 142.6" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M81.2 112.0L70.0 112.0" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M86.4 85.7L76.1 81.4" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M101.4 63.4L93.4 55.4" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M123.7 48.4L119.4 38.1" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M150.0 43.2L150.0 32.0" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M176.3 48.4L180.6 38.1" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M198.6 63.4L206.6 55.4" stroke="#3A4148" stroke-width="8.88888888888889"/><path d="M213.6 85.7L223.9 81.4" stroke="#3A4148" stroke-width="8.88888888888889"/><circle cx="150" cy="112" r="49.6" fill="#8B96A1"/><circle cx="150" cy="112" r="40" fill="#C9D1D9"/><circle cx="150.0" cy="88.0" r="4.8" fill="#8B96A1"/><circle cx="172.8" cy="104.6" r="4.8" fill="#8B96A1"/><circle cx="164.1" cy="131.4" r="4.8" fill="#8B96A1"/><circle cx="135.9" cy="131.4" r="4.8" fill="#8B96A1"/><circle cx="127.2" cy="104.6" r="4.8" fill="#8B96A1"/><circle cx="150" cy="112" r="9.6" fill="#F2B01E"/><path d="M40 30v164M260 30v164" stroke="#F2B01E" stroke-width="4" stroke-dasharray="8 8"/><path d="M40 112h26M66 112l-10-8M66 112l-10 8M260 112h-26M234 112l10-8M234 112l10 8" stroke="#F2B01E" stroke-width="4" stroke-linecap="round"/></svg>
+          <figcaption>Alinhamento <span>e balanceamento</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de scanner de diagnóstico ligado ao carro"><rect width="300" height="225" fill="#1C2024"/><circle cx="150" cy="105" r="88" fill="#F2B01E" opacity="0.12"/><rect x="96" y="30" width="108" height="168" rx="14" fill="#1E2226"/><rect x="108" y="44" width="84" height="70" rx="6" fill="#61460C"/><path d="M114 100l14-20 14 12 16-28 14 16 14-10" stroke="#F2B01E" stroke-width="3" fill="none" stroke-linejoin="round"/><circle cx="150" cy="140" r="14" fill="none" stroke="#C9D1D9" stroke-width="3"/><rect x="114" y="130" width="20" height="20" rx="4" fill="#8B96A1"/><rect x="166" y="130" width="20" height="20" rx="4" fill="#8B96A1"/><rect x="116" y="164" width="68" height="12" rx="6" fill="#F2B01E"/><path d="M204 150c40 0 40 40 70 40" stroke="#C9D1D9" stroke-width="5" fill="none"/></svg>
+          <figcaption>Diagnóstico <span>scanner automotivo</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração de saída de ar-condicionado com floco de neve"><rect width="300" height="225" fill="#1C2024"/><circle cx="150" cy="105" r="88" fill="#F2B01E" opacity="0.12"/><rect x="60" y="66" width="180" height="92" rx="18" fill="#8B96A1"/><rect x="72" y="78" width="156" height="68" rx="10" fill="#1E2226"/><rect x="80" y="88" width="140" height="6" rx="3" fill="#C9D1D9" opacity=".8"/><rect x="80" y="104" width="140" height="6" rx="3" fill="#C9D1D9" opacity=".8"/><rect x="80" y="120" width="140" height="6" rx="3" fill="#C9D1D9" opacity=".8"/><rect x="80" y="136" width="140" height="6" rx="3" fill="#C9D1D9" opacity=".8"/><g transform="translate(232 60)" stroke="#F2B01E" stroke-width="4" stroke-linecap="round"><path d="M0-30v60M-26-15l52 30M-26 15l52-30"/><path d="M-8-24l8 6 8-6M-8 24l8-6 8 6"/></g><path d="M86 176c20 10 40-10 64 0s44-10 64 0" stroke="#EEEFEF" stroke-width="3" fill="none" opacity=".4" stroke-linecap="round"/></svg>
+          <figcaption>Ar-condicionado <span>higienização e carga</span></figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 300 225" role="img" aria-label="Ilustração do ambiente: carro no elevador da oficina"><rect width="300" height="225" fill="#1C2024"/><circle cx="150" cy="105" r="88" fill="#F2B01E" opacity="0.12"/><rect x="0" y="196" width="300" height="29" fill="#262A2E"/><rect x="34" y="70" width="14" height="128" fill="#F2B01E"/><rect x="252" y="70" width="14" height="128" fill="#F2B01E"/><rect x="40" y="126" width="220" height="10" fill="#8B96A1"/><path d="M62 118v-18l22-32h120l28 32v18z" fill="#C9D1D9"/><path d="M92 74h48v26H76zM150 74h50l22 26h-72z" fill="#404346"/><circle cx="98" cy="118" r="16" fill="#1E2226"/><circle cx="210" cy="118" r="16" fill="#1E2226"/><circle cx="98" cy="118" r="7" fill="#8B96A1"/><circle cx="210" cy="118" r="7" fill="#8B96A1"/><g transform="translate(150 214) rotate(0) scale(0.45)"><path d="M-130 -11h220v22h-220z" fill="#C9D1D9"/><path d="M90 -34a34 34 0 1 1 0 68l0-22 20 0 0-24-20 0z" fill="#C9D1D9"/><path d="M-130 -30a30 30 0 1 0 0 60a30 30 0 0 0 0-60zm0 14a16 16 0 1 1 0 32a16 16 0 0 1 0-32z" fill="#C9D1D9"/></g></svg>
+          <figcaption>Nossa oficina <span>elevador e equipamentos</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="como" aria-labelledby="t-como">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="kicker">Como funciona</p>
+          <h2 id="t-como">Do orçamento à entrega</h2>
+        </div>
+      </div>
+      <ol class="steps"><li><h3>Conte o problema</h3><p>Mande o modelo do carro e o que está acontecendo. A mensagem já vai pronta pelo botão.</p></li><li><h3>Aprove o orçamento</h3><p>Avaliamos e enviamos o orçamento detalhado. Só começamos com o seu ok.</p></li><li><h3>Retire o carro pronto</h3><p>Avisamos pelo WhatsApp quando terminar, com as peças trocadas para você ver.</p></li></ol>
+      <div class="ctas"><a class="btn btn-d" href="#aviso-demonstracao" data-demo-notice><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg><span>Pedir meu orçamento</span></a></div>
+    </div>
+  </section>
+
+  <section id="duvidas" class="alt" aria-labelledby="t-duvidas">
+    <div class="wrap">
+      <div class="head"><div><p class="kicker">Dúvidas</p><h2 id="t-duvidas">Perguntas frequentes</h2></div></div>
+      <div class="faq"><details><summary>O orçamento é cobrado?</summary><p>Não. O orçamento é sem compromisso. Diagnósticos com scanner podem ter custo, sempre avisado antes.</p></details><details><summary>Posso levar a minha peça?</summary><p>Pode, conversamos caso a caso. A garantia, nesse caso, cobre só a mão de obra.</p></details><details><summary>Quanto tempo o carro fica na oficina?</summary><p>Serviços simples saem no mesmo dia. Para os maiores, o prazo vai junto com o orçamento.</p></details></div>
+    </div>
+  </section>
+
+  <section id="visite" class="" aria-labelledby="t-visite">
+    <div class="wrap">
+      <div class="head"><div><p class="kicker">Visite</p><h2 id="t-visite">Horários e endereço</h2></div></div>
+      <div class="visit">
+        <div class="box">
+          <h3>Horário de atendimento</h3>
+          <dl class="hours"><div><dt>Segunda a sexta</dt><dd>8h às 18h</dd></div><div><dt>Sábado</dt><dd>8h às 12h</dd></div><div><dt>Domingo</dt><dd>Fechado</dd></div></dl>
+        </div>
+        <div class="box address">
+          <h3>Onde estamos</h3>
+          <p><strong>Rua Sete de Setembro, 880</strong><br>Vila Nova<br>Campinas (SP)</p>
+          <div class="map"><svg viewBox="0 0 480 200" role="img" aria-label="Mapa ilustrativo da localização"><rect width="480" height="200" fill="#1C2024"/><path d="M0 64h480M0 146h480M120 0v200M300 0v200M400 0l-60 200" stroke="#313538" stroke-width="14"/><path d="M0 64h480M0 146h480M120 0v200M300 0v200" stroke="#EEEFEF" stroke-width="1" stroke-dasharray="6 8" opacity=".25"/><rect x="140" y="80" width="60" height="50" rx="4" fill="#313538" opacity=".7"/><rect x="320" y="10" width="50" height="40" rx="4" fill="#313538" opacity=".7"/><g transform="translate(210 110)"><ellipse cx="0" cy="4" rx="14" ry="5" fill="#000" opacity=".25"/><path d="M0 0c-14-16-22-26-22-38a22 22 0 0 1 44 0c0 12-8 22-22 38z" fill="#F2B01E"/><circle cx="0" cy="-38" r="8" fill="#101418"/></g></svg></div>
+          <a class="btn btn-line" href="#aviso-demonstracao" data-demo-notice>Pedir a localização no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final alt" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">Barulho estranho? <em>Chame antes</em> de piorar.</h2>
+      <p>Mande o modelo do carro e o que está acontecendo. Respondemos com o orçamento.</p>
+      <div class="ctas"><a class="btn btn-d" href="#aviso-demonstracao" data-demo-notice><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg><span>Pedir orçamento no WhatsApp</span></a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Torque Auto Center Mecânica geral · Empresa fictícia · Modelo Site Express</p>
+    <a class="social" href="https://instagram.com/torqueautocenter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@torqueautocenter</a>
+    <p>Gostou? <a href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Torque%20Auto%20Center%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um site assim</a></p>
+  </div>
+</footer>
+
+<a class="btn btn-d fab" href="#aviso-demonstracao" data-demo-notice><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.2l1.3-4.4A8.4 8.4 0 1 1 20 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.3.6-.1.9-.9 1.7-1.9 1.7-2.8 0-6.4-3.3-6.4-6.1 0-.6.2-1.1.5-1.5z" fill="currentColor"/></svg><span>Pedir orçamento no WhatsApp</span></a>
+
+<dialog id="aviso-demonstracao" aria-labelledby="aviso-titulo">
+  <h2 id="aviso-titulo">Este é um modelo da Site Express</h2>
+  <p>No site do seu negócio, este botão abre o seu WhatsApp com uma mensagem pronta para o cliente. Quer um site assim, com a sua marca? Fica pronto em até 24h.</p>
+  <div class="ctas">
+    <a class="btn btn-d" href="https://wa.me/5561996113299?text=Ol%C3%A1!%20Vi%20o%20modelo%20Torque%20Auto%20Center%20e%20quero%20um%20site%20assim%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero um site assim</a>
+    <button type="button" class="btn btn-line" data-close>Continuar vendo</button>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var d = document.getElementById("aviso-demonstracao"), last = null;
+  if (!d || typeof d.showModal !== "function") return;
+  var links = document.querySelectorAll("[data-demo-notice]");
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function (e) { e.preventDefault(); last = this; d.showModal(); });
+  }
+  d.querySelector("[data-close]").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+  d.addEventListener("close", function () { if (last) last.focus(); });
+})();
+</script>
+</body>
+</html>

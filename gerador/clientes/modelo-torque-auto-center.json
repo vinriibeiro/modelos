@@ -1,0 +1,15 @@
+{
+  "segmento": "oficina",
+  "modo": "modelo",
+  "artigo": "do",
+  "slug": "torque-auto-center",
+  "nome": "Torque Auto Center",
+  "complemento": "Mecânica geral",
+  "instagram": "@torqueautocenter",
+  "endereco": {
+    "rua": "Rua Sete de Setembro, 880",
+    "bairro": "Vila Nova",
+    "cidade": "Campinas (SP)"
+  },
+  "urlPublica": "https://vinriibeiro.github.io/modelos/modelos/torque-auto-center/"
+}

@@ -1,0 +1,14 @@
+{
+  "segmento": "clinica-estetica",
+  "modo": "modelo",
+  "slug": "lis-estetica-beleza",
+  "nome": "Lis Estética",
+  "complemento": "& Beleza",
+  "instagram": "@lisestetica",
+  "endereco": {
+    "rua": "Rua das Acácias, 214",
+    "bairro": "Jardim América",
+    "cidade": "Goiânia (GO)"
+  },
+  "urlPublica": "https://vinriibeiro.github.io/modelos/modelos/lis-estetica-beleza/"
+}
