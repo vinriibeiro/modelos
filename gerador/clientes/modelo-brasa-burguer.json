@@ -1,0 +1,15 @@
+{
+  "segmento": "restaurante",
+  "modo": "modelo",
+  "artigo": "do",
+  "slug": "brasa-burguer-lanchonete",
+  "nome": "Brasa Burguer",
+  "complemento": "Lanches & Pratos",
+  "instagram": "@brasaburguer",
+  "endereco": {
+    "rua": "Avenida Brasil, 1520",
+    "bairro": "Centro",
+    "cidade": "Recife (PE)"
+  },
+  "urlPublica": "https://vinriibeiro.github.io/modelos/modelos/brasa-burguer-lanchonete/"
+}

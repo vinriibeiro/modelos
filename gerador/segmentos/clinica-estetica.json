@@ -1,0 +1,174 @@
+{
+  "segmento": "clinica-estetica",
+  "segmentoNome": "clínica de estética e salão de beleza",
+  "cores": {
+    "fundo": "#F7F1EC",
+    "destaque": "#A8576B"
+  },
+  "estilo": {
+    "maiusculas": false,
+    "raio": 18
+  },
+  "rotulos": {
+    "cta": "Agendar pelo WhatsApp",
+    "ctaCurto": "Agendar",
+    "ctaPassos": "Agendar minha avaliação",
+    "ctaServico": "Agendar este procedimento",
+    "verServicos": "Ver procedimentos e valores",
+    "secaoServicos": "Procedimentos",
+    "secaoGaleria": "Cuidados",
+    "secaoPassos": "Como agendar",
+    "valor": "Valor",
+    "prefixoPreco": "a partir de",
+    "itens": "os procedimentos"
+  },
+  "mensagens": {
+    "geral": "Olá! Vi o site {da} {nome} e quero agendar um horário.",
+    "servico": "Olá! Vi o site {da} {nome} e quero agendar: {servico}.",
+    "localizacao": "Olá! Pode me mandar a localização {da} {nome}?"
+  },
+  "textos": {
+    "kicker": "Estética e beleza em {cidade}",
+    "titulo": "Cuidado de verdade para a sua *pele* e o seu bem-estar.",
+    "subtitulo": "Procedimentos faciais, corporais e de beleza com avaliação individual. Escolha o cuidado, chame no WhatsApp e reserve o seu horário.",
+    "chips": [
+      "Avaliação antes do procedimento",
+      "Produtos profissionais",
+      "Pix ou cartão"
+    ],
+    "tituloServicos": "Escolha o seu cuidado",
+    "notaServicos": "Valores de referência. O plano final é definido na avaliação, conforme a sua pele e o seu objetivo.",
+    "tituloGaleria": "Um pouco do nosso cuidado",
+    "tituloPassos": "Agendar é simples",
+    "tituloFinal": "Reserve um tempo para *você*.",
+    "textoFinal": "Chame no WhatsApp, tire suas dúvidas e escolha o melhor horário."
+  },
+  "diferenciais": [
+    {
+      "icone": "check",
+      "titulo": "Avaliação individual",
+      "texto": "Antes de qualquer procedimento, entendemos a sua pele e o que você quer alcançar."
+    },
+    {
+      "icone": "escudo",
+      "titulo": "Higiene e segurança",
+      "texto": "Material descartável ou esterilizado e produtos de uso profissional."
+    },
+    {
+      "icone": "coracao",
+      "titulo": "Atendimento sem pressa",
+      "texto": "Horário marcado para você ser atendida com calma e atenção."
+    }
+  ],
+  "servicos": [
+    {
+      "icone": "rosto",
+      "nome": "Limpeza de pele",
+      "descricao": "Higienização, extração e máscara calmante para uma pele mais limpa e uniforme. Cerca de 1h20.",
+      "preco": "R$ 150"
+    },
+    {
+      "icone": "sobrancelha",
+      "nome": "Design de sobrancelhas",
+      "descricao": "Desenho de acordo com o formato do rosto, com pinça ou linha. Cerca de 30 minutos.",
+      "preco": "R$ 45"
+    },
+    {
+      "icone": "massagem",
+      "nome": "Drenagem linfática",
+      "descricao": "Massagem com movimentos suaves que ajudam a reduzir o inchaço. Cerca de 1 hora.",
+      "preco": "R$ 120"
+    },
+    {
+      "icone": "pedras",
+      "nome": "Massagem relaxante",
+      "descricao": "Para aliviar a tensão do dia a dia, com óleos e pedras quentes. Cerca de 1 hora.",
+      "preco": "R$ 130"
+    },
+    {
+      "icone": "unha",
+      "nome": "Manicure e pedicure",
+      "descricao": "Cutilagem, esmaltação tradicional ou em gel. Cerca de 1h30 as duas.",
+      "preco": "R$ 70"
+    },
+    {
+      "icone": "cera",
+      "nome": "Depilação com cera",
+      "descricao": "Cera de qualidade, com cuidado para a pele sensível. Valor por região.",
+      "preco": "R$ 30"
+    }
+  ],
+  "galeria": [
+    {
+      "titulo": "Limpeza de pele",
+      "detalhe": "pele limpa e iluminada"
+    },
+    {
+      "titulo": "Sobrancelhas",
+      "detalhe": "desenho sob medida"
+    },
+    {
+      "titulo": "Massagem",
+      "detalhe": "pedras quentes"
+    },
+    {
+      "titulo": "Unhas",
+      "detalhe": "tradicional ou gel"
+    },
+    {
+      "titulo": "Skincare",
+      "detalhe": "produtos profissionais"
+    },
+    {
+      "titulo": "Nosso espaço",
+      "detalhe": "ambiente tranquilo"
+    }
+  ],
+  "passos": [
+    {
+      "titulo": "Escolha o cuidado",
+      "texto": "Veja os procedimentos acima. Se tiver dúvida, a gente indica o melhor para você."
+    },
+    {
+      "titulo": "Chame no WhatsApp",
+      "texto": "Diga o procedimento e o dia que prefere. A mensagem já vai pronta pelo botão."
+    },
+    {
+      "titulo": "Horário confirmado",
+      "texto": "Você recebe a confirmação com as orientações de preparo, se houver."
+    }
+  ],
+  "faq": [
+    {
+      "pergunta": "Preciso fazer avaliação antes?",
+      "resposta": "Para procedimentos faciais e corporais, sim. A avaliação é rápida e ajuda a indicar o tratamento certo para você."
+    },
+    {
+      "pergunta": "Quais formas de pagamento vocês aceitam?",
+      "resposta": "Pix, cartão de débito e crédito. Pacotes podem ser parcelados."
+    },
+    {
+      "pergunta": "E se eu precisar remarcar?",
+      "resposta": "Sem problema. Avise pelo WhatsApp com pelo menos 24 horas de antecedência."
+    }
+  ],
+  "horarios": [
+    [
+      "Segunda a sexta",
+      "9h às 19h"
+    ],
+    [
+      "Sábado",
+      "9h às 15h"
+    ],
+    [
+      "Domingo",
+      "Fechado"
+    ]
+  ],
+  "endereco": {
+    "rua": "Rua do Exemplo, 100",
+    "bairro": "Centro",
+    "cidade": "Sua cidade"
+  }
+}

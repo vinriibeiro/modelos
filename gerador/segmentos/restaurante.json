@@ -1,0 +1,176 @@
+{
+  "segmento": "restaurante",
+  "segmentoNome": "restaurante, lanchonete e delivery",
+  "cores": {
+    "fundo": "#16100C",
+    "destaque": "#E8642C"
+  },
+  "estilo": {
+    "maiusculas": true,
+    "raio": 14
+  },
+  "rotulos": {
+    "cta": "Pedir pelo WhatsApp",
+    "ctaCurto": "Pedir",
+    "ctaPassos": "Fazer meu pedido",
+    "ctaServico": "Pedir este",
+    "verServicos": "Ver o cardápio",
+    "secaoServicos": "Cardápio",
+    "secaoGaleria": "Da cozinha",
+    "secaoPassos": "Como pedir",
+    "valor": "Preço",
+    "prefixoPreco": "",
+    "itens": "os pratos"
+  },
+  "mensagens": {
+    "geral": "Olá! Vi o cardápio {da} {nome} e quero fazer um pedido.",
+    "servico": "Olá! Vi o cardápio {da} {nome} e quero pedir: {servico}.",
+    "localizacao": "Olá! Pode me mandar a localização {da} {nome}?"
+  },
+  "textos": {
+    "kicker": "Lanches e refeições em {cidade}",
+    "titulo": "Comida feita na hora, do jeito que *dá vontade*.",
+    "subtitulo": "Hambúrgueres, pratos do dia e porções preparados na hora. Peça pelo WhatsApp para entrega ou retire no balcão.",
+    "chips": [
+      "Entrega no bairro",
+      "Retirada no balcão",
+      "Pix, cartão ou dinheiro"
+    ],
+    "tituloServicos": "Os mais pedidos da casa",
+    "notaServicos": "Preços de referência. Taxa de entrega conforme o bairro, informada na hora do pedido.",
+    "tituloGaleria": "Feito aqui, todo dia",
+    "tituloPassos": "Pedir leva um minuto",
+    "tituloFinal": "Bateu a fome? *Peça agora.*",
+    "textoFinal": "Mande seu pedido pelo WhatsApp e receba em casa ou retire no balcão."
+  },
+  "diferenciais": [
+    {
+      "icone": "relogio",
+      "titulo": "Feito na hora",
+      "texto": "Nada fica esquentando: o pedido começa a ser preparado quando você pede."
+    },
+    {
+      "icone": "entrega",
+      "titulo": "Entrega no bairro",
+      "texto": "Entregador próprio, com o tempo de entrega informado no pedido."
+    },
+    {
+      "icone": "cartao",
+      "titulo": "Pague como preferir",
+      "texto": "Pix, cartão na entrega ou dinheiro, com troco."
+    }
+  ],
+  "servicos": [
+    {
+      "icone": "lanche",
+      "categoria": "Lanches",
+      "nome": "X-Burger da casa",
+      "descricao": "Pão brioche, blend de 150 g, queijo, alface, tomate e molho da casa.",
+      "preco": "R$ 28"
+    },
+    {
+      "icone": "lanche",
+      "categoria": "Lanches",
+      "nome": "X-Bacon duplo",
+      "descricao": "Dois blends de 120 g, cheddar, bacon crocante e cebola caramelizada.",
+      "preco": "R$ 36"
+    },
+    {
+      "icone": "prato",
+      "categoria": "Pratos",
+      "nome": "Prato executivo",
+      "descricao": "Arroz, feijão, carne do dia, salada e batata frita. Serve bem uma pessoa.",
+      "preco": "R$ 26"
+    },
+    {
+      "icone": "batata",
+      "categoria": "Porções",
+      "nome": "Batata frita com cheddar",
+      "descricao": "Porção para dividir, com cheddar cremoso e bacon. Serve duas pessoas.",
+      "preco": "R$ 32"
+    },
+    {
+      "icone": "copo",
+      "categoria": "Bebidas",
+      "nome": "Suco natural 500 ml",
+      "descricao": "Laranja, limão, maracujá ou abacaxi com hortelã, feito na hora.",
+      "preco": "R$ 10"
+    },
+    {
+      "icone": "sobremesa",
+      "categoria": "Sobremesas",
+      "nome": "Açaí 400 ml",
+      "descricao": "Com dois acompanhamentos à escolha: banana, granola, leite em pó ou paçoca.",
+      "preco": "R$ 18"
+    }
+  ],
+  "galeria": [
+    {
+      "titulo": "Hambúrguer artesanal",
+      "detalhe": "blend da casa"
+    },
+    {
+      "titulo": "Prato executivo",
+      "detalhe": "almoço de segunda a sábado"
+    },
+    {
+      "titulo": "Porções",
+      "detalhe": "para dividir"
+    },
+    {
+      "titulo": "Bebidas",
+      "detalhe": "sucos feitos na hora"
+    },
+    {
+      "titulo": "Sobremesas",
+      "detalhe": "açaí montado na hora"
+    },
+    {
+      "titulo": "Nosso espaço",
+      "detalhe": "balcão e mesas"
+    }
+  ],
+  "passos": [
+    {
+      "titulo": "Escolha no cardápio",
+      "texto": "Veja os pratos acima e decida o que vai pedir."
+    },
+    {
+      "titulo": "Mande no WhatsApp",
+      "texto": "Diga o pedido e o endereço. A mensagem já vai pronta pelo botão."
+    },
+    {
+      "titulo": "Receba ou retire",
+      "texto": "Confirmamos o valor e o tempo de entrega. É só esperar."
+    }
+  ],
+  "faq": [
+    {
+      "pergunta": "Vocês entregam no meu bairro?",
+      "resposta": "Entregamos nos bairros próximos. Mande o endereço no WhatsApp e informamos a taxa e o tempo."
+    },
+    {
+      "pergunta": "Posso tirar algum ingrediente?",
+      "resposta": "Pode. É só avisar no pedido o que quer tirar ou trocar."
+    },
+    {
+      "pergunta": "Quais formas de pagamento?",
+      "resposta": "Pix, cartão de débito e crédito na entrega ou dinheiro, com troco."
+    }
+  ],
+  "horarios": [
+    [
+      "Segunda a sábado",
+      "11h às 15h · 18h às 23h"
+    ],
+    [
+      "Domingo",
+      "18h às 23h"
+    ]
+  ],
+  "endereco": {
+    "rua": "Avenida do Exemplo, 200",
+    "bairro": "Centro",
+    "cidade": "Sua cidade"
+  }
+}

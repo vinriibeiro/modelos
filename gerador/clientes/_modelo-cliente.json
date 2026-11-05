@@ -1,0 +1,23 @@
+{
+  "segmento": "clinica-estetica",
+  "modo": "previa",
+  "artigo": "da",
+  "nome": "Nome do Negócio",
+  "complemento": "Estética Facial",
+  "whatsapp": "5500000000000",
+  "instagram": "@perfildocliente",
+  "cores": { "fundo": "#F7F1EC", "destaque": "#A8576B" },
+  "endereco": { "rua": "Rua Tal, 123", "bairro": "Bairro", "cidade": "Cidade (UF)" },
+  "horarios": [["Segunda a sexta", "9h às 19h"], ["Sábado", "9h às 13h"], ["Domingo", "Fechado"]],
+  "textos": {
+    "titulo": "Frase principal com uma *palavra em destaque*."
+  },
+  "servicos": [
+    { "icone": "rosto", "nome": "Serviço 1", "descricao": "O que é e quanto tempo leva.", "preco": "R$ 100" },
+    { "icone": "sobrancelha", "nome": "Serviço 2", "descricao": "O que é e quanto tempo leva.", "preco": "R$ 50" }
+  ],
+  "fotos": { "capa": "fotos/nome-do-negocio/capa.jpg", "capaDescricao": "Fachada do espaço" },
+  "galeria": [
+    { "titulo": "Legenda da foto", "detalhe": "detalhe curto", "foto": "fotos/nome-do-negocio/1.jpg" }
+  ]
+}

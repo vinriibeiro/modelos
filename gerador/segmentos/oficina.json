@@ -1,0 +1,174 @@
+{
+  "segmento": "oficina",
+  "segmentoNome": "oficina mecânica e auto center",
+  "cores": {
+    "fundo": "#101418",
+    "destaque": "#F2B01E"
+  },
+  "estilo": {
+    "maiusculas": true,
+    "raio": 10
+  },
+  "rotulos": {
+    "cta": "Pedir orçamento no WhatsApp",
+    "ctaCurto": "Orçamento",
+    "ctaPassos": "Pedir meu orçamento",
+    "ctaServico": "Orçar este serviço",
+    "verServicos": "Ver serviços",
+    "secaoServicos": "Serviços",
+    "secaoGaleria": "Na oficina",
+    "secaoPassos": "Como funciona",
+    "valor": "Valor",
+    "prefixoPreco": "a partir de",
+    "itens": "os serviços"
+  },
+  "mensagens": {
+    "geral": "Olá! Vi o site {da} {nome} e quero um orçamento para o meu carro.",
+    "servico": "Olá! Vi o site {da} {nome} e quero um orçamento de: {servico}. Meu carro é: ",
+    "localizacao": "Olá! Pode me mandar a localização {da} {nome}?"
+  },
+  "textos": {
+    "kicker": "Mecânica automotiva em {cidade}",
+    "titulo": "Seu carro em dia, com *orçamento antes* de mexer.",
+    "subtitulo": "Revisão, freios, suspensão, injeção e ar-condicionado. Você aprova o orçamento antes do serviço e acompanha tudo pelo WhatsApp.",
+    "chips": [
+      "Orçamento sem compromisso",
+      "Peças com nota fiscal",
+      "Pix ou cartão"
+    ],
+    "tituloServicos": "O que fazemos pelo seu carro",
+    "notaServicos": "Valores de referência para carros de passeio. O valor final depende do modelo e das peças.",
+    "tituloGaleria": "Serviço feito com cuidado",
+    "tituloPassos": "Do orçamento à entrega",
+    "tituloFinal": "Barulho estranho? *Chame antes* de piorar.",
+    "textoFinal": "Mande o modelo do carro e o que está acontecendo. Respondemos com o orçamento."
+  },
+  "diferenciais": [
+    {
+      "icone": "conversa",
+      "titulo": "Você aprova antes",
+      "texto": "Nenhum serviço começa sem o seu ok no orçamento."
+    },
+    {
+      "icone": "escudo",
+      "titulo": "Garantia do serviço",
+      "texto": "Serviços e peças com garantia, informada no orçamento."
+    },
+    {
+      "icone": "scanner",
+      "titulo": "Diagnóstico com scanner",
+      "texto": "Leitura eletrônica para achar o problema sem chute."
+    }
+  ],
+  "servicos": [
+    {
+      "icone": "oleo",
+      "nome": "Troca de óleo e filtros",
+      "descricao": "Óleo na especificação do fabricante, filtro de óleo e verificação geral.",
+      "preco": "R$ 180"
+    },
+    {
+      "icone": "chave",
+      "nome": "Revisão completa",
+      "descricao": "Checagem de itens de segurança, fluidos, correias e lista do que precisa trocar.",
+      "preco": "R$ 250"
+    },
+    {
+      "icone": "freio",
+      "nome": "Freios",
+      "descricao": "Pastilhas, discos e fluido de freio, com teste ao final.",
+      "preco": "R$ 220"
+    },
+    {
+      "icone": "pneu",
+      "nome": "Suspensão e alinhamento",
+      "descricao": "Amortecedores, buchas e alinhamento para o carro andar reto e sem barulho.",
+      "preco": "R$ 120"
+    },
+    {
+      "icone": "scanner",
+      "nome": "Injeção eletrônica",
+      "descricao": "Diagnóstico com scanner, limpeza de bicos e correção de falhas.",
+      "preco": "R$ 150"
+    },
+    {
+      "icone": "neve",
+      "nome": "Ar-condicionado",
+      "descricao": "Higienização, carga de gás e verificação de vazamentos.",
+      "preco": "R$ 160"
+    }
+  ],
+  "galeria": [
+    {
+      "titulo": "Troca de óleo",
+      "detalhe": "na especificação do fabricante"
+    },
+    {
+      "titulo": "Freios",
+      "detalhe": "pastilhas e discos"
+    },
+    {
+      "titulo": "Alinhamento",
+      "detalhe": "e balanceamento"
+    },
+    {
+      "titulo": "Diagnóstico",
+      "detalhe": "scanner automotivo"
+    },
+    {
+      "titulo": "Ar-condicionado",
+      "detalhe": "higienização e carga"
+    },
+    {
+      "titulo": "Nossa oficina",
+      "detalhe": "elevador e equipamentos"
+    }
+  ],
+  "passos": [
+    {
+      "titulo": "Conte o problema",
+      "texto": "Mande o modelo do carro e o que está acontecendo. A mensagem já vai pronta pelo botão."
+    },
+    {
+      "titulo": "Aprove o orçamento",
+      "texto": "Avaliamos e enviamos o orçamento detalhado. Só começamos com o seu ok."
+    },
+    {
+      "titulo": "Retire o carro pronto",
+      "texto": "Avisamos pelo WhatsApp quando terminar, com as peças trocadas para você ver."
+    }
+  ],
+  "faq": [
+    {
+      "pergunta": "O orçamento é cobrado?",
+      "resposta": "Não. O orçamento é sem compromisso. Diagnósticos com scanner podem ter custo, sempre avisado antes."
+    },
+    {
+      "pergunta": "Posso levar a minha peça?",
+      "resposta": "Pode, conversamos caso a caso. A garantia, nesse caso, cobre só a mão de obra."
+    },
+    {
+      "pergunta": "Quanto tempo o carro fica na oficina?",
+      "resposta": "Serviços simples saem no mesmo dia. Para os maiores, o prazo vai junto com o orçamento."
+    }
+  ],
+  "horarios": [
+    [
+      "Segunda a sexta",
+      "8h às 18h"
+    ],
+    [
+      "Sábado",
+      "8h às 12h"
+    ],
+    [
+      "Domingo",
+      "Fechado"
+    ]
+  ],
+  "endereco": {
+    "rua": "Rua do Exemplo, 300",
+    "bairro": "Centro",
+    "cidade": "Sua cidade"
+  }
+}
