@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OrçaCar · Laboratório Site Express</title>
+<meta name="description" content="Triagem de orçamento para estética automotiva: categoria, serviço e condição do veículo viram uma faixa de preço e um briefing pronto. Demonstração com dados fictícios, processada no navegador.">
+<meta name="theme-color" content="#103b30">
+<link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/lab.css">
+<script src="../assets/js/lab.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#principal">Ir para a demonstração</a>
+
+<header class="topo">
+  <div class="wrap topo__in">
+    <a class="marca" href="../" aria-label="Laboratório Site Express, voltar para a galeria">
+      <svg class="marca__simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#103b30"/><path d="M9 21.5 15.5 10h4.2l-6.5 11.5zM15.6 21.5 22.1 10h1.9l-6.5 11.5z" fill="#d9f86f"/></svg>
+      <span class="marca__nome">Site Express <small>Laboratório</small></span>
+    </a>
+    <a class="topo__voltar" href="../">Todas as soluções</a>
+  </div>
+</header>
+
+<p class="faixa-demo"><strong>Demonstração</strong> Prime Car Estética, empresa fictícia. Dados fictícios, processados no seu navegador. Nada é enviado.</p>
+
+<main id="principal" class="wrap" tabindex="-1">
+  <section class="cabeca">
+    <p class="sobretitulo">Estética automotiva</p>
+    <h1 class="titulo">OrçaCar</h1>
+    <p class="texto">Hoje o dono responde cada orçamento um a um no WhatsApp, perguntando carro, serviço e estado. Com a automação, o cliente informa isso em três toques e o dono recebe a triagem feita: faixa de preço ou pedido de avaliação, mais um briefing pronto para responder.</p>
+    <div class="cabeca__acoes">
+      <button class="btn btn--lima" type="button" data-exemplo>Rodar um exemplo</button>
+      <button class="btn btn--linha btn--sm" type="button" data-exemplo-inspecao>Exemplo com inspeção</button>
+      <p class="dica-botao">Preenche um caso típico e mostra o resultado na hora. Depois você pode mudar os dados.</p>
+    </div>
+  </section>
+
+  <ol class="passos" aria-label="Etapas do processo">
+    <li class="passo" aria-current="step"><span class="passo__num"><span>1</span></span>Dados do veículo</li>
+    <li class="passo"><span class="passo__num"><span>2</span></span>Regras de preço</li>
+    <li class="passo"><span class="passo__num"><span>3</span></span>Briefing</li>
+  </ol>
+
+  <div class="demo-grid">
+    <form class="painel demo-grid__form" id="formulario" novalidate aria-labelledby="titulo-form">
+      <div>
+        <h2 class="painel__titulo" id="titulo-form">O que o cliente informa</h2>
+        <p class="painel__sub">Três respostas rápidas, as mesmas que o dono pergunta hoje no WhatsApp.</p>
+      </div>
+
+      <div class="campo" data-campo="categoria">
+        <label for="categoria">Categoria do veículo</label>
+        <select id="categoria" name="categoria">
+          <option value="">Selecione</option>
+          <option value="hatch">Hatch ou compacto</option>
+          <option value="sedan">Sedan</option>
+          <option value="suv">SUV ou picape</option>
+          <option value="van">Van ou utilitário grande</option>
+        </select>
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="campo" data-campo="servico">
+        <span class="campo__rotulo" id="rotulo-servico">Serviço</span>
+        <div class="fichas" data-grupo="servico" role="group" aria-labelledby="rotulo-servico">
+          <button class="ficha" type="button" aria-pressed="false" data-valor="lavagem">Lavagem detalhada <small>R$ 120 a 180</small></button>
+          <button class="ficha" type="button" aria-pressed="false" data-valor="higienizacao">Higienização interna <small>R$ 250 a 380</small></button>
+          <button class="ficha" type="button" aria-pressed="false" data-valor="polimento">Polimento técnico <small>R$ 450 a 700</small></button>
+          <button class="ficha" type="button" aria-pressed="false" data-valor="vitrificacao">Vitrificação <small>R$ 900 a 1.400</small></button>
+          <button class="ficha" type="button" aria-pressed="false" data-valor="combo">Combo polimento + vitrificação <small>R$ 1.200 a 1.800</small></button>
+        </div>
+        <p class="campo__ajuda">Valores base para hatch em boas condições. A faixa muda com a categoria e a condição.</p>
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="campo" data-campo="condicao">
+        <label for="condicao">Condição do veículo</label>
+        <select id="condicao" name="condicao">
+          <option value="">Selecione</option>
+          <option value="boa">Boa, só manutenção</option>
+          <option value="leves">Riscos leves e sujeira acumulada</option>
+          <option value="manchas">Manchas, pelos ou mau cheiro</option>
+          <option value="profundos">Riscos profundos, pintura opaca ou sinistro</option>
+        </select>
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="campo" data-campo="nome">
+        <label for="nome">Nome ou placa <span class="campo__ajuda">(opcional)</span></label>
+        <input id="nome" name="nome" type="text" maxlength="40" autocomplete="off" placeholder="Ex.: Carla · ABC1D23">
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="acoes">
+        <button class="btn btn--primario" type="submit">Calcular orçamento</button>
+        <button class="btn btn--linha btn--sm" type="button" data-reiniciar>Reiniciar</button>
+      </div>
+      <p class="dica-botao">Aplica as regras de preço da estética e monta o briefing. Se o caso pedir olhar presencial, a demo avisa em vez de chutar um valor.</p>
+    </form>
+
+    <section class="demo-grid__resultado" id="resultado" aria-labelledby="titulo-resultado" aria-live="polite">
+      <h2 class="sr" id="titulo-resultado">Resultado</h2>
+      <div class="vazio" data-vazio>
+        <strong>O resultado aparece aqui.</strong>
+        <span>Faixa de preço com as regras aplicadas, ou o encaminhamento para avaliação presencial, sempre com o briefing pronto para copiar.</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="cta-comercial" id="comercial" aria-labelledby="titulo-comercial">
+    <h2 id="titulo-comercial">Quero esse fluxo na minha empresa</h2>
+    <p>As regras, os serviços e os valores são ajustados para a sua estética; esta demo mostra o caminho, não os preços reais. A conversa começa no WhatsApp e você recebe uma proposta por escrito antes de fechar.</p>
+    <div class="acoes">
+      <a class="btn btn--lima" href="https://wa.me/5561996113299?text=Ol%C3%A1%2C%20Vin%C3%ADcius!%20Testei%20a%20demo%20Or%C3%A7aCar%20no%20Laborat%C3%B3rio%20Site%20Express%20e%20quero%20esse%20fluxo%20de%20or%C3%A7amento%20na%20minha%20est%C3%A9tica%20automotiva.%0AEmpresa%3A%20%0ACidade%3A%20%0A%0A(origem%3A%20lab-orcacar)" rel="noopener" data-wa="lab-orcacar">Falar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap rodape">
+  <span>Site Express · Laboratório de soluções digitais. Empresa e dados fictícios, para demonstração.</span>
+  <a href="../../privacidade/">Privacidade</a>
+</footer>
+<div class="sr" id="anuncio" aria-live="polite"></div>
+</body>
+</html>

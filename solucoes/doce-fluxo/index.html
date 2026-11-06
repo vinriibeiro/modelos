@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Doce Fluxo · Confeitaria · Laboratório Site Express</title>
+<meta name="description" content="Fluxo de pedidos para confeitaria sob encomenda: a automação checa prazo e capacidade de produção e gera a ficha. Demonstração com dados fictícios, processada no navegador.">
+<meta name="theme-color" content="#103b30">
+<link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/lab.css">
+<script src="../assets/js/lab.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#principal">Ir para a demonstração</a>
+
+<header class="topo">
+  <div class="wrap topo__in">
+    <a class="marca" href="../" aria-label="Laboratório Site Express, voltar para a galeria">
+      <svg class="marca__simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#103b30"/><path d="M9 21.5 15.5 10h4.2l-6.5 11.5zM15.6 21.5 22.1 10h1.9l-6.5 11.5z" fill="#d9f86f"/></svg>
+      <span class="marca__nome">Site Express <small>Laboratório</small></span>
+    </a>
+    <a class="topo__voltar" href="../">Todas as soluções</a>
+  </div>
+</header>
+
+<p class="faixa-demo"><strong>Demonstração</strong> Doce Ateliê Confeitaria, empresa fictícia. Dados fictícios, processados no seu navegador. Nada é enviado.</p>
+
+<main id="principal" class="wrap" tabindex="-1">
+  <section class="cabeca">
+    <p class="sobretitulo">Confeitaria sob encomenda</p>
+    <h1 class="titulo">Doce Fluxo · Confeitaria</h1>
+    <p class="texto">Hoje a dona confere o caderno e o WhatsApp para saber se cabe mais um pedido. Com a automação, o cliente informa o que quer, o sistema checa prazo e capacidade do dia e gera a ficha de produção na hora.</p>
+    <div class="cabeca__acoes">
+      <button class="btn btn--lima" type="button" data-exemplo>Rodar um exemplo</button>
+      <button class="btn btn--linha btn--sm" type="button" data-exemplo-urgente>Exemplo urgente</button>
+      <p class="dica-botao">Preenche um caso típico e mostra o resultado na hora. Depois você pode mudar os dados. O exemplo urgente mostra um pedido fora do prazo.</p>
+    </div>
+  </section>
+
+  <ol class="passos" aria-label="Etapas do processo">
+    <li class="passo" aria-current="step"><span class="passo__num"><span>1</span></span>Pedido</li>
+    <li class="passo"><span class="passo__num"><span>2</span></span>Prazo e capacidade</li>
+    <li class="passo"><span class="passo__num"><span>3</span></span>Ficha de produção</li>
+  </ol>
+
+  <div class="demo-grid">
+    <form class="painel demo-grid__form" id="formulario" novalidate aria-labelledby="titulo-form">
+      <div>
+        <h2 class="painel__titulo" id="titulo-form">Novo pedido</h2>
+        <p class="painel__sub">Informe o que o cliente quer e para quando. A capacidade é de 6 pontos de produção por dia; a agenda fictícia já tem pedidos marcados.</p>
+      </div>
+
+      <div class="grade-campos">
+        <div class="campo">
+          <label for="data">Data de entrega</label>
+          <input id="data" name="data" type="date" required>
+          <p class="campo__ajuda">Aos domingos a confeitaria não entrega.</p>
+          <p class="campo__erro" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label for="quantidade">Quantidade</label>
+          <input id="quantidade" name="quantidade" type="number" min="1" max="50" step="1" inputmode="numeric" placeholder="1 a 50" required>
+          <p class="campo__ajuda">Acima de 20 unidades, a confeiteira aprova antes.</p>
+          <p class="campo__erro" aria-live="polite"></p>
+        </div>
+
+        <div class="campo campo--largo">
+          <label for="produto">Produto</label>
+          <select id="produto" name="produto" required>
+            <option value="">Escolha o produto</option>
+            <option value="bolo-decorado">Bolo decorado · 1 ponto por unidade · mín. 2 dias</option>
+            <option value="docinhos">Docinhos (cento) · 0,5 ponto por cento · mín. 2 dias</option>
+            <option value="cupcakes">Cupcakes (dúzia) · 0,4 ponto por dúzia · mín. 1 dia</option>
+            <option value="bolo-festa">Bolo de festa personalizado · 2 pontos por unidade · mín. 5 dias</option>
+          </select>
+          <p class="campo__erro" aria-live="polite"></p>
+        </div>
+
+        <div class="campo campo--largo" id="campo-personalizacao">
+          <span class="campo__rotulo" id="rotulo-personalizacao">Personalização</span>
+          <div class="fichas" id="personalizacao" role="group" aria-labelledby="rotulo-personalizacao">
+            <button class="ficha" type="button" data-valor="nenhuma" aria-pressed="true">Sem personalização <small>×1,0</small></button>
+            <button class="ficha" type="button" data-valor="tema" aria-pressed="false">Tema ou cores <small>×1,25 · +1 dia</small></button>
+            <button class="ficha" type="button" data-valor="topo" aria-pressed="false">Topo modelado ou foto comestível <small>×1,6 · +2 dias · aprovação</small></button>
+          </div>
+          <p class="campo__ajuda">O multiplicador aumenta os pontos de produção; o extra soma à antecedência mínima.</p>
+          <p class="campo__erro" aria-live="polite"></p>
+        </div>
+
+        <div class="campo campo--largo">
+          <label for="cliente">Nome do cliente <small>(opcional)</small></label>
+          <input id="cliente" name="cliente" type="text" maxlength="40" autocomplete="off" placeholder="Ex.: Fernanda">
+          <p class="campo__erro" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="acoes">
+        <button class="btn btn--primario" type="submit">Verificar pedido</button>
+        <button class="btn btn--linha btn--sm" type="button" data-reiniciar>Reiniciar</button>
+      </div>
+      <p class="dica-botao">Checa a antecedência mínima e a capacidade do dia escolhido. Se couber, a ficha de produção sai pronta para copiar.</p>
+    </form>
+
+    <section class="demo-grid__resultado" id="resultado" aria-labelledby="titulo-resultado" aria-live="polite">
+      <h2 class="sr" id="titulo-resultado">Resultado</h2>
+      <div class="vazio" data-vazio>
+        <strong>O resultado aparece aqui.</strong>
+        <span>Você vai ver se o pedido foi aceito, se precisa da aprovação da confeiteira ou se está fora do prazo, com as regras aplicadas e a ficha de produção.</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="cta-comercial" id="comercial" aria-labelledby="titulo-comercial">
+    <h2 id="titulo-comercial">Quero esse fluxo na minha empresa</h2>
+    <p>Esse fluxo pode ser adaptado aos seus produtos, à sua capacidade real e aos seus prazos, com ficha de produção no formato que você já usa. A conversa começa no WhatsApp e você recebe uma proposta por escrito antes de fechar.</p>
+    <div class="acoes">
+      <a class="btn btn--lima" href="https://wa.me/5561996113299?text=Ol%C3%A1%2C%20Vin%C3%ADcius!%20Testei%20a%20demo%20Doce%20Fluxo%20no%20Laborat%C3%B3rio%20Site%20Express%20e%20quero%20esse%20fluxo%20de%20pedidos%20na%20minha%20confeitaria.%0AEmpresa%3A%20%0ACidade%3A%20%0A%0A(origem%3A%20lab-doce-fluxo)" rel="noopener" data-wa="lab-doce-fluxo">Falar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap rodape">
+  <span>Site Express · Laboratório de soluções digitais. Empresa e dados fictícios, para demonstração.</span>
+  <a href="../../privacidade/">Privacidade</a>
+</footer>
+<div class="sr" id="anuncio" aria-live="polite"></div>
+</body>
+</html>

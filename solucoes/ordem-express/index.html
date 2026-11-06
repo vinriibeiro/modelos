@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ordem Express · Laboratório Site Express</title>
+<meta name="description" content="Chamados de assistência técnica classificados por prioridade, com equipe sugerida e fila de ordens de serviço. Demonstração com dados fictícios, processada no navegador.">
+<meta name="theme-color" content="#103b30">
+<link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/lab.css">
+<script src="../assets/js/lab.js" defer></script>
+<script src="app.js" defer></script>
+<style>
+  #resultado { display: grid; gap: 20px; align-content: start; }
+</style>
+</head>
+<body>
+<a class="skip" href="#principal">Ir para a demonstração</a>
+
+<header class="topo">
+  <div class="wrap topo__in">
+    <a class="marca" href="../" aria-label="Laboratório Site Express, voltar para a galeria">
+      <svg class="marca__simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#103b30"/><path d="M9 21.5 15.5 10h4.2l-6.5 11.5zM15.6 21.5 22.1 10h1.9l-6.5 11.5z" fill="#d9f86f"/></svg>
+      <span class="marca__nome">Site Express <small>Laboratório</small></span>
+    </a>
+    <a class="topo__voltar" href="../">Todas as soluções</a>
+  </div>
+</header>
+
+<p class="faixa-demo"><strong>Demonstração</strong> TecnoLar Assistência Técnica, empresa fictícia. Dados fictícios, processados no seu navegador. Nada é enviado.</p>
+
+<main id="principal" class="wrap" tabindex="-1">
+  <section class="cabeca">
+    <p class="sobretitulo">Assistência técnica</p>
+    <h1 class="titulo">Ordem Express</h1>
+    <p class="texto">Hoje o dono da TecnoLar anota os chamados em papel e decide no grito quem atende primeiro. Aqui, cada chamado vira uma ordem de serviço na hora: a automação classifica a prioridade, sugere a equipe pela região e organiza a fila de atendimento.</p>
+    <div class="cabeca__acoes">
+      <button class="btn btn--lima" type="button" data-exemplo>Rodar um exemplo</button>
+      <button class="btn btn--linha btn--sm" type="button" data-exemplo-emergencia>Exemplo de emergência</button>
+      <p class="dica-botao">Preenche um caso típico e mostra o resultado na hora. Depois você pode mudar os dados.</p>
+    </div>
+  </section>
+
+  <ol class="passos" aria-label="Etapas do processo">
+    <li class="passo" aria-current="step"><span class="passo__num"><span>1</span></span>Chamado</li>
+    <li class="passo"><span class="passo__num"><span>2</span></span>Prioridade e equipe</li>
+    <li class="passo"><span class="passo__num"><span>3</span></span>Fila e andamento</li>
+  </ol>
+
+  <div class="demo-grid">
+    <form class="painel demo-grid__form" id="formulario" novalidate aria-labelledby="titulo-form">
+      <div>
+        <h2 class="painel__titulo" id="titulo-form">Registrar chamado</h2>
+        <p class="painel__sub">O que o cliente conta pelo telefone ou pelo site vira uma ordem de serviço classificada.</p>
+      </div>
+
+      <div class="campo">
+        <label for="problema">Tipo de problema</label>
+        <select id="problema" name="problema">
+          <option value="">Escolha o problema</option>
+          <option value="geladeira">Geladeira não gela</option>
+          <option value="lavadora">Máquina de lavar com vazamento</option>
+          <option value="ar">Ar-condicionado sem refrigerar</option>
+          <option value="microondas">Micro-ondas não liga</option>
+          <option value="gas">Fogão/forno com cheiro de gás</option>
+          <option value="outro">Outro</option>
+        </select>
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="campo">
+        <span class="campo__rotulo" id="rotulo-regiao">Região do cliente</span>
+        <div class="fichas" id="regiao" role="group" aria-labelledby="rotulo-regiao">
+          <button class="ficha" type="button" data-valor="centro" aria-pressed="false">Centro</button>
+          <button class="ficha" type="button" data-valor="norte" aria-pressed="false">Zona Norte</button>
+          <button class="ficha" type="button" data-valor="sul" aria-pressed="false">Zona Sul</button>
+          <button class="ficha" type="button" data-valor="leste" aria-pressed="false">Zona Leste</button>
+          <button class="ficha" type="button" data-valor="oeste" aria-pressed="false">Zona Oeste</button>
+        </div>
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="campo">
+        <span class="campo__rotulo" id="rotulo-urgencia">Urgência informada pelo cliente</span>
+        <div class="fichas" id="urgencia" role="group" aria-labelledby="rotulo-urgencia">
+          <button class="ficha" type="button" data-valor="0" aria-pressed="false">Pode esperar</button>
+          <button class="ficha" type="button" data-valor="1" aria-pressed="false">Esta semana</button>
+          <button class="ficha" type="button" data-valor="2" aria-pressed="false">Hoje</button>
+          <button class="ficha" type="button" data-valor="3" aria-pressed="false">Emergência</button>
+        </div>
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="grade-campos">
+        <div class="campo">
+          <label for="nome">Nome do cliente</label>
+          <input id="nome" name="nome" type="text" maxlength="40" autocomplete="off" placeholder="Ex.: Sr. Antônio">
+          <p class="campo__erro" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="telefone">Telefone <small>(opcional)</small></label>
+          <input id="telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="off" placeholder="DDD + número">
+          <p class="campo__ajuda">Só dígitos, com DDD: 10 ou 11 números.</p>
+          <p class="campo__erro" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="acoes">
+        <button class="btn btn--primario" type="submit">Criar ordem de serviço</button>
+        <button class="btn btn--linha btn--sm" type="button" data-reiniciar>Reiniciar</button>
+      </div>
+      <p class="dica-botao">Ao criar, a ordem recebe número, prioridade, equipe sugerida e previsão de chegada, e entra na fila ao lado como "Recebida".</p>
+    </form>
+
+    <section class="demo-grid__resultado" id="resultado" aria-labelledby="titulo-resultado" aria-live="polite">
+      <h2 class="sr" id="titulo-resultado">Resultado</h2>
+      <div class="vazio" data-vazio>
+        <strong>O resultado aparece aqui.</strong>
+        <span>Número da ordem, prioridade calculada, equipe sugerida e previsão de chegada, com as regras que levaram a isso.</span>
+      </div>
+      <div id="saida" hidden></div>
+
+      <section class="painel" id="fila-secao" aria-labelledby="titulo-fila">
+        <div>
+          <h3 class="painel__titulo" id="titulo-fila">Fila de ordens</h3>
+          <p class="painel__sub" id="fila-intro">A fila começa com duas ordens fictícias para você ver o andamento. Prioridade ALTA fica no topo; concluídas vão para o fim.</p>
+        </div>
+        <div class="fila" id="fila"></div>
+      </section>
+    </section>
+  </div>
+
+  <section class="cta-comercial" id="comercial" aria-labelledby="titulo-comercial">
+    <h2 id="titulo-comercial">Quero esse fluxo na minha empresa</h2>
+    <p>Se a sua assistência técnica ainda organiza chamados no papel, dá para montar um fluxo parecido com este, ajustado aos seus tipos de serviço e regiões. A conversa começa no WhatsApp e você recebe uma proposta por escrito antes de fechar.</p>
+    <div class="acoes">
+      <a class="btn btn--lima" href="https://wa.me/5561996113299?text=Ol%C3%A1%2C%20Vin%C3%ADcius!%20Testei%20a%20demo%20Ordem%20Express%20no%20Laborat%C3%B3rio%20Site%20Express%20e%20quero%20esse%20fluxo%20de%20chamados%20na%20minha%20assist%C3%AAncia%20t%C3%A9cnica.%0AEmpresa%3A%20%0ACidade%3A%20%0A%0A(origem%3A%20lab-ordem-express)" rel="noopener" data-wa="lab-ordem-express">Falar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap rodape">
+  <span>Site Express · Laboratório de soluções digitais. Empresa e dados fictícios, para demonstração.</span>
+  <a href="../../privacidade/">Privacidade</a>
+</footer>
+<div class="sr" id="anuncio" aria-live="polite"></div>
+</body>
+</html>
