@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laboratório Site Express · Soluções digitais para testar pelo celular</title>
+<meta name="description" content="Demonstrações de automações para pequenos negócios: orçamento de estética automotiva, pedidos de confeitaria, chamados de assistência técnica e conciliação de vendas. Teste em menos de um minuto, com dados fictícios.">
+<link rel="canonical" href="https://vinriibeiro.github.io/modelos/solucoes/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Site Express">
+<meta property="og:url" content="https://vinriibeiro.github.io/modelos/solucoes/">
+<meta property="og:title" content="Laboratório Site Express · teste uma automação do seu negócio">
+<meta property="og:description" content="Em menos de um minuto você testa uma situação do seu negócio e vê o trabalho que a automação faria. Dados fictícios, nada é enviado.">
+<meta property="og:image" content="https://vinriibeiro.github.io/modelos/img/og-site-express.jpg">
+<meta name="theme-color" content="#103b30">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/lab.css">
+<style>
+  /* A galeria fica um nível acima das demos: as fontes do lab.css resolvem a partir do próprio CSS, então nada muda aqui. */
+  .como { display: grid; gap: 14px; padding: 8px 0 28px; }
+  .como ol { display: grid; gap: 10px; counter-reset: n; }
+  .como li { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); font-size: .9375rem; }
+  .como li::before { counter-increment: n; content: counter(n); flex: none; width: 28px; height: 28px; border-radius: 50%; display: inline-grid; place-items: center; background: var(--lima); color: var(--floresta); font: 600 .8125rem/1 var(--display); }
+  @media (min-width: 760px) { .como ol { grid-template-columns: repeat(3, 1fr); } }
+</style>
+</head>
+<body>
+<a class="skip" href="#solucoes">Ir para as soluções</a>
+
+<header class="topo">
+  <div class="wrap topo__in">
+    <a class="marca" href="./" aria-label="Laboratório Site Express">
+      <svg class="marca__simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#103b30"/><path d="M9 21.5 15.5 10h4.2l-6.5 11.5zM15.6 21.5 22.1 10h1.9l-6.5 11.5z" fill="#d9f86f"/></svg>
+      <span class="marca__nome">Site Express <small>Laboratório</small></span>
+    </a>
+    <a class="topo__voltar" href="../">Modelos de site</a>
+  </div>
+</header>
+
+<p class="faixa-demo"><strong>Demonstrações</strong> Empresas e dados fictícios. Tudo roda no seu celular. Nada é enviado.</p>
+
+<main class="wrap">
+  <section class="heroi" aria-labelledby="titulo">
+    <p class="sobretitulo">Soluções digitais e automações de processos</p>
+    <h1 class="titulo" id="titulo">Teste uma situação do seu negócio e veja o trabalho que a automação faria</h1>
+    <p class="texto">Cada demonstração tem um exemplo pronto que roda em um clique. Depois você troca os dados pelos do seu dia a dia e vê o resultado mudar, com a regra aplicada explicada em linguagem simples.</p>
+    <ul class="heroi__pontos" aria-label="Como funciona">
+      <li class="etiqueta etiqueta--lima">Menos de 1 minuto</li>
+      <li class="etiqueta">Funciona no celular</li>
+      <li class="etiqueta">Dados fictícios</li>
+      <li class="etiqueta">Sem cadastro</li>
+    </ul>
+  </section>
+
+  <section id="solucoes" aria-labelledby="titulo-solucoes" tabindex="-1">
+    <h2 class="sr" id="titulo-solucoes">Soluções para testar</h2>
+    <div class="cartoes">
+
+      <article class="cartao" aria-labelledby="c-orcacar">
+        <div class="cartao__topo">
+          <span class="etiqueta etiqueta--info">Estética automotiva</span>
+          <span class="cartao__empresa">Prime Car Estética · fictícia</span>
+        </div>
+        <h3 class="cartao__titulo" id="c-orcacar">OrçaCar</h3>
+        <dl>
+          <div><dt>O que o dono faz hoje</dt><dd>Responde cada pedido de orçamento no WhatsApp, perguntando carro, serviço e estado do veículo, um por um.</dd></div>
+          <div><dt>O que você vai testar</dt><dd>Informe categoria, serviço e condição. A tabela de regras calcula uma faixa demonstrativa, mostra o que pesou no valor e gera um briefing copiável. Casos críticos vão para avaliação presencial.</dd></div>
+        </dl>
+        <div class="cartao__acoes">
+          <a class="btn btn--primario" href="orcacar/">Testar agora</a>
+        </div>
+      </article>
+
+      <article class="cartao" aria-labelledby="c-doce">
+        <div class="cartao__topo">
+          <span class="etiqueta etiqueta--info">Confeitaria</span>
+          <span class="cartao__empresa">Doce Ateliê Confeitaria · fictícia</span>
+        </div>
+        <h3 class="cartao__titulo" id="c-doce">Doce Fluxo</h3>
+        <dl>
+          <div><dt>O que a dona faz hoje</dt><dd>Confere o caderno e as conversas para saber se cabe mais um pedido naquela data e se dá tempo de personalizar.</dd></div>
+          <div><dt>O que você vai testar</dt><dd>Informe data, quantidade e personalização. A demo confere antecedência e capacidade do dia, separa o que precisa de aprovação, marca pedidos urgentes e gera a ficha de produção.</dd></div>
+        </dl>
+        <div class="cartao__acoes">
+          <a class="btn btn--primario" href="doce-fluxo/">Testar agora</a>
+        </div>
+      </article>
+
+      <article class="cartao" aria-labelledby="c-ordem">
+        <div class="cartao__topo">
+          <span class="etiqueta etiqueta--info">Assistência técnica</span>
+          <span class="cartao__empresa">TecnoLar Assistência · fictícia</span>
+        </div>
+        <h3 class="cartao__titulo" id="c-ordem">Ordem Express</h3>
+        <dl>
+          <div><dt>O que o dono faz hoje</dt><dd>Anota chamados em papel ou no WhatsApp e decide de cabeça quem atende primeiro e qual equipe vai.</dd></div>
+          <div><dt>O que você vai testar</dt><dd>Registre um chamado com problema, região e urgência. A regra de prioridade classifica, sugere a equipe e cria a ordem numa fila que você avança de Recebida até Concluída, com histórico.</dd></div>
+        </dl>
+        <div class="cartao__acoes">
+          <a class="btn btn--primario" href="ordem-express/">Testar agora</a>
+        </div>
+      </article>
+
+      <article class="cartao" aria-labelledby="c-concilia">
+        <div class="cartao__topo">
+          <span class="etiqueta etiqueta--info">Comércio e serviços</span>
+          <span class="cartao__empresa">Qualquer negócio com maquininha</span>
+        </div>
+        <h3 class="cartao__titulo" id="c-concilia">Concilia Express</h3>
+        <dl>
+          <div><dt>O que o dono faz hoje</dt><dd>Compara, linha por linha, as vendas do sistema com o extrato da maquininha para achar o que não bateu.</dd></div>
+          <div><dt>O que você vai testar</dt><dd>Dois CSVs fictícios são comparados na hora: totais somados, correspondências, divergências de valor e itens sem par, com relatório copiável.</dd></div>
+        </dl>
+        <div class="cartao__acoes">
+          <a class="btn btn--primario" href="concilia-express/">Testar agora</a>
+        </div>
+      </article>
+
+      <article class="cartao cartao--existente" aria-labelledby="c-jandaia">
+        <div class="cartao__topo">
+          <span class="etiqueta">Provedores de internet</span>
+          <span class="cartao__empresa">Demo existente</span>
+        </div>
+        <h3 class="cartao__titulo" id="c-jandaia">Jandaia OS</h3>
+        <dl>
+          <div><dt>O que o dono faz hoje</dt><dd>Controla clientes, cobranças e chamados de um provedor local em planilhas e grupos de WhatsApp.</dd></div>
+          <div><dt>O que você vai ver</dt><dd>Proposta e protótipo navegável de um sistema para provedores, já publicados no site da Site Express.</dd></div>
+        </dl>
+        <div class="cartao__acoes">
+          <a class="btn btn--linha" href="https://vinriibeiro.github.io/site-express/provedores/" rel="noopener">Ver a proposta</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="como" aria-labelledby="titulo-como">
+    <h2 class="titulo titulo--sm" id="titulo-como">Como testar em menos de um minuto</h2>
+    <ol>
+      <li>Toque em <strong>Testar agora</strong> e depois em <strong>Rodar um exemplo</strong>. O resultado aparece com a regra aplicada.</li>
+      <li>Troque os dados pelos de uma situação real do seu negócio e envie de novo. O resultado muda na hora.</li>
+      <li>Gostou do fluxo? Use <strong>Quero esse fluxo na minha empresa</strong>, no fim da demo, para falar comigo no WhatsApp.</li>
+    </ol>
+  </section>
+
+  <section class="cta-comercial" id="comercial" aria-labelledby="titulo-comercial">
+    <h2 id="titulo-comercial">Quer um fluxo assim no seu negócio?</h2>
+    <p>Cada automação é combinada conforme o que a sua empresa precisa. A conversa começa no WhatsApp e você recebe uma proposta por escrito, com escopo, valor e prazo, antes de fechar.</p>
+    <div class="acoes">
+      <a class="btn btn--lima" href="https://wa.me/5561996113299?text=Ol%C3%A1%2C%20Vin%C3%ADcius!%20Vi%20o%20Laborat%C3%B3rio%20Site%20Express%20e%20quero%20conversar%20sobre%20uma%20automa%C3%A7%C3%A3o%20para%20o%20meu%20neg%C3%B3cio.%0AEmpresa%3A%20%0ARamo%3A%20%0ACidade%3A%20%0A%0A(origem%3A%20lab-galeria)" rel="noopener" data-wa="lab-galeria">Falar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap rodape">
+  <span>Site Express · Laboratório de soluções digitais. Empresas e dados fictícios, para demonstração.</span>
+  <span><a href="../">Modelos de site</a> · <a href="../privacidade/">Privacidade</a></span>
+</footer>
+</body>
+</html>

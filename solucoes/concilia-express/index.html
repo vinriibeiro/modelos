@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concilia Express · Laboratório Site Express</title>
+<meta name="description" content="Compara as vendas do sistema com o extrato da maquininha: soma totais e separa correspondências, divergências e itens sem par. Demonstração com dados fictícios, processada no navegador.">
+<meta name="theme-color" content="#103b30">
+<link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/lab.css">
+<script src="../assets/js/lab.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#principal">Ir para a demonstração</a>
+
+<header class="topo">
+  <div class="wrap topo__in">
+    <a class="marca" href="../" aria-label="Laboratório Site Express, voltar para a galeria">
+      <svg class="marca__simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#103b30"/><path d="M9 21.5 15.5 10h4.2l-6.5 11.5zM15.6 21.5 22.1 10h1.9l-6.5 11.5z" fill="#d9f86f"/></svg>
+      <span class="marca__nome">Site Express <small>Laboratório</small></span>
+    </a>
+    <a class="topo__voltar" href="../">Todas as soluções</a>
+  </div>
+</header>
+
+<p class="faixa-demo"><strong>Demonstração</strong> Loja fictícia. Dados fictícios, processados no seu navegador. Nada é enviado.</p>
+
+<main id="principal" class="wrap" tabindex="-1">
+  <section class="cabeca">
+    <p class="sobretitulo">Comércio e serviços · conciliação de vendas</p>
+    <h1 class="titulo">Concilia Express</h1>
+    <p class="texto">Hoje o dono compara, linha por linha, as vendas do sistema com o extrato da maquininha. A automação cruza os dois arquivos pelo número da venda, soma os totais e separa o que bateu, o que divergiu e o que ficou sem par.</p>
+    <div class="cabeca__acoes">
+      <button class="btn btn--lima" type="button" data-exemplo>Rodar um exemplo</button>
+      <p class="dica-botao">Carrega dois CSVs fictícios (vendas do sistema e extrato da maquininha) e faz a conciliação na hora.</p>
+    </div>
+  </section>
+
+  <ol class="passos" aria-label="Etapas do processo">
+    <li class="passo" aria-current="step"><span class="passo__num"><span>1</span></span>Arquivos</li>
+    <li class="passo"><span class="passo__num"><span>2</span></span>Cruzamento</li>
+    <li class="passo"><span class="passo__num"><span>3</span></span>Relatório</li>
+  </ol>
+
+  <div class="demo-grid">
+    <form class="painel demo-grid__form" id="formulario" novalidate aria-labelledby="titulo-form">
+      <div>
+        <h2 class="painel__titulo" id="titulo-form">Os dois arquivos</h2>
+        <p class="painel__sub">Cole o conteúdo CSV ou escolha um arquivo do celular. Primeira linha com os nomes das colunas; separador ponto e vírgula ou vírgula.</p>
+      </div>
+
+      <div class="campo" data-campo="a">
+        <label for="csv-a">Vendas do sistema (CSV)</label>
+        <textarea id="csv-a" rows="7" spellcheck="false" placeholder="pedido;data;cliente;valor&#10;1001;03/11/2026;Ana;150,00"></textarea>
+        <p class="campo__ajuda">Colunas reconhecidas: identificador (pedido, nsu, id, código) e valor (valor, total). <label class="link-simples" for="arq-a">Escolher arquivo</label></p>
+        <input class="sr" type="file" id="arq-a" accept=".csv,text/csv,text/plain" data-arquivo="csv-a">
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="campo" data-campo="b">
+        <label for="csv-b">Extrato da maquininha (CSV)</label>
+        <textarea id="csv-b" rows="7" spellcheck="false" placeholder="nsu;data;bandeira;valor&#10;1001;03/11/2026;Visa;150,00"></textarea>
+        <p class="campo__ajuda">O cruzamento usa o identificador em comum entre os dois arquivos. <label class="link-simples" for="arq-b">Escolher arquivo</label></p>
+        <input class="sr" type="file" id="arq-b" accept=".csv,text/csv,text/plain" data-arquivo="csv-b">
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="campo" data-campo="tolerancia">
+        <label for="tolerancia">Tolerância de diferença (R$)</label>
+        <input id="tolerancia" type="number" inputmode="decimal" min="0" max="100" step="0.01" value="0.01">
+        <p class="campo__ajuda">Diferenças até esse valor contam como correspondência (arredondamento).</p>
+        <p class="campo__erro" aria-live="polite"></p>
+      </div>
+
+      <div class="acoes">
+        <button class="btn btn--primario" type="submit">Conciliar</button>
+        <button class="btn btn--linha btn--sm" type="button" data-reiniciar>Reiniciar</button>
+      </div>
+      <p class="dica-botao">Ao tocar em Conciliar, a demo lê os dois arquivos, cruza pelo identificador, soma os totais e monta o relatório ao lado.</p>
+    </form>
+
+    <section class="demo-grid__resultado" id="resultado" aria-labelledby="titulo-resultado" aria-live="polite">
+      <h2 class="sr" id="titulo-resultado">Resultado</h2>
+      <div class="vazio" data-vazio>
+        <strong>O relatório aparece aqui.</strong>
+        <span>Totais dos dois arquivos, diferença, lista de correspondências, divergências e itens sem par.</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="cta-comercial" id="comercial" aria-labelledby="titulo-comercial">
+    <h2 id="titulo-comercial">Quero esse fluxo na minha empresa</h2>
+    <p>A conciliação pode ler os arquivos que o seu sistema e a sua maquininha já exportam, no formato que eles usam. A conversa começa no WhatsApp e você recebe uma proposta por escrito antes de fechar.</p>
+    <div class="acoes">
+      <a class="btn btn--lima" href="https://wa.me/5561996113299?text=Ol%C3%A1%2C%20Vin%C3%ADcius!%20Testei%20a%20demo%20Concilia%20Express%20no%20Laborat%C3%B3rio%20Site%20Express%20e%20quero%20esse%20fluxo%20de%20concilia%C3%A7%C3%A3o%20na%20minha%20empresa.%0AEmpresa%3A%20%0ASistema%20e%20maquininha%20que%20uso%3A%20%0A%0A(origem%3A%20lab-concilia-express)" rel="noopener" data-wa="lab-concilia-express">Falar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap rodape">
+  <span>Site Express · Laboratório de soluções digitais. Empresa e dados fictícios, para demonstração.</span>
+  <a href="../../privacidade/">Privacidade</a>
+</footer>
+<div class="sr" id="anuncio" aria-live="polite"></div>
+</body>
+</html>
